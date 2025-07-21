@@ -41,19 +41,27 @@ export default function LandingPage() {
             <Link
               href='#features'
               className='text-sm font-medium hover:text-blue-600'
-            >{t("nav.features")}</Link>
+            >
+              {t('nav.features')}
+            </Link>
             <Link
               href='#benefits'
               className='text-sm font-medium hover:text-blue-600'
-            >{t("nav.benefits")}</Link>
+            >
+              {t('nav.benefits')}
+            </Link>
             <Link
               href='#testimonials'
               className='text-sm font-medium hover:text-blue-600'
-            >{t("nav.testimonials")}</Link>
+            >
+              {t('nav.testimonials')}
+            </Link>
             <Link
               href='#contact'
               className='text-sm font-medium hover:text-blue-600'
-            >{t("nav.contact")}</Link>
+            >
+              {t('nav.contact')}
+            </Link>
           </nav>
           <div className='flex items-center gap-4'>
             <Button
@@ -75,22 +83,30 @@ export default function LandingPage() {
                     href='#features'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >{t("nav.features")}</Link>
+                  >
+                    {t('nav.features')}
+                  </Link>
                   <Link
                     href='#benefits'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >{t("nav.benefits")}</Link>
+                  >
+                    {t('nav.benefits')}
+                  </Link>
                   <Link
                     href='#testimonials'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >{t("nav.testimonials")}</Link>
+                  >
+                    {t('nav.testimonials')}
+                  </Link>
                   <Link
                     href='#contact'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >{t("nav.contact")}</Link>
+                  >
+                    {t('nav.contact')}
+                  </Link>
                   <Button
                     asChild
                     className='mt-4 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
@@ -119,7 +135,7 @@ export default function LandingPage() {
                     {t('hero.title')}
                   </h1>
                   <p className='max-w-[600px] text-slate-500 md:text-xl'>
-                    {t("hero.desc")}
+                    {t('hero.desc')}
                   </p>
                 </div>
                 <div className='flex flex-col gap-2 min-[400px]:flex-row'>
@@ -129,7 +145,7 @@ export default function LandingPage() {
                     className='px-8 bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-800 hover:via-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
                   >
                     <Link href='#contact'>
-                      {t("hero.cta")} <ArrowRight className='ml-2 h-4 w-4' />
+                      {t('hero.cta')} <ArrowRight className='ml-2 h-4 w-4' />
                     </Link>
                   </Button>
                 </div>
@@ -153,10 +169,10 @@ export default function LandingPage() {
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
-                  {t("featuresSection.title")}
+                  {t('featuresSection.title')}
                 </h2>
                 <p className='max-w-[900px] text-slate-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                  {t("featuresSection.desc")}
+                  {t('featuresSection.desc')}
                 </p>
               </div>
             </div>
@@ -290,10 +306,10 @@ export default function LandingPage() {
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
-                  {t("benefitsSection.title")}
+                  {t('benefitsSection.title')}
                 </h2>
                 <p className='max-w-[900px] text-slate-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                  {t("benefitsSection.desc")}
+                  {t('benefitsSection.desc')}
                 </p>
               </div>
             </div>
@@ -464,7 +480,7 @@ export default function LandingPage() {
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
-                  {t("contactSection.headline")}
+                  {t('contactSection.headline')}
                 </h2>
                 <p className='max-w-[900px] text-slate-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
                   {t('contactSection.desc')}
@@ -498,18 +514,20 @@ export default function LandingPage() {
               href='#'
               className='text-sm text-slate-500 hover:text-blue-600'
             >
-              {t("footer.privacy")}
+              {t('footer.privacy')}
             </Link>
             <Link
               href='#'
               className='text-sm text-slate-500 hover:text-blue-600'
             >
-              {t("footer.terms")}
+              {t('footer.terms')}
             </Link>
             <Link
               href='#'
               className='text-sm text-slate-500 hover:text-blue-600'
-            >{t("nav.contact")}</Link>
+            >
+              {t('nav.contact')}
+            </Link>
           </div>
         </div>
       </footer>
