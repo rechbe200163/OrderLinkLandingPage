@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import en from '@/messages/en.json';
 import {
   ArrowRight,
   BarChart3,
@@ -33,7 +34,7 @@ export default function LandingPage() {
         <div className='container flex h-16 items-center justify-between'>
           <div className='flex items-center gap-2'>
             <Globe className='h-6 w-6 text-blue-600' />
-            <span className='text-xl font-bold'>LogiTech</span>
+            <span className='text-xl font-bold'>{en.companyName}</span>
           </div>
           <nav className='hidden md:flex items-center gap-6'>
             <Link
@@ -66,7 +67,7 @@ export default function LandingPage() {
               asChild
               className='hidden md:flex bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
             >
-              <Link href='#contact'>Contact Sales</Link>
+              <Link href='#contact'>{en.ctaContactSales}</Link>
             </Button>
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -113,7 +114,7 @@ export default function LandingPage() {
                       href='#contact'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Contact Sales
+                      {en.ctaContactSales}
                     </Link>
                   </Button>
                 </nav>
@@ -130,12 +131,10 @@ export default function LandingPage() {
               <div className='flex flex-col justify-center space-y-4'>
                 <div className='space-y-2'>
                   <h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'>
-                    Complete Business Management Solution
+                    {en.heroTitle}
                   </h1>
                   <p className='max-w-[600px] text-slate-500 md:text-xl'>
-                    Streamline your operations with our integrated suite of
-                    tools for administration, e-commerce, delivery, and data
-                    analysis.
+                    {en.heroSubtitle}
                   </p>
                 </div>
                 <div className='flex flex-col gap-2 min-[400px]:flex-row'>
@@ -145,7 +144,7 @@ export default function LandingPage() {
                     className='px-8 bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-800 hover:via-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
                   >
                     <Link href='#contact'>
-                      Contact Sales <ArrowRight className='ml-2 h-4 w-4' />
+                      {en.ctaContactSales} <ArrowRight className='ml-2 h-4 w-4' />
                     </Link>
                   </Button>
                 </div>
@@ -494,7 +493,7 @@ export default function LandingPage() {
                   size='lg'
                   className='w-full bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 hover:from-indigo-700 hover:via-blue-700 hover:to-sky-600 shadow-md hover:shadow-lg transition-all'
                 >
-                  Contact Sales
+                  {en.ctaContactSales}
                 </Button>
                 <p className='text-xs text-slate-500'>
                   Our team will respond within 24 hours to schedule your demo.
@@ -509,7 +508,7 @@ export default function LandingPage() {
           <div className='flex items-center gap-2'>
             <Globe className='h-6 w-6 text-blue-600' />
             <p className='text-sm text-slate-500'>
-              © 2023 LogiTech. All rights reserved.
+              {en.copyright}
             </p>
           </div>
           <div className='flex gap-4'>
