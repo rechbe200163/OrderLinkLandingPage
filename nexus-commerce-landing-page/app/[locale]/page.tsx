@@ -27,7 +27,7 @@ import { useTranslations } from 'next-intl';
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const t = useTranslations('');
+  const t = useTranslations();
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
@@ -41,34 +41,26 @@ export default function LandingPage() {
             <Link
               href='#features'
               className='text-sm font-medium hover:text-blue-600'
-            >
-              Features
-            </Link>
+            >{t("nav.features")}</Link>
             <Link
               href='#benefits'
               className='text-sm font-medium hover:text-blue-600'
-            >
-              Benefits
-            </Link>
+            >{t("nav.benefits")}</Link>
             <Link
               href='#testimonials'
               className='text-sm font-medium hover:text-blue-600'
-            >
-              Testimonials
-            </Link>
+            >{t("nav.testimonials")}</Link>
             <Link
               href='#contact'
               className='text-sm font-medium hover:text-blue-600'
-            >
-              Contact
-            </Link>
+            >{t("nav.contact")}</Link>
           </nav>
           <div className='flex items-center gap-4'>
             <Button
               asChild
               className='hidden md:flex bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
             >
-              <Link href='#contact'>Contact Sales</Link>
+              <Link href='#contact'>{t('nav.contactSales')}</Link>
             </Button>
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -83,30 +75,22 @@ export default function LandingPage() {
                     href='#features'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Features
-                  </Link>
+                  >{t("nav.features")}</Link>
                   <Link
                     href='#benefits'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Benefits
-                  </Link>
+                  >{t("nav.benefits")}</Link>
                   <Link
                     href='#testimonials'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Testimonials
-                  </Link>
+                  >{t("nav.testimonials")}</Link>
                   <Link
                     href='#contact'
                     className='text-lg font-medium hover:text-blue-600'
                     onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Contact
-                  </Link>
+                  >{t("nav.contact")}</Link>
                   <Button
                     asChild
                     className='mt-4 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
@@ -115,7 +99,7 @@ export default function LandingPage() {
                       href='#contact'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Contact Sales
+                      {t('nav.contactSales')}
                     </Link>
                   </Button>
                 </nav>
@@ -132,12 +116,10 @@ export default function LandingPage() {
               <div className='flex flex-col justify-center space-y-4'>
                 <div className='space-y-2'>
                   <h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'>
-                    Complete Business Management Solution
+                    {t('hero.title')}
                   </h1>
                   <p className='max-w-[600px] text-slate-500 md:text-xl'>
-                    Streamline your operations with our integrated suite of
-                    tools for administration, e-commerce, delivery, and data
-                    analysis.
+                    {t("hero.desc")}
                   </p>
                 </div>
                 <div className='flex flex-col gap-2 min-[400px]:flex-row'>
@@ -147,7 +129,7 @@ export default function LandingPage() {
                     className='px-8 bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-800 hover:via-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
                   >
                     <Link href='#contact'>
-                      Contact Sales <ArrowRight className='ml-2 h-4 w-4' />
+                      {t("hero.cta")} <ArrowRight className='ml-2 h-4 w-4' />
                     </Link>
                   </Button>
                 </div>
@@ -171,11 +153,10 @@ export default function LandingPage() {
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
-                  Comprehensive Suite of Tools
+                  {t("featuresSection.title")}
                 </h2>
                 <p className='max-w-[900px] text-slate-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                  Our integrated platform provides everything you need to manage
-                  your business efficiently.
+                  {t("featuresSection.desc")}
                 </p>
               </div>
             </div>
@@ -309,11 +290,10 @@ export default function LandingPage() {
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
-                  Why Choose Our Solution
+                  {t("benefitsSection.title")}
                 </h2>
                 <p className='max-w-[900px] text-slate-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                  Our integrated platform delivers tangible benefits across your
-                  entire operation.
+                  {t("benefitsSection.desc")}
                 </p>
               </div>
             </div>
@@ -484,11 +464,10 @@ export default function LandingPage() {
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
-                  Ready to Transform Your Business?
+                  {t("contactSection.headline")}
                 </h2>
                 <p className='max-w-[900px] text-slate-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                  Contact our sales team for a personalized demonstration of our
-                  platform.
+                  {t('contactSection.desc')}
                 </p>
               </div>
               <div className='mx-auto w-full max-w-sm space-y-2'>
@@ -496,10 +475,10 @@ export default function LandingPage() {
                   size='lg'
                   className='w-full bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 hover:from-indigo-700 hover:via-blue-700 hover:to-sky-600 shadow-md hover:shadow-lg transition-all'
                 >
-                  Contact Sales
+                  {t('contactSection.cta')}
                 </Button>
                 <p className='text-xs text-slate-500'>
-                  Our team will respond within 24 hours to schedule your demo.
+                  {t('contactSection.responseTime')}
                 </p>
               </div>
             </div>
@@ -519,20 +498,18 @@ export default function LandingPage() {
               href='#'
               className='text-sm text-slate-500 hover:text-blue-600'
             >
-              Privacy Policy
+              {t("footer.privacy")}
             </Link>
             <Link
               href='#'
               className='text-sm text-slate-500 hover:text-blue-600'
             >
-              Terms of Service
+              {t("footer.terms")}
             </Link>
             <Link
               href='#'
               className='text-sm text-slate-500 hover:text-blue-600'
-            >
-              Contact
-            </Link>
+            >{t("nav.contact")}</Link>
           </div>
         </div>
       </footer>
