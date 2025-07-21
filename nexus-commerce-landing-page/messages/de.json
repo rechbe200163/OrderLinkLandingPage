@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "benefits": "Vorteile",
+    "testimonials": "Kundenstimmen",
+    "contact": "Kontakt",
+    "contactSales": "Vertrieb kontaktieren"
+  },
+  "hero": {
+    "title": "Umfassende Unternehmenslösung",
+    "desc": "Vereinfachen Sie Ihre Abläufe mit unserer integrierten Suite aus Verwaltung, E-Commerce, Lieferung und Datenanalyse.",
+    "cta": "Vertrieb kontaktieren"
+  },
+  "featuresSection": {
+    "title": "Umfassende Werkzeug-Suite",
+    "desc": "Unsere integrierte Plattform bietet alles, was Sie benötigen, um Ihr Geschäft effizient zu verwalten."
+  },
+  "benefitsSection": {
+    "title": "Warum unsere Lösung wählen",
+    "desc": "Unsere integrierte Plattform liefert messbare Vorteile für Ihr gesamtes Unternehmen."
+  },
+  "contactSection": {
+    "headline": "Bereit, Ihr Geschäft zu transformieren?",
+    "desc": "Kontaktieren Sie unser Vertriebsteam für eine persönliche Demo unserer Plattform.",
+    "cta": "Vertrieb kontaktieren",
+    "responseTime": "Unser Team meldet sich innerhalb von 24 Stunden, um einen Termin zu vereinbaren."
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "contact": "Kontakt"
+  }
+}

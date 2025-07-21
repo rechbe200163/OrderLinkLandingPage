@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "features": "Features",
+    "benefits": "Benefits",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "contactSales": "Contact Sales"
+  },
+  "hero": {
+    "title": "Complete Business Management Solution",
+    "desc": "Streamline your operations with our integrated suite of tools for administration, e-commerce, delivery, and data analysis.",
+    "cta": "Contact Sales"
+  },
+  "featuresSection": {
+    "title": "Comprehensive Suite of Tools",
+    "desc": "Our integrated platform provides everything you need to manage your business efficiently."
+  },
+  "benefitsSection": {
+    "title": "Why Choose Our Solution",
+    "desc": "Our integrated platform delivers tangible benefits across your entire operation."
+  },
+  "contactSection": {
+    "headline": "Ready to Transform Your Business?",
+    "desc": "Contact our sales team for a personalized demonstration of our platform.",
+    "cta": "Contact Sales",
+    "responseTime": "Our team will respond within 24 hours to schedule your demo."
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact"
+  }
+}
