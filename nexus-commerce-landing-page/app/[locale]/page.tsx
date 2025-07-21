@@ -23,9 +23,11 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useTranslations } from 'next-intl';
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useTranslations('');
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
