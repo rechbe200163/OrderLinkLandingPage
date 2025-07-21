@@ -31,7 +31,7 @@ export default function LandingPage() {
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
-      <header className='sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60'>
+      <header className='sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/60'>
         <div className='container flex h-16 items-center justify-between'>
           <div className='flex items-center gap-2'>
             <Globe className='h-6 w-6 text-blue-600' />
@@ -66,7 +66,7 @@ export default function LandingPage() {
           <div className='flex items-center gap-4'>
             <Button
               asChild
-              className='hidden md:flex bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
+              className='hidden md:flex bg-linear-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
             >
               <Link href='#contact'>{t('nav.contactSales')}</Link>
             </Button>
@@ -109,7 +109,7 @@ export default function LandingPage() {
                   </Link>
                   <Button
                     asChild
-                    className='mt-4 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
+                    className='mt-4 bg-linear-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-700 hover:via-blue-600 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
                   >
                     <Link
                       href='#contact'
@@ -126,7 +126,7 @@ export default function LandingPage() {
       </header>
       <main className='flex-1'>
         {/* Hero Section */}
-        <section className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-indigo-50'>
+        <section className='w-full py-12 md:py-24 lg:py-32 bg-linear-to-br from-blue-50 via-white to-indigo-50'>
           <div className='container px-4 md:px-6'>
             <div className='grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2'>
               <div className='flex flex-col justify-center space-y-4'>
@@ -142,7 +142,7 @@ export default function LandingPage() {
                   <Button
                     asChild
                     size='lg'
-                    className='px-8 bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-800 hover:via-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
+                    className='px-8 bg-linear-to-tr from-blue-700 via-blue-600 to-indigo-600 hover:from-blue-800 hover:via-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all'
                   >
                     <Link href='#contact'>
                       {t('hero.cta')} <ArrowRight className='ml-2 h-4 w-4' />
@@ -300,7 +300,7 @@ export default function LandingPage() {
         {/* Benefits Section */}
         <section
           id='benefits'
-          className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-tr from-blue-50 via-slate-50 to-indigo-50'
+          className='w-full py-12 md:py-24 lg:py-32 bg-linear-to-tr from-blue-50 via-slate-50 to-indigo-50'
         >
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
@@ -474,7 +474,7 @@ export default function LandingPage() {
         {/* Contact Section */}
         <section
           id='contact'
-          className='w-full py-12 md:py-24 lg:py-32 bg-gradient-to-bl from-blue-50 via-slate-50 to-indigo-50'
+          className='w-full py-12 md:py-24 lg:py-32 bg-linear-to-bl from-blue-50 via-slate-50 to-indigo-50'
         >
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
@@ -489,7 +489,7 @@ export default function LandingPage() {
               <div className='mx-auto w-full max-w-sm space-y-2'>
                 <Button
                   size='lg'
-                  className='w-full bg-gradient-to-br from-indigo-600 via-blue-600 to-sky-500 hover:from-indigo-700 hover:via-blue-700 hover:to-sky-600 shadow-md hover:shadow-lg transition-all'
+                  className='w-full bg-linear-to-br from-indigo-600 via-blue-600 to-sky-500 hover:from-indigo-700 hover:via-blue-700 hover:to-sky-600 shadow-md hover:shadow-lg transition-all'
                 >
                   {t('contactSection.cta')}
                 </Button>
