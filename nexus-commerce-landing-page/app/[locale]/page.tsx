@@ -31,7 +31,7 @@ export default function LandingPage() {
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
-      <header className='sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/60'>
+      <header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 dark:border-slate-700'>
         <div className='container flex h-16 items-center justify-between'>
           <div className='flex items-center gap-2'>
             <Globe className='h-6 w-6 text-blue-600' />
@@ -126,7 +126,7 @@ export default function LandingPage() {
       </header>
       <main className='flex-1'>
         {/* Hero Section */}
-        <section className='w-full py-12 md:py-24 lg:py-32 bg-linear-to-br from-blue-50 via-white to-indigo-50'>
+        <section className='w-full py-12 md:py-24 lg:py-32 bg-background'>
           <div className='container px-4 md:px-6'>
             <div className='grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2'>
               <div className='flex flex-col justify-center space-y-4'>
@@ -300,7 +300,7 @@ export default function LandingPage() {
         {/* Benefits Section */}
         <section
           id='benefits'
-          className='w-full py-12 md:py-24 lg:py-32 bg-linear-to-tr from-blue-50 via-slate-50 to-indigo-50'
+          className='w-full py-12 md:py-24 lg:py-32 bg-background'
         >
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
@@ -314,7 +314,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className='mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12'>
-              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-white hover:shadow-md transition-all'>
+              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-background hover:shadow-md transition-all'>
                 <div className='rounded-full bg-blue-100 p-3'>
                   <CheckCircle className='h-6 w-6 text-blue-600' />
                 </div>
@@ -324,7 +324,7 @@ export default function LandingPage() {
                   integrated tools.
                 </p>
               </div>
-              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-white hover:shadow-md transition-all'>
+              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-background hover:shadow-md transition-all'>
                 <div className='rounded-full bg-sky-100 p-3'>
                   <CheckCircle className='h-6 w-6 text-sky-500' />
                 </div>
@@ -334,7 +334,7 @@ export default function LandingPage() {
                   data-driven insights.
                 </p>
               </div>
-              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-white hover:shadow-md transition-all'>
+              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-background hover:shadow-md transition-all'>
                 <div className='rounded-full bg-cyan-100 p-3'>
                   <CheckCircle className='h-6 w-6 text-cyan-600' />
                 </div>
@@ -346,7 +346,7 @@ export default function LandingPage() {
                   integrated platform.
                 </p>
               </div>
-              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-white hover:shadow-md transition-all'>
+              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-background hover:shadow-md transition-all'>
                 <div className='rounded-full bg-indigo-100 p-3'>
                   <CheckCircle className='h-6 w-6 text-indigo-600' />
                 </div>
@@ -356,7 +356,7 @@ export default function LandingPage() {
                   analytics.
                 </p>
               </div>
-              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-white hover:shadow-md transition-all'>
+              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-background hover:shadow-md transition-all'>
                 <div className='rounded-full bg-blue-100 p-3'>
                   <CheckCircle className='h-6 w-6 text-blue-700' />
                 </div>
@@ -366,7 +366,7 @@ export default function LandingPage() {
                   needs.
                 </p>
               </div>
-              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-white hover:shadow-md transition-all'>
+              <div className='flex flex-col items-center space-y-2 rounded-lg border p-6 shadow-sm bg-background hover:shadow-md transition-all'>
                 <div className='rounded-full bg-indigo-100 p-3'>
                   <CheckCircle className='h-6 w-6 text-indigo-700' />
                 </div>
@@ -472,7 +472,7 @@ export default function LandingPage() {
         </section> */}
         <section
           id='pricing'
-          className='w-full py-12 md:py-24 lg:py-32 bg-white'
+          className='w-full py-12 md:py-24 lg:py-32 bg-background'
         >
           <div className='container px-4 md:px-6 text-center'>
             <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6'>
@@ -562,7 +562,7 @@ export default function LandingPage() {
         {/* Contact Section */}
         <section
           id='contact'
-          className='w-full py-12 md:py-24 lg:py-32 bg-linear-to-bl from-blue-50 via-slate-50 to-indigo-50'
+          className='w-full py-12 md:py-24 lg:py-32 bg-background'
         >
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center'>
