@@ -470,6 +470,94 @@ export default function LandingPage() {
             </div>
           </div>
         </section> */}
+        <section
+          id='pricing'
+          className='w-full py-12 md:py-24 lg:py-32 bg-white'
+        >
+          <div className='container px-4 md:px-6 text-center'>
+            <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6'>
+              Flexible Pakete für jedes Team
+            </h2>
+            <p className='max-w-3xl mx-auto text-slate-500 md:text-xl mb-10'>
+              Kombiniere nur die Module, die du brauchst – und wähle die
+              passende Nutzergröße. Die Preise sind klar und additiv.
+            </p>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Module (monatlich)</CardTitle>
+                  <CardDescription>Wähle frei kombinierbar</CardDescription>
+                </CardHeader>
+                <CardContent className='text-left text-sm space-y-2'>
+                  <p>
+                    <strong>AdminTool:</strong> inkludiert
+                  </p>
+                  <p>
+                    <strong>Insight (Statistiken):</strong> +10 EUR
+                  </p>
+                  <p>
+                    <strong>Flow (Navigation & App):</strong> +15 EUR
+                  </p>
+                  <p>
+                    <strong>Access (Rechtemanagement):</strong> +5 EUR
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Nutzergruppen (monatlich)</CardTitle>
+                  <CardDescription>Staffelung nach Teamgröße</CardDescription>
+                </CardHeader>
+                <CardContent className='text-left text-sm space-y-2'>
+                  <p>
+                    <strong>Core:</strong> bis 3 Nutzer (inkludiert)
+                  </p>
+                  <p>
+                    <strong>Team:</strong> bis 5 Nutzer +5 EUR
+                  </p>
+                  <p>
+                    <strong>Pro:</strong> bis 7 Nutzer +10 EUR
+                  </p>
+                  <p>
+                    <strong>Enterprise:</strong> 11+ Nutzer – individuell
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Beispielpaket</CardTitle>
+                  <CardDescription>Insight Core (3 Nutzer)</CardDescription>
+                </CardHeader>
+                <CardContent className='text-left text-sm space-y-2'>
+                  <p>
+                    <strong>Insight Modul:</strong> +10 EUR
+                  </p>
+                  <p>
+                    <strong>3 Nutzer:</strong> inkludiert
+                  </p>
+                  <p>
+                    <strong>Einrichtungsgebühr (einmalig):</strong> 49 EUR
+                  </p>
+                  <hr />
+                  <p>
+                    <strong>Monat 1 (netto):</strong> 59,00 EUR
+                  </p>
+                  <p>
+                    <strong>zzgl. USt (20 %):</strong> 11,80 EUR
+                  </p>
+                  <p>
+                    <strong>Gesamt (brutto):</strong> 70,80 EUR
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+            <div className='mt-10'>
+              <Button size='lg' asChild>
+                <Link href='#contact'>Jetzt Paket zusammenstellen</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
 
         {/* Contact Section */}
         <section
