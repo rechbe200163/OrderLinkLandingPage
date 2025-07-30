@@ -30,14 +30,14 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className='flex min-h-screen flex-col'>
+    <div className='flex min-h-screen flex-col items-center'>
       <header className='sticky top-0 z-50 w-full border-b bg-foreground/95 backdrop-blur supports-backdrop-filter:bg-foreground/60 shadow-sm'>
         <div className='container flex h-16 items-center justify-between bg-foreground/20 backdrop-blur-md rounded-lg mx-4 px-6 border border-white/30 shadow-lg'>
           <div className='flex items-center gap-2'>
-            <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg'>
+            <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-lg'>
               <Globe className='h-5 w-5 text-foreground' />
             </div>
-            <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
+            <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 bg-clip-text text-transparent'>
               LogiTech
             </span>
           </div>
@@ -133,9 +133,9 @@ export default function LandingPage() {
         </div>
       </header>
 
-      <main className='flex-1'>
+      <main className='flex-1 w-full flex flex-col items-center'>
         {/* Hero Section */}
-        <section className='relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden'>
+        <section className='relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950 dark:via-indigo-950 dark:to-purple-950 overflow-hidden'>
           <div className='absolute inset-0 bg-grid-pattern opacity-5'></div>
           <div className='container px-4 md:px-6 relative'>
             <div className='grid gap-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-2 items-center'>
@@ -226,7 +226,7 @@ export default function LandingPage() {
             <div className='mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
               <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
                 <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <ShieldCheck className='h-8 w-8 text-foreground' />
                   </div>
                   <CardTitle className='text-xl'>Admin Tool</CardTitle>
@@ -258,7 +258,7 @@ export default function LandingPage() {
 
               <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
                 <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 dark:from-sky-400 dark:to-sky-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Package className='h-8 w-8 text-foreground' />
                   </div>
                   <CardTitle className='text-xl'>Web Shop</CardTitle>
@@ -290,7 +290,7 @@ export default function LandingPage() {
 
               <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
                 <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 dark:from-cyan-400 dark:to-cyan-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <Truck className='h-8 w-8 text-foreground' />
                   </div>
                   <CardTitle className='text-xl'>Delivery Navigation</CardTitle>
@@ -322,7 +322,7 @@ export default function LandingPage() {
 
               <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
                 <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 dark:from-indigo-400 dark:to-indigo-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
                     <BarChart3 className='h-8 w-8 text-foreground' />
                   </div>
                   <CardTitle className='text-xl'>Data Analysis</CardTitle>
@@ -358,7 +358,7 @@ export default function LandingPage() {
         {/* Benefits Section */}
         <section
           id='benefits'
-          className='w-full py-20 md:py-32 bg-gradient-to-br from-gray-50 to-blue-50'
+          className='w-full py-20 md:py-32 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900'
         >
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16'>
@@ -376,7 +376,7 @@ export default function LandingPage() {
             </div>
             <div className='mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
               <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-blue-500 to-blue-600 p-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='rounded-full bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 p-4 group-hover:scale-110 transition-transform duration-300'>
                   <CheckCircle className='h-8 w-8 text-foreground' />
                 </div>
                 <h3 className='text-xl font-bold text-center'>
@@ -389,7 +389,7 @@ export default function LandingPage() {
               </div>
 
               <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-sky-500 to-sky-600 p-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='rounded-full bg-gradient-to-br from-sky-500 to-sky-600 dark:from-sky-400 dark:to-sky-500 p-4 group-hover:scale-110 transition-transform duration-300'>
                   <CheckCircle className='h-8 w-8 text-foreground' />
                 </div>
                 <h3 className='text-xl font-bold text-center'>
@@ -402,7 +402,7 @@ export default function LandingPage() {
               </div>
 
               <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 p-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 dark:from-cyan-400 dark:to-cyan-500 p-4 group-hover:scale-110 transition-transform duration-300'>
                   <CheckCircle className='h-8 w-8 text-foreground' />
                 </div>
                 <h3 className='text-xl font-bold text-center'>
@@ -415,7 +415,7 @@ export default function LandingPage() {
               </div>
 
               <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 p-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 dark:from-indigo-400 dark:to-indigo-500 p-4 group-hover:scale-110 transition-transform duration-300'>
                   <CheckCircle className='h-8 w-8 text-foreground' />
                 </div>
                 <h3 className='text-xl font-bold text-center'>
@@ -428,7 +428,7 @@ export default function LandingPage() {
               </div>
 
               <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-blue-600 to-blue-700 p-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='rounded-full bg-gradient-to-br from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 p-4 group-hover:scale-110 transition-transform duration-300'>
                   <CheckCircle className='h-8 w-8 text-foreground' />
                 </div>
                 <h3 className='text-xl font-bold text-center'>
@@ -441,7 +441,7 @@ export default function LandingPage() {
               </div>
 
               <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-indigo-600 to-indigo-700 p-4 group-hover:scale-110 transition-transform duration-300'>
+                <div className='rounded-full bg-gradient-to-br from-indigo-600 to-indigo-700 dark:from-indigo-500 dark:to-indigo-600 p-4 group-hover:scale-110 transition-transform duration-300'>
                   <CheckCircle className='h-8 w-8 text-foreground' />
                 </div>
                 <h3 className='text-xl font-bold text-center'>
@@ -475,7 +475,7 @@ export default function LandingPage() {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
               <Card className='relative overflow-hidden border-0 shadow-xl bg-bg-background'>
                 <CardHeader className='pb-6'>
-                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4'>
+                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-xl flex items-center justify-center mb-4'>
                     <Package className='h-6 w-6 text-foreground' />
                   </div>
                   <CardTitle className='text-2xl'>Core Modules</CardTitle>
@@ -505,7 +505,7 @@ export default function LandingPage() {
                 </CardContent>
               </Card>
 
-              <Card className='relative overflow-hidden border-0 shadow-xl bg-gradient-to-br from-indigo-50 to-purple-50'>
+              <Card className='relative overflow-hidden border-0 shadow-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900'>
                 <CardHeader className='pb-6'>
                   <div className='w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
                     <Users className='h-6 w-6 text-foreground' />
@@ -538,12 +538,12 @@ export default function LandingPage() {
               </Card>
 
               <Card className='relative overflow-hidden border-2 border-blue-200 shadow-xl bg-bg-background'>
-                <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500'></div>
+                <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-400 dark:to-indigo-400'></div>
                 <CardHeader className='pb-6'>
-                  <Badge className='w-fit mb-2 bg-gradient-to-r from-blue-500 to-indigo-500'>
+                  <Badge className='w-fit mb-2 bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-400 dark:to-indigo-400'>
                     Most Popular
                   </Badge>
-                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
+                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-400 dark:to-indigo-500 rounded-xl flex items-center justify-center mb-4'>
                     <Star className='h-6 w-6 text-foreground' />
                   </div>
                   <CardTitle className='text-2xl'>Starter Package</CardTitle>
@@ -596,7 +596,7 @@ export default function LandingPage() {
         {/* Contact Section */}
         <section
           id='contact'
-          className='w-full py-20 md:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-foreground'
+          className='w-full py-20 md:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-800 dark:via-indigo-800 dark:to-purple-800 text-foreground'
         >
           <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center justify-center space-y-8 text-center'>
@@ -644,10 +644,10 @@ export default function LandingPage() {
           <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
-                <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg'>
+                <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-lg'>
                   <Globe className='h-5 w-5 text-foreground' />
                 </div>
-                <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
+                <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 bg-clip-text text-transparent'>
                   LogiTech
                 </span>
               </div>
