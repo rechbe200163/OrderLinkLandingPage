@@ -418,7 +418,7 @@ export default function LandingPage() {
           '[background-size:30px_30px]'
         )}
         {/* Benefits Section */}{' '}
-        {backgroundGridWrapper(
+        {backgroundDotWrapper(
           <section
             id='benefits'
             className='w-full py-20 md:py-32 bg-muted/30 relative lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-background dark:via-blue-900/10 dark:to-indigo-900/10 overflow-hidden'
