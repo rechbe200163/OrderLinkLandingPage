@@ -2,32 +2,58 @@
   "nav": {
     "features": "Features",
     "benefits": "Benefits",
+    "pricing": "Pricing",
     "testimonials": "Testimonials",
     "contact": "Contact",
-    "contactSales": "Contact Sales"
+    "contactSales": "Contact Sales",
+    "getStarted": "Get Started"
   },
   "hero": {
-    "title": "Complete Business Management Solution",
-    "desc": "Streamline your operations with our integrated suite of tools for administration, e-commerce, delivery, and data analysis.",
-    "cta": "Contact Sales"
+    "badge": "Complete Business Solution",
+    "title": "Transform Your",
+    "desc": "Streamline your entire business with our comprehensive platform featuring admin tools, e-commerce, delivery navigation, and powerful analytics.",
+    "cta": "Start Free Trial",
+    "learnMore": "Learn More",
+    "words": {
+      "workflows": "Workflows",
+      "logistics": "Logistics",
+      "inventory": "Inventory",
+      "deliveries": "Deliveries",
+      "insights": "Insights",
+      "growth": "Growth"
+    },
+    "statCompanies": "500+ Companies",
+    "statRating": "4.9/5 Rating"
   },
   "featuresSection": {
-    "title": "Comprehensive Suite of Tools",
-    "desc": "Our integrated platform provides everything you need to manage your business efficiently."
+    "badge": "Powerful Features",
+    "title": "Everything You Need in One Platform",
+    "desc": "Our comprehensive suite of tools covers every aspect of your logistics and e-commerce operations."
   },
   "benefitsSection": {
-    "title": "Why Choose Our Solution",
-    "desc": "Our integrated platform delivers tangible benefits across your entire operation."
+    "badge": "Key Benefits",
+    "title": "Why Choose OrderLink?",
+    "desc": "Transform your business operations with measurable results and improved efficiency."
   },
   "contactSection": {
+    "badge": "Get Started Today",
     "headline": "Ready to Transform Your Business?",
-    "desc": "Contact our sales team for a personalized demonstration of our platform.",
-    "cta": "Contact Sales",
-    "responseTime": "Our team will respond within 24 hours to schedule your demo."
+    "desc": "Join hundreds of companies already using OrderLink to streamline their operations and boost efficiency.",
+    "cta": "Start Free Trial",
+    "scheduleDemo": "Schedule Demo",
+    "responseTime": "Get a response within 24 hours • No credit card required"
   },
   "footer": {
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "contact": "Contact"
+    "cookiePolicy": "Cookie Policy",
+    "contact": "Contact",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "integrations": "Integrations",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "rights": "© 2024 OrderLink. All rights reserved."
   }
 }
