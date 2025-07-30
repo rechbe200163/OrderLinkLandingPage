@@ -2,32 +2,58 @@
   "nav": {
     "features": "Funktionen",
     "benefits": "Vorteile",
+    "pricing": "Preise",
     "testimonials": "Kundenstimmen",
     "contact": "Kontakt",
-    "contactSales": "Vertrieb kontaktieren"
+    "contactSales": "Vertrieb kontaktieren",
+    "getStarted": "Jetzt starten"
   },
   "hero": {
-    "title": "Umfassende Unternehmenslösung",
-    "desc": "Vereinfachen Sie Ihre Abläufe mit unserer integrierten Suite aus Verwaltung, E-Commerce, Lieferung und Datenanalyse.",
-    "cta": "Vertrieb kontaktieren"
+    "badge": "Umfassende Geschäftslösung",
+    "title": "Transformieren Sie Ihr",
+    "desc": "Optimieren Sie Ihr gesamtes Unternehmen mit unserer umfassenden Plattform, die Admin-Tools, E-Commerce, Liefernavigation und leistungsstarke Analysen bietet.",
+    "cta": "Kostenlose Testversion starten",
+    "learnMore": "Mehr erfahren",
+    "words": {
+      "workflows": "Arbeitsabläufe",
+      "logistics": "Logistik",
+      "inventory": "Bestand",
+      "deliveries": "Lieferungen",
+      "insights": "Einblicke",
+      "growth": "Wachstum"
+    },
+    "statCompanies": "500+ Unternehmen",
+    "statRating": "4,9/5 Bewertung"
   },
   "featuresSection": {
-    "title": "Umfassende Werkzeug-Suite",
-    "desc": "Unsere integrierte Plattform bietet alles, was Sie benötigen, um Ihr Geschäft effizient zu verwalten."
+    "badge": "Leistungsstarke Funktionen",
+    "title": "Alles, was Sie brauchen, in einer Plattform",
+    "desc": "Unsere umfassende Suite deckt jeden Aspekt Ihrer Logistik- und E-Commerce-Operationen ab."
   },
   "benefitsSection": {
-    "title": "Warum unsere Lösung wählen",
-    "desc": "Unsere integrierte Plattform liefert messbare Vorteile für Ihr gesamtes Unternehmen."
+    "badge": "Wichtige Vorteile",
+    "title": "Warum OrderLink wählen?",
+    "desc": "Transformieren Sie Ihre Geschäftsabläufe mit messbaren Ergebnissen und verbesserter Effizienz."
   },
   "contactSection": {
+    "badge": "Jetzt starten",
     "headline": "Bereit, Ihr Geschäft zu transformieren?",
-    "desc": "Kontaktieren Sie unser Vertriebsteam für eine persönliche Demo unserer Plattform.",
-    "cta": "Vertrieb kontaktieren",
-    "responseTime": "Unser Team meldet sich innerhalb von 24 Stunden, um einen Termin zu vereinbaren."
+    "desc": "Schließen Sie sich hunderten Unternehmen an, die bereits OrderLink nutzen, um ihre Abläufe zu optimieren und die Effizienz zu steigern.",
+    "cta": "Kostenlose Testversion starten",
+    "scheduleDemo": "Demo vereinbaren",
+    "responseTime": "Antwort innerhalb von 24 Stunden • Keine Kreditkarte erforderlich"
   },
   "footer": {
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
-    "contact": "Kontakt"
+    "cookiePolicy": "Cookie-Richtlinie",
+    "contact": "Kontakt",
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "integrations": "Integrationen",
+    "aboutUs": "Über uns",
+    "careers": "Karriere",
+    "rights": "© 2024 OrderLink. Alle Rechte vorbehalten."
   }
 }
