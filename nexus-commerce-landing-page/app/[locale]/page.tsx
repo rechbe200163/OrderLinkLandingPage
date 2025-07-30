@@ -162,12 +162,11 @@ export default function LandingPage() {
                     <Star className='w-3 h-3 mr-1' />
                     Complete Business Solution
                   </Badge>
-                  <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-foreground via-blue-600 to-indigo-600'>
+                  <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground via-blue-600 to-indigo-600 bg-clip-text text-transparent'>
                     Transform Your{' '}
                     <span className='inline-block'>
                       <FlipWords words={words} className='inline-block' />
-                    </span>{' '}
-                    Operations
+                    </span>
                   </h1>
                   <p className='max-w-[600px] text-muted-foreground text-lg md:text-xl leading-relaxed mx-auto lg:mx-0'>
                     Streamline your entire business with our comprehensive
@@ -225,454 +224,452 @@ export default function LandingPage() {
           </div>
           <BackgroundBeams className='realtive inset-0 -z-10' />
         </section>
-
-        <section id='features' className='w-full py-20 md:py-32 bg-background'>
-          {/* Features Section */}
-          <div className='relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black'>
-            <div
-              className={cn(
-                'absolute inset-0',
-                '[background-size:30px_30px]',
-                '[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]',
-                'dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]'
-              )}
-            />
-            {/* Radial gradient for the container to give a faded look */}
-            <div className='pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black'></div>
-
-            <div className='container relative z-20 bg-gradient-to-b from-neutral-200 to-neutral-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl'>
-              <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
-                <Badge variant='outline' className='mb-4'>
-                  <Zap className='w-3 h-3 mr-1' />
-                  Powerful Features
-                </Badge>
-                <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                  Everything You Need in One Platform
-                </h2>
-                <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                  Our comprehensive suite of tools covers every aspect of your
-                  logistics and e-commerce operations.
-                </p>
-              </div>
-              <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
-                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                    <CardHeader className='pb-4'>
-                      <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                        <ShieldCheck className='h-8 w-8 text-white' />
-                      </div>
-                      <CardTitle className='text-xl'>Admin Tool</CardTitle>
-                      <CardDescription>
-                        Comprehensive management dashboard
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className='space-y-3 text-sm'>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            User management for all customer types
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Role-based access control
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Product and inventory management
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Route creation and management
-                          </span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                    <CardHeader className='pb-4'>
-                      <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                        <Package className='h-8 w-8 text-white' />
-                      </div>
-                      <CardTitle className='text-xl'>Web Shop</CardTitle>
-                      <CardDescription>
-                        Complete e-commerce solution
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className='space-y-3 text-sm'>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Order management system
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Secure online payment processing
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Order history and tracking
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Customer account management
-                          </span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                    <CardHeader className='pb-4'>
-                      <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                        <Truck className='h-8 w-8 text-white' />
-                      </div>
-                      <CardTitle className='text-xl'>
-                        Delivery Navigation
-                      </CardTitle>
-                      <CardDescription>
-                        Optimized delivery management
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className='space-y-3 text-sm'>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Intelligent route generation
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Real-time navigation
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Order completion tracking
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Contactless payment options
-                          </span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                    <CardHeader className='pb-4'>
-                      <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                        <BarChart3 className='h-8 w-8 text-white' />
-                      </div>
-                      <CardTitle className='text-xl'>Data Analysis</CardTitle>
-                      <CardDescription>
-                        Powerful business intelligence
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className='space-y-3 text-sm'>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Comprehensive data integration
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Real-time business analytics
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Predictive trend analysis
-                          </span>
-                        </li>
-                        <li className='flex items-center'>
-                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                          <span className='text-muted-foreground'>
-                            Customizable reporting
-                          </span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section id='benefits' className='w-full py-20 md:py-32 bg-muted/30'>
-          <div className='container'>
+        {/* Features Section */}
+        {backgroundDotWrapper(
+          <section
+            id='features'
+            className='w-full py-20 md:py-32 bg-background'
+          >
             <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
               <Badge variant='outline' className='mb-4'>
-                <CheckCircle className='w-3 h-3 mr-1' />
-                Key Benefits
+                <Zap className='w-3 h-3 mr-1' />
+                Powerful Features
               </Badge>
               <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                Why Choose OrderLink?
+                Everything You Need in One Platform
               </h2>
               <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                Transform your business operations with measurable results and
-                improved efficiency.
+                Our comprehensive suite of tools covers every aspect of your
+                logistics and e-commerce operations.
               </p>
             </div>
-            <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-              {[
-                {
-                  icon: CheckCircle,
-                  title: 'Increased Efficiency',
-                  description:
-                    'Streamline operations and reduce manual tasks with our integrated tools, boosting productivity by up to 40%.',
-                  color: 'from-blue-500 to-blue-600',
-                },
-                {
-                  icon: CheckCircle,
-                  title: 'Cost Reduction',
-                  description:
-                    'Optimize resources and reduce operational costs with data-driven insights, saving up to 30% annually.',
-                  color: 'from-sky-500 to-sky-600',
-                },
-                {
-                  icon: CheckCircle,
-                  title: 'Enhanced Customer Experience',
-                  description:
-                    'Provide seamless service from order to delivery with our integrated platform, improving satisfaction rates.',
-                  color: 'from-cyan-500 to-cyan-600',
-                },
-                {
-                  icon: CheckCircle,
-                  title: 'Data-Driven Decisions',
-                  description:
-                    'Make informed business decisions based on comprehensive analytics and real-time insights.',
-                  color: 'from-indigo-500 to-indigo-600',
-                },
-                {
-                  icon: CheckCircle,
-                  title: 'Scalable Solution',
-                  description:
-                    'Grow your business with a platform that scales with your needs, from startup to enterprise.',
-                  color: 'from-blue-600 to-blue-700',
-                },
-                {
-                  icon: CheckCircle,
-                  title: 'Secure Infrastructure',
-                  description:
-                    'Protect your data and transactions with enterprise-grade security and compliance standards.',
-                  color: 'from-indigo-600 to-indigo-700',
-                },
-              ].map((benefit, index) => (
-                <div
-                  key={index}
-                  className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-2xl'
-                >
-                  <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full'>
-                    <div
-                      className={`rounded-full bg-gradient-to-br ${benefit.color} p-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <benefit.icon className='h-8 w-8 text-white' />
-                    </div>
-                    <h3 className='text-xl font-bold text-center'>
-                      {benefit.title}
-                    </h3>
-                    <p className='text-center text-muted-foreground leading-relaxed'>
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Section */}
-        <section id='pricing' className='w-full py-20 md:py-32 bg-background'>
-          <div className='container'>
-            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
-              <Badge variant='outline' className='mb-4'>
-                <Star className='w-3 h-3 mr-1' />
-                Flexible Pricing
-              </Badge>
-              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                Choose Your Perfect Plan
-              </h2>
-              <p className='max-w-3xl text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                Modular pricing that grows with your business. Mix and match
-                features to create the perfect solution for your team.
-              </p>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+            <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
               <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-6'>
-                    <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4'>
-                      <Package className='h-6 w-6 text-white' />
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <ShieldCheck className='h-8 w-8 text-white' />
                     </div>
-                    <CardTitle className='text-2xl'>Core Modules</CardTitle>
+                    <CardTitle className='text-xl'>Admin Tool</CardTitle>
                     <CardDescription>
-                      Essential features for every business
+                      Comprehensive management dashboard
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className='space-y-4'>
-                    <div className='space-y-3'>
-                      <div className='flex justify-between items-center'>
-                        <span className='font-medium'>AdminTool</span>
-                        <Badge variant='secondary'>Included</Badge>
-                      </div>
-                      <div className='flex justify-between items-center'>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
                         <span className='text-muted-foreground'>
-                          Insight (Analytics)
+                          User management for all customer types
                         </span>
-                        <span className='font-semibold'>+€10/month</span>
-                      </div>
-                      <div className='flex justify-between items-center'>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
                         <span className='text-muted-foreground'>
-                          Flow (Navigation)
+                          Role-based access control
                         </span>
-                        <span className='font-semibold'>+€15/month</span>
-                      </div>
-                      <div className='flex justify-between items-center'>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
                         <span className='text-muted-foreground'>
-                          Access (Rights Management)
+                          Product and inventory management
                         </span>
-                        <span className='font-semibold'>+€5/month</span>
-                      </div>
-                    </div>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Route creation and management
+                        </span>
+                      </li>
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
 
               <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-6'>
-                    <div className='w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
-                      <Users className='h-6 w-6 text-white' />
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <Package className='h-8 w-8 text-white' />
                     </div>
-                    <CardTitle className='text-2xl'>User Tiers</CardTitle>
-                    <CardDescription>Scalable team sizes</CardDescription>
+                    <CardTitle className='text-xl'>Web Shop</CardTitle>
+                    <CardDescription>
+                      Complete e-commerce solution
+                    </CardDescription>
                   </CardHeader>
-                  <CardContent className='space-y-4'>
-                    <div className='space-y-3'>
-                      <div className='flex justify-between items-center'>
-                        <span className='font-medium'>
-                          Core (up to 3 users)
-                        </span>
-                        <Badge variant='secondary'>Included</Badge>
-                      </div>
-                      <div className='flex justify-between items-center'>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
                         <span className='text-muted-foreground'>
-                          Team (up to 5 users)
+                          Order management system
                         </span>
-                        <span className='font-semibold'>+€5/month</span>
-                      </div>
-                      <div className='flex justify-between items-center'>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
                         <span className='text-muted-foreground'>
-                          Pro (up to 7 users)
+                          Secure online payment processing
                         </span>
-                        <span className='font-semibold'>+€10/month</span>
-                      </div>
-                      <div className='flex justify-between items-center'>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
                         <span className='text-muted-foreground'>
-                          Enterprise (11+ users)
+                          Order history and tracking
                         </span>
-                        <span className='font-semibold'>Custom</span>
-                      </div>
-                    </div>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Customer account management
+                        </span>
+                      </li>
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
 
-              <div className='relative overflow-hidden border-2 border-blue-200 dark:border-blue-800 shadow-xl bg-card rounded-xl'>
-                <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500'></div>
-                <CardHeader className='pb-6'>
-                  <Badge className='w-fit mb-2 bg-gradient-to-r from-blue-500 to-indigo-500'>
-                    Most Popular
-                  </Badge>
-                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
-                    <Star className='h-6 w-6 text-white' />
-                  </div>
-                  <CardTitle className='text-2xl'>Starter Package</CardTitle>
-                  <CardDescription>Perfect for growing teams</CardDescription>
-                </CardHeader>
-                <CardContent className='space-y-6'>
-                  <div className='space-y-3'>
-                    <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-blue-600' />
-                      <span className='text-muted-foreground'>
-                        AdminTool included
-                      </span>
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <Truck className='h-8 w-8 text-white' />
                     </div>
-                    <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-blue-600' />
-                      <span className='text-muted-foreground'>
-                        Insight Analytics module
-                      </span>
+                    <CardTitle className='text-xl'>
+                      Delivery Navigation
+                    </CardTitle>
+                    <CardDescription>
+                      Optimized delivery management
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Intelligent route generation
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Real-time navigation
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Order completion tracking
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Contactless payment options
+                        </span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <BarChart3 className='h-8 w-8 text-white' />
                     </div>
-                    <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-blue-600' />
-                      <span className='text-muted-foreground'>
-                        Up to 3 users
-                      </span>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-blue-600' />
-                      <span className='text-muted-foreground'>
-                        24/7 support
-                      </span>
-                    </div>
-                  </div>
-                  <div className='pt-4 border-t border-border'>
-                    <div className='text-3xl font-bold text-blue-600'>€10</div>
-                    <div className='text-sm text-muted-foreground'>
-                      per month + setup fee
-                    </div>
-                  </div>
-                </CardContent>
+                    <CardTitle className='text-xl'>Data Analysis</CardTitle>
+                    <CardDescription>
+                      Powerful business intelligence
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Comprehensive data integration
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Real-time business analytics
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Predictive trend analysis
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Customizable reporting
+                        </span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
               </div>
             </div>
-            <div className='text-center mt-12'>
-              <Button
-                size='lg'
-                className='px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl hover:shadow-2xl transition-all duration-300'
-              >
-                <Link href='#contact'>Configure Your Package</Link>
-              </Button>
-              <p className='text-sm text-muted-foreground mt-4'>
-                One-time setup fee of €49. No hidden costs.
-              </p>
+          </section>,
+          '[background-size:30px_30px]'
+        )}
+        {/* Benefits Section */}{' '}
+        {backgroundGridWrapper(
+          <section
+            id='benefits'
+            className='w-full py-20 md:py-32 bg-muted/30 relative lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-background dark:via-blue-900/10 dark:to-indigo-900/10 overflow-hidden'
+          >
+            <div className='container'>
+              <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
+                <Badge variant='outline' className='mb-4'>
+                  <CheckCircle className='w-3 h-3 mr-1' />
+                  Key Benefits
+                </Badge>
+                <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
+                  Why Choose OrderLink?
+                </h2>
+                <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
+                  Transform your business operations with measurable results and
+                  improved efficiency.
+                </p>
+              </div>
+              <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
+                {[
+                  {
+                    icon: CheckCircle,
+                    title: 'Increased Efficiency',
+                    description:
+                      'Streamline operations and reduce manual tasks with our integrated tools, boosting productivity by up to 40%.',
+                    color: 'from-blue-500 to-blue-600',
+                  },
+                  {
+                    icon: CheckCircle,
+                    title: 'Cost Reduction',
+                    description:
+                      'Optimize resources and reduce operational costs with data-driven insights, saving up to 30% annually.',
+                    color: 'from-sky-500 to-sky-600',
+                  },
+                  {
+                    icon: CheckCircle,
+                    title: 'Enhanced Customer Experience',
+                    description:
+                      'Provide seamless service from order to delivery with our integrated platform, improving satisfaction rates.',
+                    color: 'from-cyan-500 to-cyan-600',
+                  },
+                  {
+                    icon: CheckCircle,
+                    title: 'Data-Driven Decisions',
+                    description:
+                      'Make informed business decisions based on comprehensive analytics and real-time insights.',
+                    color: 'from-indigo-500 to-indigo-600',
+                  },
+                  {
+                    icon: CheckCircle,
+                    title: 'Scalable Solution',
+                    description:
+                      'Grow your business with a platform that scales with your needs, from startup to enterprise.',
+                    color: 'from-blue-600 to-blue-700',
+                  },
+                  {
+                    icon: CheckCircle,
+                    title: 'Secure Infrastructure',
+                    description:
+                      'Protect your data and transactions with enterprise-grade security and compliance standards.',
+                    color: 'from-indigo-600 to-indigo-700',
+                  },
+                ].map((benefit, index) => (
+                  <div
+                    key={index}
+                    className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-2xl'
+                  >
+                    <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full'>
+                      <div
+                        className={`rounded-full bg-gradient-to-br ${benefit.color} p-4 group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <benefit.icon className='h-8 w-8 text-white' />
+                      </div>
+                      <h3 className='text-xl font-bold text-center'>
+                        {benefit.title}
+                      </h3>
+                      <p className='text-center text-muted-foreground leading-relaxed'>
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>,
+          '[background-size:20px_20px]'
+        )}
+        {/* Pricing Section */}
+        {backgroundDotWrapper(
+          <section id='pricing' className='w-full py-20 md:py-32 bg-background'>
+            <div className='container'>
+              <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
+                <Badge variant='outline' className='mb-4'>
+                  <Star className='w-3 h-3 mr-1' />
+                  Flexible Pricing
+                </Badge>
+                <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
+                  Choose Your Perfect Plan
+                </h2>
+                <p className='max-w-3xl text-muted-foreground text-lg md:text-xl leading-relaxed'>
+                  Modular pricing that grows with your business. Mix and match
+                  features to create the perfect solution for your team.
+                </p>
+              </div>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                  <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
+                    <CardHeader className='pb-6'>
+                      <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4'>
+                        <Package className='h-6 w-6 text-white' />
+                      </div>
+                      <CardTitle className='text-2xl'>Core Modules</CardTitle>
+                      <CardDescription>
+                        Essential features for every business
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className='space-y-4'>
+                      <div className='space-y-3'>
+                        <div className='flex justify-between items-center'>
+                          <span className='font-medium'>AdminTool</span>
+                          <Badge variant='secondary'>Included</Badge>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                          <span className='text-muted-foreground'>
+                            Insight (Analytics)
+                          </span>
+                          <span className='font-semibold'>+€10/month</span>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                          <span className='text-muted-foreground'>
+                            Flow (Navigation)
+                          </span>
+                          <span className='font-semibold'>+€15/month</span>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                          <span className='text-muted-foreground'>
+                            Access (Rights Management)
+                          </span>
+                          <span className='font-semibold'>+€5/month</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
 
-        {/* Contact Section */}
+                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                  <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
+                    <CardHeader className='pb-6'>
+                      <div className='w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
+                        <Users className='h-6 w-6 text-white' />
+                      </div>
+                      <CardTitle className='text-2xl'>User Tiers</CardTitle>
+                      <CardDescription>Scalable team sizes</CardDescription>
+                    </CardHeader>
+                    <CardContent className='space-y-4'>
+                      <div className='space-y-3'>
+                        <div className='flex justify-between items-center'>
+                          <span className='font-medium'>
+                            Core (up to 3 users)
+                          </span>
+                          <Badge variant='secondary'>Included</Badge>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                          <span className='text-muted-foreground'>
+                            Team (up to 5 users)
+                          </span>
+                          <span className='font-semibold'>+€5/month</span>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                          <span className='text-muted-foreground'>
+                            Pro (up to 7 users)
+                          </span>
+                          <span className='font-semibold'>+€10/month</span>
+                        </div>
+                        <div className='flex justify-between items-center'>
+                          <span className='text-muted-foreground'>
+                            Enterprise (11+ users)
+                          </span>
+                          <span className='font-semibold'>Custom</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className='relative overflow-hidden border-2 border-blue-200 dark:border-blue-800 shadow-xl bg-card rounded-xl'>
+                  <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500'></div>
+                  <CardHeader className='pb-6'>
+                    <Badge className='w-fit mb-2 bg-gradient-to-r from-blue-500 to-indigo-500'>
+                      Most Popular
+                    </Badge>
+                    <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
+                      <Star className='h-6 w-6 text-white' />
+                    </div>
+                    <CardTitle className='text-2xl'>Starter Package</CardTitle>
+                    <CardDescription>Perfect for growing teams</CardDescription>
+                  </CardHeader>
+                  <CardContent className='space-y-6'>
+                    <div className='space-y-3'>
+                      <div className='flex items-center gap-2'>
+                        <CheckCircle className='h-4 w-4 text-blue-600' />
+                        <span className='text-muted-foreground'>
+                          AdminTool included
+                        </span>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <CheckCircle className='h-4 w-4 text-blue-600' />
+                        <span className='text-muted-foreground'>
+                          Insight Analytics module
+                        </span>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <CheckCircle className='h-4 w-4 text-blue-600' />
+                        <span className='text-muted-foreground'>
+                          Up to 3 users
+                        </span>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <CheckCircle className='h-4 w-4 text-blue-600' />
+                        <span className='text-muted-foreground'>
+                          24/7 support
+                        </span>
+                      </div>
+                    </div>
+                    <div className='pt-4 border-t border-border'>
+                      <div className='text-3xl font-bold text-blue-600'>
+                        €10
+                      </div>
+                      <div className='text-sm text-muted-foreground'>
+                        per month + setup fee
+                      </div>
+                    </div>
+                  </CardContent>
+                </div>
+              </div>
+              <div className='text-center mt-12'>
+                <Button
+                  size='lg'
+                  className='px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl hover:shadow-2xl transition-all duration-300'
+                >
+                  <Link href='#contact'>Configure Your Package</Link>
+                </Button>
+                <p className='text-sm text-muted-foreground mt-4'>
+                  One-time setup fee of €49. No hidden costs.
+                </p>
+              </div>
+            </div>
+          </section>,
+          '[background-size:22px_22px]'
+        )}
+        {/* Contact Section */}{' '}
         <section
           id='contact'
           className='w-full py-20 md:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white'
@@ -846,3 +843,37 @@ export default function LandingPage() {
     </div>
   );
 }
+const backgroundGridWrapper = (
+  content: React.ReactNode,
+  size = '[background-size:25px_25px]'
+) => (
+  <div className='relative w-full'>
+    <div
+      className={cn(
+        'absolute inset-0 z-0',
+        size,
+        '[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]',
+        'dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]'
+      )}
+    />
+    <div className='pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black' />
+    <div className='relative z-20'>{content}</div>
+  </div>
+);
+const backgroundDotWrapper = (
+  content: React.ReactNode,
+  size = '[background-size:25px_25px]'
+) => (
+  <div className='relative w-full'>
+    <div
+      className={cn(
+        'absolute inset-0 z-0',
+        size,
+        '[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]',
+        'dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]'
+      )}
+    />
+    <div className='pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black' />
+    <div className='relative z-20'>{content}</div>
+  </div>
+);
