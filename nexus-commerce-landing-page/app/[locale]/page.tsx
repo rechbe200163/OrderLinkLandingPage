@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import {
   ArrowRight,
   BarChart3,
@@ -31,13 +32,14 @@ import { FlipWords } from '@/components/ui/flip-words';
 import { cn } from '@/lib/utils';
 
 export default function LandingPage() {
+  const t = useTranslations();
   const words = [
-    'Workflows',
-    'Logistics',
-    'Inventory',
-    'Deliveries',
-    'Insights',
-    'Growth',
+    t('hero.words.workflows'),
+    t('hero.words.logistics'),
+    t('hero.words.inventory'),
+    t('hero.words.deliveries'),
+    t('hero.words.insights'),
+    t('hero.words.growth'),
   ];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,25 +62,25 @@ export default function LandingPage() {
                 href='#features'
                 className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
               >
-                Features
+                {t('nav.features')}
               </Link>
               <Link
                 href='#benefits'
                 className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
               >
-                Benefits
+                {t('nav.benefits')}
               </Link>
               <Link
                 href='#pricing'
                 className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
               >
-                Pricing
+                {t('nav.pricing')}
               </Link>
               <Link
                 href='#contact'
                 className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
               >
-                Contact
+                {t('nav.contact')}
               </Link>
             </nav>
             <div className='flex items-center gap-4'>
@@ -86,7 +88,7 @@ export default function LandingPage() {
                 asChild
                 className='hidden md:flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
               >
-                <Link href='#contact'>Get Started</Link>
+                <Link href='#contact'>{t('nav.getStarted')}</Link>
               </Button>
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
@@ -106,39 +108,39 @@ export default function LandingPage() {
                       className='text-lg font-medium hover:text-blue-600 transition-colors'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Features
+                      {t('nav.features')}
                     </Link>
                     <Link
                       href='#benefits'
                       className='text-lg font-medium hover:text-blue-600 transition-colors'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Benefits
+                      {t('nav.benefits')}
                     </Link>
                     <Link
                       href='#pricing'
                       className='text-lg font-medium hover:text-blue-600 transition-colors'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Pricing
+                      {t('nav.pricing')}
                     </Link>
                     <Link
                       href='#contact'
                       className='text-lg font-medium hover:text-blue-600 transition-colors'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Contact
+                      {t('nav.contact')}
                     </Link>
                     <Button
                       asChild
                       className='mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
                     >
-                      <Link
-                        href='#contact'
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Get Started
-                      </Link>
+                    <Link
+                      href='#contact'
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {t('nav.getStarted')}
+                    </Link>
                     </Button>
                   </nav>
                 </SheetContent>
@@ -160,18 +162,16 @@ export default function LandingPage() {
                     className='w-fit mx-auto lg:mx-0 bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900/20 dark:text-blue-300'
                   >
                     <Star className='w-3 h-3 mr-1' />
-                    Complete Business Solution
+                    {t('hero.badge')}
                   </Badge>
                   <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground via-blue-600 to-indigo-600 bg-clip-text text-transparent'>
-                    Transform Your{' '}
+                    {t('hero.title')}{' '}
                     <span className='inline-block'>
                       <FlipWords words={words} className='inline-block' />
                     </span>
                   </h1>
                   <p className='max-w-[600px] text-muted-foreground text-lg md:text-xl leading-relaxed mx-auto lg:mx-0'>
-                    Streamline your entire business with our comprehensive
-                    platform featuring admin tools, e-commerce, delivery
-                    navigation, and powerful analytics.
+                    {t('hero.desc')}
                   </p>
                 </div>
                 <div className='flex flex-col gap-4 min-[400px]:flex-row justify-center lg:justify-start'>
@@ -181,7 +181,7 @@ export default function LandingPage() {
                     className='px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
                   >
                     <Link href='#contact'>
-                      Start Free Trial <ArrowRight className='ml-2 h-5 w-5' />
+                      {t('hero.cta')} <ArrowRight className='ml-2 h-5 w-5' />
                     </Link>
                   </Button>
                   <Button
@@ -190,20 +190,20 @@ export default function LandingPage() {
                     size='lg'
                     className='px-8 py-6 text-lg border-2 hover:bg-muted transition-all duration-300 bg-transparent'
                   >
-                    <Link href='#features'>Learn More</Link>
+                    <Link href='#features'>{t('hero.learnMore')}</Link>
                   </Button>
                 </div>
                 <div className='flex items-center gap-8 pt-4 justify-center lg:justify-start'>
                   <div className='flex items-center gap-2'>
                     <Users className='h-5 w-5 text-blue-600' />
                     <span className='text-sm text-muted-foreground'>
-                      500+ Companies
+                      {t('hero.statCompanies')}
                     </span>
                   </div>
                   <div className='flex items-center gap-2'>
                     <Star className='h-5 w-5 text-yellow-500' />
                     <span className='text-sm text-muted-foreground'>
-                      4.9/5 Rating
+                      {t('hero.statRating')}
                     </span>
                   </div>
                 </div>
@@ -233,14 +233,13 @@ export default function LandingPage() {
             <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
               <Badge variant='outline' className='mb-4'>
                 <Zap className='w-3 h-3 mr-1' />
-                Powerful Features
+                {t('featuresSection.badge')}
               </Badge>
               <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                Everything You Need in One Platform
+                {t('featuresSection.title')}
               </h2>
               <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                Our comprehensive suite of tools covers every aspect of your
-                logistics and e-commerce operations.
+                {t('featuresSection.desc')}
               </p>
             </div>
             <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
@@ -427,14 +426,13 @@ export default function LandingPage() {
               <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
                 <Badge variant='outline' className='mb-4'>
                   <CheckCircle className='w-3 h-3 mr-1' />
-                  Key Benefits
+                  {t('benefitsSection.badge')}
                 </Badge>
                 <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                  Why Choose OrderLink?
+                  {t('benefitsSection.title')}
                 </h2>
                 <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                  Transform your business operations with measurable results and
-                  improved efficiency.
+                  {t('benefitsSection.desc')}
                 </p>
               </div>
               <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
@@ -682,14 +680,13 @@ export default function LandingPage() {
                   className='bg-white/20 text-white hover:bg-white/30'
                 >
                   <ArrowRight className='w-3 h-3 mr-1' />
-                  Get Started Today
+                  {t('contactSection.badge')}
                 </Badge>
                 <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl'>
-                  Ready to Transform Your Business?
+                  {t('contactSection.headline')}
                 </h2>
                 <p className='max-w-[900px] text-blue-100 text-lg md:text-xl leading-relaxed'>
-                  Join hundreds of companies already using OrderLink to
-                  streamline their operations and boost efficiency.
+                  {t('contactSection.desc')}
                 </p>
               </div>
               <div className='flex flex-col sm:flex-row gap-4 w-full max-w-md'>
@@ -697,18 +694,18 @@ export default function LandingPage() {
                   size='lg'
                   className='flex-1 bg-white text-blue-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
                 >
-                  Start Free Trial
+                  {t('contactSection.cta')}
                 </Button>
                 <Button
                   size='lg'
                   variant='outline'
                   className='flex-1 border-white/50 text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:border-white/70 transition-all duration-300 font-medium'
                 >
-                  Schedule Demo
+                  {t('contactSection.scheduleDemo')}
                 </Button>
               </div>
               <p className='text-sm text-blue-200'>
-                Get a response within 24 hours • No credit card required
+                {t('contactSection.responseTime')}
               </p>
             </div>
           </div>
@@ -732,78 +729,78 @@ export default function LandingPage() {
               </p>
             </div>
             <div className='space-y-4'>
-              <h4 className='font-semibold'>Product</h4>
+              <h4 className='font-semibold'>{t('footer.product')}</h4>
               <div className='space-y-2'>
                 <Link
                   href='#features'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Features
+                  {t('nav.features')}
                 </Link>
                 <Link
                   href='#pricing'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Pricing
+                  {t('nav.pricing')}
                 </Link>
                 <Link
                   href='#'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Integrations
+                  {t('footer.integrations')}
                 </Link>
               </div>
             </div>
             <div className='space-y-4'>
-              <h4 className='font-semibold'>Company</h4>
+              <h4 className='font-semibold'>{t('footer.company')}</h4>
               <div className='space-y-2'>
                 <Link
                   href='#'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  About Us
+                  {t('footer.aboutUs')}
                 </Link>
                 <Link
                   href='#'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Careers
+                  {t('footer.careers')}
                 </Link>
                 <Link
                   href='#contact'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Contact
+                  {t('nav.contact')}
                 </Link>
               </div>
             </div>
             <div className='space-y-4'>
-              <h4 className='font-semibold'>Legal</h4>
+              <h4 className='font-semibold'>{t('footer.legal')}</h4>
               <div className='space-y-2'>
                 <Link
                   href='#'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Privacy Policy
+                  {t('footer.privacy')}
                 </Link>
                 <Link
                   href='#'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Terms of Service
+                  {t('footer.terms')}
                 </Link>
                 <Link
                   href='#'
                   className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
-                  Cookie Policy
+                  {t('footer.cookiePolicy')}
                 </Link>
               </div>
             </div>
           </div>
           <div className='border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center max-w-6xl mx-auto'>
             <p className='text-sm text-muted-foreground'>
-              © 2024 OrderLink. All rights reserved.
+              {t('footer.rights')}
             </p>
             <div className='flex gap-4 mt-4 sm:mt-0'>
               <Link
