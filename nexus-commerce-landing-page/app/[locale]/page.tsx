@@ -25,15 +25,17 @@ import {
 } from '@/components/ui/card';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
+import { BackgroundBeams } from '@/components/ui/background-beams';
+import { Meteors } from '@/components/ui/meteors';
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className='min-h-screen w-full'>
-      <header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 shadow-sm'>
+      <header className='sticky top-0 z-50 w-full border-b bg-background/40 backdrop-blur  shadow-sm'>
         <div className='container'>
-          <div className='flex h-16 items-center justify-between bg-background/20 backdrop-blur-md rounded-lg mx-4 px-6 border border-border/30 shadow-lg'>
+          <div className='flex h-16 items-center justify-between bg-background/40 backdrop-blur-md rounded-lg mx-4 px-6 border border-border/30 shadow-lg'>
             <div className='flex items-center gap-2'>
               <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg'>
                 <Globe className='h-5 w-5 text-white' />
@@ -134,14 +136,13 @@ export default function LandingPage() {
           </div>
         </div>
       </header>
-
       <main className='w-full'>
         {/* Hero Section */}
         <section className='relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-background dark:via-blue-900/10 dark:to-indigo-900/10 overflow-hidden'>
           <div className='absolute inset-0 bg-grid-pattern opacity-30'></div>
           <div className='container relative'>
-            <div className='grid gap-12 lg:grid-cols-2 lg:gap-16 items-center max-w-7xl mx-auto'>
-              <div className='flex flex-col justify-center space-y-8 text-center lg:text-left'>
+            <div className='grid gap-16 lg:grid-cols-2 lg:gap-24 xl:gap-32 items-center max-w-7xl mx-auto'>
+              <div className='flex flex-col justify-center space-y-8 text-center lg:text-left lg:pr-8'>
                 <div className='space-y-6'>
                   <Badge
                     variant='secondary'
@@ -193,13 +194,13 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              <div className='flex items-center justify-center'>
-                <div className='relative'>
+              <div className='flex items-center justify-center lg:justify-end lg:pl-8'>
+                <div className='relative scale-90 sm:scale-100 md:scale-110 lg:scale-125 xl:scale-150 transition-transform duration-300'>
                   <div className='absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl blur-3xl opacity-20 transform rotate-6'></div>
                   <Image
-                    src='/placeholder.svg?height=600&width=600'
-                    width={600}
-                    height={600}
+                    src='/dashboard-preview-1.png'
+                    width={1000}
+                    height={1000}
                     alt='Dashboard Preview'
                     className='relative rounded-2xl object-cover shadow-2xl border border-border'
                   />
@@ -207,6 +208,7 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+          <BackgroundBeams className='realtive inset-0 -z-10' />
         </section>
 
         {/* Features Section */}
@@ -687,7 +689,6 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-
       <footer className='w-full border-t py-12 bg-muted/30 border-border'>
         <div className='container'>
           <div className='grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto'>
