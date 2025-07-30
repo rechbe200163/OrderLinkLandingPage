@@ -27,8 +27,19 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { Meteors } from '@/components/ui/meteors';
+import { FlipWords } from '@/components/ui/flip-words';
+import { cn } from '@/lib/utils';
 
 export default function LandingPage() {
+  const words = [
+    'Workflows',
+    'Logistics',
+    'Inventory',
+    'Deliveries',
+    'Insights',
+    'Growth',
+  ];
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -151,8 +162,12 @@ export default function LandingPage() {
                     <Star className='w-3 h-3 mr-1' />
                     Complete Business Solution
                   </Badge>
-                  <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground via-blue-600 to-indigo-600 bg-clip-text text-transparent'>
-                    Transform Your Logistics Operations
+                  <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-foreground via-blue-600 to-indigo-600'>
+                    Transform Your{' '}
+                    <span className='inline-block'>
+                      <FlipWords words={words} className='inline-block' />
+                    </span>{' '}
+                    Operations
                   </h1>
                   <p className='max-w-[600px] text-muted-foreground text-lg md:text-xl leading-relaxed mx-auto lg:mx-0'>
                     Streamline your entire business with our comprehensive
@@ -202,7 +217,7 @@ export default function LandingPage() {
                     width={1000}
                     height={1000}
                     alt='Dashboard Preview'
-                    className='relative rounded-2xl object-cover shadow-2xl border border-border'
+                    className='relative rounded-lg object-cover shadow-lg border border-border'
                   />
                 </div>
               </div>
@@ -211,191 +226,204 @@ export default function LandingPage() {
           <BackgroundBeams className='realtive inset-0 -z-10' />
         </section>
 
-        {/* Features Section */}
         <section id='features' className='w-full py-20 md:py-32 bg-background'>
-          <div className='container'>
-            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
-              <Badge variant='outline' className='mb-4'>
-                <Zap className='w-3 h-3 mr-1' />
-                Powerful Features
-              </Badge>
-              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                Everything You Need in One Platform
-              </h2>
-              <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                Our comprehensive suite of tools covers every aspect of your
-                logistics and e-commerce operations.
-              </p>
-            </div>
-            <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <ShieldCheck className='h-8 w-8 text-white' />
-                    </div>
-                    <CardTitle className='text-xl'>Admin Tool</CardTitle>
-                    <CardDescription>
-                      Comprehensive management dashboard
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className='space-y-3 text-sm'>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          User management for all customer types
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Role-based access control
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Product and inventory management
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Route creation and management
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
+          {/* Features Section */}
+          <div className='relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black'>
+            <div
+              className={cn(
+                'absolute inset-0',
+                '[background-size:30px_30px]',
+                '[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]',
+                'dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]'
+              )}
+            />
+            {/* Radial gradient for the container to give a faded look */}
+            <div className='pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black'></div>
 
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <Package className='h-8 w-8 text-white' />
-                    </div>
-                    <CardTitle className='text-xl'>Web Shop</CardTitle>
-                    <CardDescription>
-                      Complete e-commerce solution
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className='space-y-3 text-sm'>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Order management system
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Secure online payment processing
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Order history and tracking
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Customer account management
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
+            <div className='container relative z-20 bg-gradient-to-b from-neutral-200 to-neutral-500 bg-clip-text py-8 text-4xl font-bold text-transparent sm:text-7xl'>
+              <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
+                <Badge variant='outline' className='mb-4'>
+                  <Zap className='w-3 h-3 mr-1' />
+                  Powerful Features
+                </Badge>
+                <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
+                  Everything You Need in One Platform
+                </h2>
+                <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
+                  Our comprehensive suite of tools covers every aspect of your
+                  logistics and e-commerce operations.
+                </p>
               </div>
+              <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
+                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                    <CardHeader className='pb-4'>
+                      <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                        <ShieldCheck className='h-8 w-8 text-white' />
+                      </div>
+                      <CardTitle className='text-xl'>Admin Tool</CardTitle>
+                      <CardDescription>
+                        Comprehensive management dashboard
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className='space-y-3 text-sm'>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            User management for all customer types
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Role-based access control
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Product and inventory management
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Route creation and management
+                          </span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
 
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <Truck className='h-8 w-8 text-white' />
-                    </div>
-                    <CardTitle className='text-xl'>
-                      Delivery Navigation
-                    </CardTitle>
-                    <CardDescription>
-                      Optimized delivery management
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className='space-y-3 text-sm'>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Intelligent route generation
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Real-time navigation
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Order completion tracking
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Contactless payment options
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
+                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                    <CardHeader className='pb-4'>
+                      <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                        <Package className='h-8 w-8 text-white' />
+                      </div>
+                      <CardTitle className='text-xl'>Web Shop</CardTitle>
+                      <CardDescription>
+                        Complete e-commerce solution
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className='space-y-3 text-sm'>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Order management system
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Secure online payment processing
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Order history and tracking
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Customer account management
+                          </span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
 
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <BarChart3 className='h-8 w-8 text-white' />
-                    </div>
-                    <CardTitle className='text-xl'>Data Analysis</CardTitle>
-                    <CardDescription>
-                      Powerful business intelligence
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className='space-y-3 text-sm'>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Comprehensive data integration
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Real-time business analytics
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Predictive trend analysis
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Customizable reporting
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                    <CardHeader className='pb-4'>
+                      <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                        <Truck className='h-8 w-8 text-white' />
+                      </div>
+                      <CardTitle className='text-xl'>
+                        Delivery Navigation
+                      </CardTitle>
+                      <CardDescription>
+                        Optimized delivery management
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className='space-y-3 text-sm'>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Intelligent route generation
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Real-time navigation
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Order completion tracking
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Contactless payment options
+                          </span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                  <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                    <CardHeader className='pb-4'>
+                      <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                        <BarChart3 className='h-8 w-8 text-white' />
+                      </div>
+                      <CardTitle className='text-xl'>Data Analysis</CardTitle>
+                      <CardDescription>
+                        Powerful business intelligence
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className='space-y-3 text-sm'>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Comprehensive data integration
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Real-time business analytics
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Predictive trend analysis
+                          </span>
+                        </li>
+                        <li className='flex items-center'>
+                          <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                          <span className='text-muted-foreground'>
+                            Customizable reporting
+                          </span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </div>
           </div>
