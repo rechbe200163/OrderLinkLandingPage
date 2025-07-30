@@ -30,134 +30,136 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className='flex min-h-screen flex-col items-center'>
-      <header className='sticky top-0 z-50 w-full border-b bg-foreground/95 backdrop-blur supports-backdrop-filter:bg-foreground/60 shadow-sm'>
-        <div className='container flex h-16 items-center justify-between bg-foreground/20 backdrop-blur-md rounded-lg mx-4 px-6 border border-white/30 shadow-lg'>
-          <div className='flex items-center gap-2'>
-            <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-lg'>
-              <Globe className='h-5 w-5 text-foreground' />
+    <div className='min-h-screen w-full'>
+      <header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 shadow-sm'>
+        <div className='container'>
+          <div className='flex h-16 items-center justify-between bg-background/20 backdrop-blur-md rounded-lg mx-4 px-6 border border-border/30 shadow-lg'>
+            <div className='flex items-center gap-2'>
+              <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg'>
+                <Globe className='h-5 w-5 text-white' />
+              </div>
+              <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
+                OrderLink
+              </span>
             </div>
-            <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 bg-clip-text text-transparent'>
-              LogiTech
-            </span>
-          </div>
-          <nav className='hidden md:flex items-center gap-8'>
-            <Link
-              href='#features'
-              className='text-sm font-medium text-muted-foreground hover:text-primary transition-colors'
-            >
-              Features
-            </Link>
-            <Link
-              href='#benefits'
-              className='text-sm font-medium text-muted-foreground hover:text-primary transition-colors'
-            >
-              Benefits
-            </Link>
-            <Link
-              href='#pricing'
-              className='text-sm font-medium text-muted-foreground hover:text-primary transition-colors'
-            >
-              Pricing
-            </Link>
-            <Link
-              href='#contact'
-              className='text-sm font-medium text-muted-foreground hover:text-primary transition-colors'
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className='flex items-center gap-4'>
-            <Button
-              asChild
-              className='hidden md:flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
-            >
-              <Link href='#contact'>Get Started</Link>
-            </Button>
-            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant='outline'
-                  size='icon'
-                  className='md:hidden bg-transparent'
-                >
-                  <Menu className='h-6 w-6' />
-                  <span className='sr-only'>Toggle menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
-                <nav className='flex flex-col gap-4 mt-8'>
-                  <Link
-                    href='#features'
-                    className='text-lg font-medium hover:text-primary transition-colors'
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Features
-                  </Link>
-                  <Link
-                    href='#benefits'
-                    className='text-lg font-medium hover:text-primary transition-colors'
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Benefits
-                  </Link>
-                  <Link
-                    href='#pricing'
-                    className='text-lg font-medium hover:text-primary transition-colors'
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Pricing
-                  </Link>
-                  <Link
-                    href='#contact'
-                    className='text-lg font-medium hover:text-primary transition-colors'
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Contact
-                  </Link>
+            <nav className='hidden md:flex items-center gap-8'>
+              <Link
+                href='#features'
+                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
+              >
+                Features
+              </Link>
+              <Link
+                href='#benefits'
+                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
+              >
+                Benefits
+              </Link>
+              <Link
+                href='#pricing'
+                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
+              >
+                Pricing
+              </Link>
+              <Link
+                href='#contact'
+                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
+              >
+                Contact
+              </Link>
+            </nav>
+            <div className='flex items-center gap-4'>
+              <Button
+                asChild
+                className='hidden md:flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
+              >
+                <Link href='#contact'>Get Started</Link>
+              </Button>
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
                   <Button
-                    asChild
-                    className='mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
+                    variant='outline'
+                    size='icon'
+                    className='md:hidden bg-transparent'
                   >
+                    <Menu className='h-6 w-6' />
+                    <span className='sr-only'>Toggle menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
+                  <nav className='flex flex-col gap-4 mt-8'>
                     <Link
-                      href='#contact'
+                      href='#features'
+                      className='text-lg font-medium hover:text-blue-600 transition-colors'
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Get Started
+                      Features
                     </Link>
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
+                    <Link
+                      href='#benefits'
+                      className='text-lg font-medium hover:text-blue-600 transition-colors'
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Benefits
+                    </Link>
+                    <Link
+                      href='#pricing'
+                      className='text-lg font-medium hover:text-blue-600 transition-colors'
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Pricing
+                    </Link>
+                    <Link
+                      href='#contact'
+                      className='text-lg font-medium hover:text-blue-600 transition-colors'
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Contact
+                    </Link>
+                    <Button
+                      asChild
+                      className='mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
+                    >
+                      <Link
+                        href='#contact'
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        Get Started
+                      </Link>
+                    </Button>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>
 
-      <main className='flex-1 w-full flex flex-col items-center'>
+      <main className='w-full'>
         {/* Hero Section */}
-        <section className='relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950 dark:via-indigo-950 dark:to-purple-950 overflow-hidden'>
-          <div className='absolute inset-0 bg-grid-pattern opacity-5'></div>
-          <div className='container px-4 md:px-6 relative'>
-            <div className='grid gap-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-2 items-center'>
-              <div className='flex flex-col justify-center space-y-8'>
+        <section className='relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-background dark:via-blue-900/10 dark:to-indigo-900/10 overflow-hidden'>
+          <div className='absolute inset-0 bg-grid-pattern opacity-30'></div>
+          <div className='container relative'>
+            <div className='grid gap-12 lg:grid-cols-2 lg:gap-16 items-center max-w-7xl mx-auto'>
+              <div className='flex flex-col justify-center space-y-8 text-center lg:text-left'>
                 <div className='space-y-6'>
                   <Badge
                     variant='secondary'
-                    className='w-fit bg-blue-100 text-blue-700 hover:bg-blue-200'
+                    className='w-fit mx-auto lg:mx-0 bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900/20 dark:text-blue-300'
                   >
                     <Star className='w-3 h-3 mr-1' />
                     Complete Business Solution
                   </Badge>
-                  <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent'>
+                  <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground via-blue-600 to-indigo-600 bg-clip-text text-transparent'>
                     Transform Your Logistics Operations
                   </h1>
-                  <p className='max-w-[600px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
+                  <p className='max-w-[600px] text-muted-foreground text-lg md:text-xl leading-relaxed mx-auto lg:mx-0'>
                     Streamline your entire business with our comprehensive
                     platform featuring admin tools, e-commerce, delivery
                     navigation, and powerful analytics.
                   </p>
                 </div>
-                <div className='flex flex-col gap-4 min-[400px]:flex-row'>
+                <div className='flex flex-col gap-4 min-[400px]:flex-row justify-center lg:justify-start'>
                   <Button
                     asChild
                     size='lg'
@@ -171,14 +173,14 @@ export default function LandingPage() {
                     asChild
                     variant='outline'
                     size='lg'
-                    className='px-8 py-6 text-lg border-2 hover:bg-blue-50 transition-all duration-300 bg-transparent'
+                    className='px-8 py-6 text-lg border-2 hover:bg-muted transition-all duration-300 bg-transparent'
                   >
                     <Link href='#features'>Learn More</Link>
                   </Button>
                 </div>
-                <div className='flex items-center gap-8 pt-4'>
+                <div className='flex items-center gap-8 pt-4 justify-center lg:justify-start'>
                   <div className='flex items-center gap-2'>
-                    <Users className='h-5 w-5 text-primary' />
+                    <Users className='h-5 w-5 text-blue-600' />
                     <span className='text-sm text-muted-foreground'>
                       500+ Companies
                     </span>
@@ -191,7 +193,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              <div className='flex items-center justify-center lg:justify-end'>
+              <div className='flex items-center justify-center'>
                 <div className='relative'>
                   <div className='absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl blur-3xl opacity-20 transform rotate-6'></div>
                   <Image
@@ -199,7 +201,7 @@ export default function LandingPage() {
                     width={600}
                     height={600}
                     alt='Dashboard Preview'
-                    className='relative rounded-2xl object-cover shadow-2xl border border-white/20'
+                    className='relative rounded-2xl object-cover shadow-2xl border border-border'
                   />
                 </div>
               </div>
@@ -208,14 +210,14 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section id='features' className='w-full py-20 md:py-32 bg-foreground'>
-          <div className='container px-4 md:px-6'>
-            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16'>
+        <section id='features' className='w-full py-20 md:py-32 bg-background'>
+          <div className='container'>
+            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
               <Badge variant='outline' className='mb-4'>
                 <Zap className='w-3 h-3 mr-1' />
                 Powerful Features
               </Badge>
-              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent'>
+              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
                 Everything You Need in One Platform
               </h2>
               <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
@@ -223,248 +225,273 @@ export default function LandingPage() {
                 logistics and e-commerce operations.
               </p>
             </div>
-            <div className='mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
-              <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
-                <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                    <ShieldCheck className='h-8 w-8 text-foreground' />
-                  </div>
-                  <CardTitle className='text-xl'>Admin Tool</CardTitle>
-                  <CardDescription className='text-muted-foreground'>
-                    Comprehensive management dashboard
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className='space-y-3 text-sm'>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-primary flex-shrink-0' />
-                      <span>User management for all customer types</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-primary flex-shrink-0' />
-                      <span>Role-based access control</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-primary flex-shrink-0' />
-                      <span>Product and inventory management</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-primary flex-shrink-0' />
-                      <span>Route creation and management</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+            <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <ShieldCheck className='h-8 w-8 text-white' />
+                    </div>
+                    <CardTitle className='text-xl'>Admin Tool</CardTitle>
+                    <CardDescription>
+                      Comprehensive management dashboard
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          User management for all customer types
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Role-based access control
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Product and inventory management
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Route creation and management
+                        </span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
-                <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 dark:from-sky-400 dark:to-sky-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                    <Package className='h-8 w-8 text-foreground' />
-                  </div>
-                  <CardTitle className='text-xl'>Web Shop</CardTitle>
-                  <CardDescription className='text-muted-foreground'>
-                    Complete e-commerce solution
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className='space-y-3 text-sm'>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                      <span>Order management system</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                      <span>Secure online payment processing</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                      <span>Order history and tracking</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                      <span>Customer account management</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <Package className='h-8 w-8 text-white' />
+                    </div>
+                    <CardTitle className='text-xl'>Web Shop</CardTitle>
+                    <CardDescription>
+                      Complete e-commerce solution
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Order management system
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Secure online payment processing
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Order history and tracking
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Customer account management
+                        </span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
-                <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 dark:from-cyan-400 dark:to-cyan-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                    <Truck className='h-8 w-8 text-foreground' />
-                  </div>
-                  <CardTitle className='text-xl'>Delivery Navigation</CardTitle>
-                  <CardDescription className='text-muted-foreground'>
-                    Optimized delivery management
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className='space-y-3 text-sm'>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                      <span>Intelligent route generation</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                      <span>Real-time navigation</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                      <span>Order completion tracking</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                      <span>Contactless payment options</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <Truck className='h-8 w-8 text-white' />
+                    </div>
+                    <CardTitle className='text-xl'>
+                      Delivery Navigation
+                    </CardTitle>
+                    <CardDescription>
+                      Optimized delivery management
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Intelligent route generation
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Real-time navigation
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Order completion tracking
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Contactless payment options
+                        </span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-background'>
-                <CardHeader className='pb-4'>
-                  <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 dark:from-indigo-400 dark:to-indigo-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                    <BarChart3 className='h-8 w-8 text-foreground' />
-                  </div>
-                  <CardTitle className='text-xl'>Data Analysis</CardTitle>
-                  <CardDescription className='text-muted-foreground'>
-                    Powerful business intelligence
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className='space-y-3 text-sm'>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                      <span>Comprehensive data integration</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                      <span>Real-time business analytics</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                      <span>Predictive trend analysis</span>
-                    </li>
-                    <li className='flex items-center'>
-                      <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                      <span>Customizable reporting</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-4'>
+                    <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
+                      <BarChart3 className='h-8 w-8 text-white' />
+                    </div>
+                    <CardTitle className='text-xl'>Data Analysis</CardTitle>
+                    <CardDescription>
+                      Powerful business intelligence
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className='space-y-3 text-sm'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Comprehensive data integration
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Real-time business analytics
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Predictive trend analysis
+                        </span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
+                        <span className='text-muted-foreground'>
+                          Customizable reporting
+                        </span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Benefits Section */}
-        <section
-          id='benefits'
-          className='w-full py-20 md:py-32 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900'
-        >
-          <div className='container px-4 md:px-6'>
-            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16'>
+        <section id='benefits' className='w-full py-20 md:py-32 bg-muted/30'>
+          <div className='container'>
+            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
               <Badge variant='outline' className='mb-4'>
                 <CheckCircle className='w-3 h-3 mr-1' />
                 Key Benefits
               </Badge>
-              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent'>
-                Why Choose LogiTech?
+              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
+                Why Choose OrderLink?
               </h2>
               <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
                 Transform your business operations with measurable results and
                 improved efficiency.
               </p>
             </div>
-            <div className='mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-              <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 p-4 group-hover:scale-110 transition-transform duration-300'>
-                  <CheckCircle className='h-8 w-8 text-foreground' />
+            <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
+              {[
+                {
+                  icon: CheckCircle,
+                  title: 'Increased Efficiency',
+                  description:
+                    'Streamline operations and reduce manual tasks with our integrated tools, boosting productivity by up to 40%.',
+                  color: 'from-blue-500 to-blue-600',
+                },
+                {
+                  icon: CheckCircle,
+                  title: 'Cost Reduction',
+                  description:
+                    'Optimize resources and reduce operational costs with data-driven insights, saving up to 30% annually.',
+                  color: 'from-sky-500 to-sky-600',
+                },
+                {
+                  icon: CheckCircle,
+                  title: 'Enhanced Customer Experience',
+                  description:
+                    'Provide seamless service from order to delivery with our integrated platform, improving satisfaction rates.',
+                  color: 'from-cyan-500 to-cyan-600',
+                },
+                {
+                  icon: CheckCircle,
+                  title: 'Data-Driven Decisions',
+                  description:
+                    'Make informed business decisions based on comprehensive analytics and real-time insights.',
+                  color: 'from-indigo-500 to-indigo-600',
+                },
+                {
+                  icon: CheckCircle,
+                  title: 'Scalable Solution',
+                  description:
+                    'Grow your business with a platform that scales with your needs, from startup to enterprise.',
+                  color: 'from-blue-600 to-blue-700',
+                },
+                {
+                  icon: CheckCircle,
+                  title: 'Secure Infrastructure',
+                  description:
+                    'Protect your data and transactions with enterprise-grade security and compliance standards.',
+                  color: 'from-indigo-600 to-indigo-700',
+                },
+              ].map((benefit, index) => (
+                <div
+                  key={index}
+                  className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-2xl'
+                >
+                  <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full'>
+                    <div
+                      className={`rounded-full bg-gradient-to-br ${benefit.color} p-4 group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <benefit.icon className='h-8 w-8 text-white' />
+                    </div>
+                    <h3 className='text-xl font-bold text-center'>
+                      {benefit.title}
+                    </h3>
+                    <p className='text-center text-muted-foreground leading-relaxed'>
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className='text-xl font-bold text-center'>
-                  Increased Efficiency
-                </h3>
-                <p className='text-center text-muted-foreground leading-relaxed'>
-                  Streamline operations and reduce manual tasks with our
-                  integrated tools, boosting productivity by up to 40%.
-                </p>
-              </div>
-
-              <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-sky-500 to-sky-600 dark:from-sky-400 dark:to-sky-500 p-4 group-hover:scale-110 transition-transform duration-300'>
-                  <CheckCircle className='h-8 w-8 text-foreground' />
-                </div>
-                <h3 className='text-xl font-bold text-center'>
-                  Cost Reduction
-                </h3>
-                <p className='text-center text-muted-foreground leading-relaxed'>
-                  Optimize resources and reduce operational costs with
-                  data-driven insights, saving up to 30% annually.
-                </p>
-              </div>
-
-              <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 dark:from-cyan-400 dark:to-cyan-500 p-4 group-hover:scale-110 transition-transform duration-300'>
-                  <CheckCircle className='h-8 w-8 text-foreground' />
-                </div>
-                <h3 className='text-xl font-bold text-center'>
-                  Enhanced Customer Experience
-                </h3>
-                <p className='text-center text-muted-foreground leading-relaxed'>
-                  Provide seamless service from order to delivery with our
-                  integrated platform, improving satisfaction rates.
-                </p>
-              </div>
-
-              <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 dark:from-indigo-400 dark:to-indigo-500 p-4 group-hover:scale-110 transition-transform duration-300'>
-                  <CheckCircle className='h-8 w-8 text-foreground' />
-                </div>
-                <h3 className='text-xl font-bold text-center'>
-                  Data-Driven Decisions
-                </h3>
-                <p className='text-center text-muted-foreground leading-relaxed'>
-                  Make informed business decisions based on comprehensive
-                  analytics and real-time insights.
-                </p>
-              </div>
-
-              <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 p-4 group-hover:scale-110 transition-transform duration-300'>
-                  <CheckCircle className='h-8 w-8 text-foreground' />
-                </div>
-                <h3 className='text-xl font-bold text-center'>
-                  Scalable Solution
-                </h3>
-                <p className='text-center text-muted-foreground leading-relaxed'>
-                  Grow your business with a platform that scales with your
-                  needs, from startup to enterprise.
-                </p>
-              </div>
-
-              <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-foreground hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                <div className='rounded-full bg-gradient-to-br from-indigo-600 to-indigo-700 dark:from-indigo-500 dark:to-indigo-600 p-4 group-hover:scale-110 transition-transform duration-300'>
-                  <CheckCircle className='h-8 w-8 text-foreground' />
-                </div>
-                <h3 className='text-xl font-bold text-center'>
-                  Secure Infrastructure
-                </h3>
-                <p className='text-center text-muted-foreground leading-relaxed'>
-                  Protect your data and transactions with enterprise-grade
-                  security and compliance standards.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Pricing Section */}
-        <section id='pricing' className='w-full py-20 md:py-32 bg-foreground'>
-          <div className='container px-4 md:px-6'>
-            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16'>
+        <section id='pricing' className='w-full py-20 md:py-32 bg-background'>
+          <div className='container'>
+            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
               <Badge variant='outline' className='mb-4'>
                 <Star className='w-3 h-3 mr-1' />
                 Flexible Pricing
               </Badge>
-              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent'>
+              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
                 Choose Your Perfect Plan
               </h2>
               <p className='max-w-3xl text-muted-foreground text-lg md:text-xl leading-relaxed'>
@@ -473,111 +500,133 @@ export default function LandingPage() {
               </p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
-              <Card className='relative overflow-hidden border-0 shadow-xl bg-bg-background'>
-                <CardHeader className='pb-6'>
-                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-xl flex items-center justify-center mb-4'>
-                    <Package className='h-6 w-6 text-foreground' />
-                  </div>
-                  <CardTitle className='text-2xl'>Core Modules</CardTitle>
-                  <CardDescription className='text-muted-foreground'>
-                    Essential features for every business
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className='space-y-4'>
-                  <div className='space-y-3'>
-                    <div className='flex justify-between items-center'>
-                      <span className='font-medium'>AdminTool</span>
-                      <Badge variant='secondary'>Included</Badge>
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-6'>
+                    <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4'>
+                      <Package className='h-6 w-6 text-white' />
                     </div>
-                    <div className='flex justify-between items-center'>
-                      <span>Insight (Analytics)</span>
-                      <span className='font-semibold'>+€10/month</span>
+                    <CardTitle className='text-2xl'>Core Modules</CardTitle>
+                    <CardDescription>
+                      Essential features for every business
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className='space-y-4'>
+                    <div className='space-y-3'>
+                      <div className='flex justify-between items-center'>
+                        <span className='font-medium'>AdminTool</span>
+                        <Badge variant='secondary'>Included</Badge>
+                      </div>
+                      <div className='flex justify-between items-center'>
+                        <span className='text-muted-foreground'>
+                          Insight (Analytics)
+                        </span>
+                        <span className='font-semibold'>+€10/month</span>
+                      </div>
+                      <div className='flex justify-between items-center'>
+                        <span className='text-muted-foreground'>
+                          Flow (Navigation)
+                        </span>
+                        <span className='font-semibold'>+€15/month</span>
+                      </div>
+                      <div className='flex justify-between items-center'>
+                        <span className='text-muted-foreground'>
+                          Access (Rights Management)
+                        </span>
+                        <span className='font-semibold'>+€5/month</span>
+                      </div>
                     </div>
-                    <div className='flex justify-between items-center'>
-                      <span>Flow (Navigation)</span>
-                      <span className='font-semibold'>+€15/month</span>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <span>Access (Rights Management)</span>
-                      <span className='font-semibold'>+€5/month</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className='relative overflow-hidden border-0 shadow-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900'>
-                <CardHeader className='pb-6'>
-                  <div className='w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
-                    <Users className='h-6 w-6 text-foreground' />
-                  </div>
-                  <CardTitle className='text-2xl'>User Tiers</CardTitle>
-                  <CardDescription className='text-muted-foreground'>
-                    Scalable team sizes
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className='space-y-4'>
-                  <div className='space-y-3'>
-                    <div className='flex justify-between items-center'>
-                      <span className='font-medium'>Core (up to 3 users)</span>
-                      <Badge variant='secondary'>Included</Badge>
+              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
+                <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
+                  <CardHeader className='pb-6'>
+                    <div className='w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
+                      <Users className='h-6 w-6 text-white' />
                     </div>
-                    <div className='flex justify-between items-center'>
-                      <span>Team (up to 5 users)</span>
-                      <span className='font-semibold'>+€5/month</span>
+                    <CardTitle className='text-2xl'>User Tiers</CardTitle>
+                    <CardDescription>Scalable team sizes</CardDescription>
+                  </CardHeader>
+                  <CardContent className='space-y-4'>
+                    <div className='space-y-3'>
+                      <div className='flex justify-between items-center'>
+                        <span className='font-medium'>
+                          Core (up to 3 users)
+                        </span>
+                        <Badge variant='secondary'>Included</Badge>
+                      </div>
+                      <div className='flex justify-between items-center'>
+                        <span className='text-muted-foreground'>
+                          Team (up to 5 users)
+                        </span>
+                        <span className='font-semibold'>+€5/month</span>
+                      </div>
+                      <div className='flex justify-between items-center'>
+                        <span className='text-muted-foreground'>
+                          Pro (up to 7 users)
+                        </span>
+                        <span className='font-semibold'>+€10/month</span>
+                      </div>
+                      <div className='flex justify-between items-center'>
+                        <span className='text-muted-foreground'>
+                          Enterprise (11+ users)
+                        </span>
+                        <span className='font-semibold'>Custom</span>
+                      </div>
                     </div>
-                    <div className='flex justify-between items-center'>
-                      <span>Pro (up to 7 users)</span>
-                      <span className='font-semibold'>+€10/month</span>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                      <span>Enterprise (11+ users)</span>
-                      <span className='font-semibold'>Custom</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
 
-              <Card className='relative overflow-hidden border-2 border-blue-200 shadow-xl bg-bg-background'>
-                <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-400 dark:to-indigo-400'></div>
+              <div className='relative overflow-hidden border-2 border-blue-200 dark:border-blue-800 shadow-xl bg-card rounded-xl'>
+                <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500'></div>
                 <CardHeader className='pb-6'>
-                  <Badge className='w-fit mb-2 bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-400 dark:to-indigo-400'>
+                  <Badge className='w-fit mb-2 bg-gradient-to-r from-blue-500 to-indigo-500'>
                     Most Popular
                   </Badge>
-                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-400 dark:to-indigo-500 rounded-xl flex items-center justify-center mb-4'>
-                    <Star className='h-6 w-6 text-foreground' />
+                  <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
+                    <Star className='h-6 w-6 text-white' />
                   </div>
                   <CardTitle className='text-2xl'>Starter Package</CardTitle>
-                  <CardDescription className='text-muted-foreground'>
-                    Perfect for growing teams
-                  </CardDescription>
+                  <CardDescription>Perfect for growing teams</CardDescription>
                 </CardHeader>
                 <CardContent className='space-y-6'>
                   <div className='space-y-3'>
                     <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-primary' />
-                      <span>AdminTool included</span>
+                      <CheckCircle className='h-4 w-4 text-blue-600' />
+                      <span className='text-muted-foreground'>
+                        AdminTool included
+                      </span>
                     </div>
                     <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-primary' />
-                      <span>Insight Analytics module</span>
+                      <CheckCircle className='h-4 w-4 text-blue-600' />
+                      <span className='text-muted-foreground'>
+                        Insight Analytics module
+                      </span>
                     </div>
                     <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-primary' />
-                      <span>Up to 3 users</span>
+                      <CheckCircle className='h-4 w-4 text-blue-600' />
+                      <span className='text-muted-foreground'>
+                        Up to 3 users
+                      </span>
                     </div>
                     <div className='flex items-center gap-2'>
-                      <CheckCircle className='h-4 w-4 text-primary' />
-                      <span>24/7 support</span>
+                      <CheckCircle className='h-4 w-4 text-blue-600' />
+                      <span className='text-muted-foreground'>
+                        24/7 support
+                      </span>
                     </div>
                   </div>
-                  <div className='pt-4 border-t'>
-                    <div className='text-3xl font-bold text-primary'>€10</div>
+                  <div className='pt-4 border-t border-border'>
+                    <div className='text-3xl font-bold text-blue-600'>€10</div>
                     <div className='text-sm text-muted-foreground'>
                       per month + setup fee
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </div>
             </div>
             <div className='text-center mt-12'>
               <Button
@@ -586,7 +635,7 @@ export default function LandingPage() {
               >
                 <Link href='#contact'>Configure Your Package</Link>
               </Button>
-              <p className='text-sm text-gray-500 mt-4'>
+              <p className='text-sm text-muted-foreground mt-4'>
                 One-time setup fee of €49. No hidden costs.
               </p>
             </div>
@@ -596,14 +645,14 @@ export default function LandingPage() {
         {/* Contact Section */}
         <section
           id='contact'
-          className='w-full py-20 md:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-800 dark:via-indigo-800 dark:to-purple-800 text-foreground'
+          className='w-full py-20 md:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white'
         >
-          <div className='container px-4 md:px-6'>
-            <div className='flex flex-col items-center justify-center space-y-8 text-center'>
+          <div className='container'>
+            <div className='flex flex-col items-center justify-center space-y-8 text-center max-w-4xl mx-auto'>
               <div className='space-y-6'>
                 <Badge
                   variant='secondary'
-                  className='bg-foreground/20 text-foreground hover:bg-foreground/30'
+                  className='bg-white/20 text-white hover:bg-white/30'
                 >
                   <ArrowRight className='w-3 h-3 mr-1' />
                   Get Started Today
@@ -612,21 +661,21 @@ export default function LandingPage() {
                   Ready to Transform Your Business?
                 </h2>
                 <p className='max-w-[900px] text-blue-100 text-lg md:text-xl leading-relaxed'>
-                  Join hundreds of companies already using LogiTech to
+                  Join hundreds of companies already using OrderLink to
                   streamline their operations and boost efficiency.
                 </p>
               </div>
               <div className='flex flex-col sm:flex-row gap-4 w-full max-w-md'>
                 <Button
                   size='lg'
-                  className='flex-1 bg-foreground text-primary hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
+                  className='flex-1 bg-white text-blue-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
                 >
                   Start Free Trial
                 </Button>
                 <Button
                   size='lg'
                   variant='outline'
-                  className='flex-1 border-white/50 text-foreground bg-foreground/10 backdrop-blur-sm hover:bg-foreground/20 hover:border-white/70 transition-all duration-300 font-medium'
+                  className='flex-1 border-white/50 text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:border-white/70 transition-all duration-300 font-medium'
                 >
                   Schedule Demo
                 </Button>
@@ -639,16 +688,16 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className='w-full border-t py-12 bg-gray-50'>
-        <div className='container px-4 md:px-6'>
-          <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
+      <footer className='w-full border-t py-12 bg-muted/30 border-border'>
+        <div className='container'>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto'>
             <div className='space-y-4'>
               <div className='flex items-center gap-2'>
-                <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 rounded-lg'>
-                  <Globe className='h-5 w-5 text-foreground' />
+                <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg'>
+                  <Globe className='h-5 w-5 text-white' />
                 </div>
-                <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 bg-clip-text text-transparent'>
-                  LogiTech
+                <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
+                  OrderLink
                 </span>
               </div>
               <p className='text-sm text-muted-foreground max-w-xs'>
@@ -657,83 +706,83 @@ export default function LandingPage() {
               </p>
             </div>
             <div className='space-y-4'>
-              <h4 className='font-semibold text-gray-900'>Product</h4>
+              <h4 className='font-semibold'>Product</h4>
               <div className='space-y-2'>
                 <Link
                   href='#features'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Features
                 </Link>
                 <Link
                   href='#pricing'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Pricing
                 </Link>
                 <Link
                   href='#'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Integrations
                 </Link>
               </div>
             </div>
             <div className='space-y-4'>
-              <h4 className='font-semibold text-gray-900'>Company</h4>
+              <h4 className='font-semibold'>Company</h4>
               <div className='space-y-2'>
                 <Link
                   href='#'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   About Us
                 </Link>
                 <Link
                   href='#'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Careers
                 </Link>
                 <Link
                   href='#contact'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Contact
                 </Link>
               </div>
             </div>
             <div className='space-y-4'>
-              <h4 className='font-semibold text-gray-900'>Legal</h4>
+              <h4 className='font-semibold'>Legal</h4>
               <div className='space-y-2'>
                 <Link
                   href='#'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href='#'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href='#'
-                  className='block text-sm text-muted-foreground hover:text-primary transition-colors'
+                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
                 >
                   Cookie Policy
                 </Link>
               </div>
             </div>
           </div>
-          <div className='border-t mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center'>
+          <div className='border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center max-w-6xl mx-auto'>
             <p className='text-sm text-muted-foreground'>
-              © 2024 LogiTech. All rights reserved.
+              © 2024 OrderLink. All rights reserved.
             </p>
             <div className='flex gap-4 mt-4 sm:mt-0'>
               <Link
                 href='#'
-                className='text-gray-400 hover:text-primary transition-colors'
+                className='text-muted-foreground hover:text-blue-600 transition-colors'
               >
                 <span className='sr-only'>Twitter</span>
                 <svg
@@ -746,7 +795,7 @@ export default function LandingPage() {
               </Link>
               <Link
                 href='#'
-                className='text-gray-400 hover:text-primary transition-colors'
+                className='text-muted-foreground hover:text-blue-600 transition-colors'
               >
                 <span className='sr-only'>LinkedIn</span>
                 <svg

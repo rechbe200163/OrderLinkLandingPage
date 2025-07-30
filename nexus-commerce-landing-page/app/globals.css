@@ -125,4 +125,37 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Ensure proper container centering */
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Fix any layout issues */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure full width sections */
+  section {
+    @apply w-full;
+  }
+}
+
+/* Custom gradient backgrounds */
+.bg-grid-pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.15) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+}
+
+.dark .bg-grid-pattern {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 0
+  );
 }
