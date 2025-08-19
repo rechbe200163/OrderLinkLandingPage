@@ -1,18 +1,23 @@
 'use client';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+
 import {
-  ArrowRight,
-  BarChart3,
-  CheckCircle,
-  Globe,
-  Menu,
   Package,
-  ShieldCheck,
-  Truck,
-  Star,
-  Users,
+  CheckCircle,
   Zap,
+  Menu,
+  Settings,
+  Rocket,
+  Star,
+  TrendingUp,
+  Shield,
+  Workflow,
+  ShoppingCart,
+  LineChart,
+  Navigation,
+  Users,
+  Target,
+  BarChart3,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -27,257 +32,305 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { BackgroundBeams } from '@/components/ui/background-beams';
-import { Meteors } from '@/components/ui/meteors';
 import { FlipWords } from '@/components/ui/flip-words';
-import { cn } from '@/lib/utils';
 
 export default function LandingPage() {
-  const t = useTranslations();
   const words = [
-    t('hero.words.workflows'),
-    t('hero.words.logistics'),
-    t('hero.words.inventory'),
-    t('hero.words.deliveries'),
-    t('hero.words.insights'),
-    t('hero.words.growth'),
+    'operations',
+    'logistics',
+    'business',
+    'delivery',
+    'growth',
+    'success',
   ];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className='min-h-screen w-full'>
-      <header className='sticky top-0 z-50 w-full border-b bg-background/40 backdrop-blur  shadow-sm'>
-        <div className='container'>
-          <div className='flex h-16 items-center justify-between bg-background/40 backdrop-blur-md rounded-lg mx-4 px-6 border border-border/30 shadow-lg'>
-            <div className='flex items-center gap-2'>
-              <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg'>
-                <Globe className='h-5 w-5 text-white' />
+    <div className='min-h-screen w-full bg-gradient-to-br from-slate-950 via-blue-950/50 to-emerald-950/30 text-white overflow-x-hidden'>
+      <header className='sticky top-0 z-50 w-full border-b border-blue-500/20 bg-slate-950/80 backdrop-blur-2xl'>
+        <div className='absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-blue-500/30 to-emerald-500/30 rounded-br-[2.5rem] blur-xl'></div>
+        <div className='absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-emerald-400/20 to-blue-400/20 rounded-bl-3xl blur-lg'></div>
+        <div className='container relative'>
+          <div className='flex h-20 items-center justify-between'>
+            <div className='flex items-center gap-4'>
+              <div className='relative'>
+                <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
+                <div className='relative flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
+                  <Package className='h-7 w-7 text-white' />
+                </div>
               </div>
-              <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
-                OrderLink
-              </span>
+              <div className='flex flex-col'>
+                <span className='text-2xl font-black bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+                  OrderLink
+                </span>
+                <span className='text-xs text-blue-300 font-medium tracking-wider'>
+                  LOGISTICS PLATFORM
+                </span>
+              </div>
             </div>
-            <nav className='hidden md:flex items-center gap-8'>
+            <nav className='hidden md:flex items-center space-x-8'>
               <Link
-                href='#features'
-                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
+                href='#modules'
+                className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
               >
-                {t('nav.features')}
+                Modules
+                <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
               </Link>
               <Link
-                href='#benefits'
-                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
+                href='#features'
+                className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
               >
-                {t('nav.benefits')}
+                Features
+                <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
               </Link>
               <Link
                 href='#pricing'
-                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
+                className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
               >
-                {t('nav.pricing')}
+                Pricing
+                <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
               </Link>
-              <Link
-                href='#contact'
-                className='text-sm font-medium text-muted-foreground hover:text-blue-600 transition-colors'
-              >
-                {t('nav.contact')}
-              </Link>
-            </nav>
-            <div className='flex items-center gap-4'>
-              <Button
-                asChild
-                className='hidden md:flex bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
-              >
-                <Link href='#contact'>{t('nav.getStarted')}</Link>
+              <Button className='bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-6 py-3 font-semibold'>
+                Get Started
               </Button>
-              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button
-                    variant='outline'
-                    size='icon'
-                    className='md:hidden bg-transparent'
+            </nav>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild className='md:hidden'>
+                <Button variant='ghost' size='icon' className='text-slate-300'>
+                  <Menu className='h-6 w-6' />
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side='right'
+                className='w-[300px] sm:w-[400px] bg-slate-950 border-blue-500/20'
+              >
+                <nav className='flex flex-col space-y-6 mt-8'>
+                  <Link
+                    href='#modules'
+                    className='text-lg font-medium text-slate-300 hover:text-blue-300 transition-colors'
+                    onClick={() => setMobileMenuOpen(false)}
                   >
-                    <Menu className='h-6 w-6' />
-                    <span className='sr-only'>Toggle menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
-                  <nav className='flex flex-col gap-4 mt-8'>
-                    <Link
-                      href='#features'
-                      className='text-lg font-medium hover:text-blue-600 transition-colors'
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {t('nav.features')}
-                    </Link>
-                    <Link
-                      href='#benefits'
-                      className='text-lg font-medium hover:text-blue-600 transition-colors'
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {t('nav.benefits')}
-                    </Link>
-                    <Link
-                      href='#pricing'
-                      className='text-lg font-medium hover:text-blue-600 transition-colors'
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {t('nav.pricing')}
-                    </Link>
-                    <Link
-                      href='#contact'
-                      className='text-lg font-medium hover:text-blue-600 transition-colors'
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {t('nav.contact')}
-                    </Link>
-                    <Button
-                      asChild
-                      className='mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300'
-                    >
-                    <Link
-                      href='#contact'
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {t('nav.getStarted')}
-                    </Link>
-                    </Button>
-                  </nav>
-                </SheetContent>
-              </Sheet>
-            </div>
+                    Modules
+                  </Link>
+                  <Link
+                    href='#features'
+                    className='text-lg font-medium text-slate-300 hover:text-blue-300 transition-colors'
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Features
+                  </Link>
+                  <Link
+                    href='#pricing'
+                    className='text-lg font-medium text-slate-300 hover:text-blue-300 transition-colors'
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Pricing
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
+
       <main className='w-full'>
-        {/* Hero Section */}
-        <section className='relative w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-background dark:via-blue-900/10 dark:to-indigo-900/10 overflow-hidden'>
-          <div className='absolute inset-0 bg-grid-pattern opacity-30'></div>
+        <section className='relative w-full py-24 md:py-32 lg:py-48 overflow-hidden'>
+          <BackgroundBeams />
+          <div className='absolute top-20 left-0 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-transparent rounded-br-[5rem]'></div>
+          <div className='absolute bottom-20 right-0 w-36 h-36 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-[4.5rem]'></div>
+
           <div className='container relative'>
-            <div className='grid gap-16 lg:grid-cols-2 lg:gap-24 xl:gap-32 items-center max-w-7xl mx-auto'>
-              <div className='flex flex-col justify-center space-y-8 text-center lg:text-left lg:pr-8'>
-                <div className='space-y-6'>
+            <div className='grid gap-20 lg:grid-cols-2 lg:gap-32 items-center max-w-7xl mx-auto'>
+              <div className='flex flex-col justify-center space-y-10 text-center lg:text-left'>
+                <div className='space-y-8'>
                   <Badge
                     variant='secondary'
-                    className='w-fit mx-auto lg:mx-0 bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900/20 dark:text-blue-300'
+                    className='w-fit mx-auto lg:mx-0 bg-gradient-to-r from-blue-900/50 to-emerald-900/50 text-blue-200 border-blue-500/30 rounded-full px-6 py-3 text-sm font-medium'
                   >
-                    <Star className='w-3 h-3 mr-1' />
-                    {t('hero.badge')}
+                    <Settings className='w-4 h-4 mr-2' />
+                    Complete Business Management
                   </Badge>
-                  <h1 className='text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground via-blue-600 to-indigo-600 bg-clip-text text-transparent'>
-                    {t('hero.title')}{' '}
+                  <h1 className='text-5xl font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl leading-none'>
+                    <span className='bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+                      Streamline your{' '}
+                    </span>
+                    <br />
                     <span className='inline-block'>
-                      <FlipWords words={words} className='inline-block' />
+                      <FlipWords
+                        words={words}
+                        className='inline-block bg-gradient-to-r from-blue-400 via-blue-300 to-emerald-300 bg-clip-text text-transparent'
+                      />
                     </span>
                   </h1>
-                  <p className='max-w-[600px] text-muted-foreground text-lg md:text-xl leading-relaxed mx-auto lg:mx-0'>
-                    {t('hero.desc')}
+                  <p className='max-w-[600px] text-slate-300 text-xl md:text-2xl leading-relaxed mx-auto lg:mx-0 font-light'>
+                    Comprehensive logistics and business management platform.
+                    OrderLink integrates all your operations from admin tools to
+                    delivery tracking in one powerful solution.
                   </p>
                 </div>
-                <div className='flex flex-col gap-4 min-[400px]:flex-row justify-center lg:justify-start'>
+                <div className='flex flex-col gap-6 min-[400px]:flex-row justify-center lg:justify-start'>
                   <Button
                     asChild
                     size='lg'
-                    className='px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
+                    className='px-10 py-6 text-xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 rounded-2xl text-white font-bold'
                   >
                     <Link href='#contact'>
-                      {t('hero.cta')} <ArrowRight className='ml-2 h-5 w-5' />
+                      Start Managing <Rocket className='ml-3 h-6 w-6' />
                     </Link>
                   </Button>
                   <Button
                     asChild
                     variant='outline'
                     size='lg'
-                    className='px-8 py-6 text-lg border-2 hover:bg-muted transition-all duration-300 bg-transparent'
+                    className='px-10 py-6 text-xl border-2 border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300 bg-slate-950/50 backdrop-blur-sm text-blue-200 hover:text-white rounded-2xl font-semibold'
                   >
-                    <Link href='#features'>{t('hero.learnMore')}</Link>
+                    <Link href='#modules'>View Modules</Link>
                   </Button>
                 </div>
-                <div className='flex items-center gap-8 pt-4 justify-center lg:justify-start'>
-                  <div className='flex items-center gap-2'>
-                    <Users className='h-5 w-5 text-blue-600' />
-                    <span className='text-sm text-muted-foreground'>
-                      {t('hero.statCompanies')}
+                <div className='flex items-center gap-12 pt-6 justify-center lg:justify-start'>
+                  <div className='flex items-center gap-3'>
+                    <div className='w-3 h-3 bg-emerald-400 rounded-full animate-pulse'></div>
+                    <span className='text-slate-400 font-medium'>
+                      10K+ Orders Daily
                     </span>
                   </div>
-                  <div className='flex items-center gap-2'>
-                    <Star className='h-5 w-5 text-yellow-500' />
-                    <span className='text-sm text-muted-foreground'>
-                      {t('hero.statRating')}
+                  <div className='flex items-center gap-3'>
+                    <div className='flex -space-x-1'>
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className='h-5 w-5 text-yellow-400 fill-current'
+                        />
+                      ))}
+                    </div>
+                    <span className='text-slate-400 font-medium'>
+                      5.0 Rating
                     </span>
                   </div>
                 </div>
               </div>
-              <div className='flex items-center justify-center lg:justify-end lg:pl-8'>
-                <div className='relative scale-90 sm:scale-100 md:scale-110 lg:scale-125 xl:scale-150 transition-transform duration-300'>
-                  <div className='absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl blur-3xl opacity-20 transform rotate-6'></div>
+              <div className='flex items-center justify-center lg:justify-end'>
+                <div className='relative scale-90 sm:scale-100 md:scale-110 lg:scale-125 xl:scale-150'>
+                  <div className='absolute inset-0 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl transform rotate-6 animate-pulse'></div>
+                  <div className='absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-blue-400 to-emerald-500 rounded-2xl opacity-80 animate-bounce'></div>
+                  <div className='absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-2xl opacity-70 animate-pulse'></div>
+                  <div className='absolute top-1/2 -right-8 w-6 h-6 bg-emerald-400 rounded-full opacity-60 animate-ping'></div>
                   <Image
                     src='/dashboard-preview-1.png'
-                    width={1000}
-                    height={1000}
-                    alt='Dashboard Preview'
-                    className='relative rounded-lg object-cover shadow-lg border border-border'
+                    alt='OrderLink Dashboard'
+                    width={800}
+                    height={600}
+                    className='relative rounded-3xl shadow-2xl border border-slate-700/50 backdrop-blur-sm'
                   />
                 </div>
               </div>
             </div>
           </div>
-          <BackgroundBeams className='realtive inset-0 -z-10' />
         </section>
-        {/* Features Section */}
-        {backgroundDotWrapper(
-          <section
-            id='features'
-            className='w-full py-20 md:py-32 bg-background'
-          >
-            <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
-              <Badge variant='outline' className='mb-4'>
-                <Zap className='w-3 h-3 mr-1' />
-                {t('featuresSection.badge')}
+
+        <section
+          id='modules'
+          className='relative w-full py-24 md:py-32 bg-gradient-to-b from-slate-950 to-slate-900'
+        >
+          <div className='absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-br-[4rem]'></div>
+          <div className='absolute bottom-0 right-0 w-28 h-28 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-[3.5rem]'></div>
+
+          <div className='container relative'>
+            <div className='flex flex-col items-center justify-center space-y-6 text-center mb-20 max-w-4xl mx-auto'>
+              <Badge
+                variant='outline'
+                className='border-blue-500/30 text-blue-300 bg-blue-900/20 rounded-full px-6 py-3'
+              >
+                <Package className='w-4 h-4 mr-2' />
+                Core Modules
               </Badge>
-              <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                {t('featuresSection.title')}
+              <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+                Everything you need to manage your business
               </h2>
-              <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                {t('featuresSection.desc')}
+              <p className='max-w-[900px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
+                Four powerful modules that work together seamlessly to handle
+                every aspect of your logistics and business operations.
               </p>
             </div>
             <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <ShieldCheck className='h-8 w-8 text-white' />
+              {/* Admin Tool */}
+              <div className='relative group'>
+                <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
+                <Card className='relative group transition-all duration-700 hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-4 border-0 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl h-full overflow-hidden'>
+                  <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-3xl'></div>
+                  <CardHeader className='pb-6 relative'>
+                    <div className='w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 shadow-2xl shadow-blue-500/25'>
+                      <Settings className='h-10 w-10 text-white' />
                     </div>
-                    <CardTitle className='text-xl'>Admin Tool</CardTitle>
-                    <CardDescription>
-                      Comprehensive management dashboard
+                    <CardTitle className='text-2xl text-white font-bold'>
+                      Admin Tool
+                    </CardTitle>
+                    <CardDescription className='text-blue-200 text-lg'>
+                      Complete business administration
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className='space-y-3 text-sm'>
+                    <ul className='space-y-4 text-base'>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          User management for all customer types
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>User management</span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          System configuration
                         </span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Role-based access control
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>Access control</span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>Audit logging</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Web Shop */}
+              <div className='relative group'>
+                <div className='absolute -inset-1 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
+                <Card className='relative group transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/25 hover:-translate-y-4 border-0 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl h-full overflow-hidden'>
+                  <div className='absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-500/20 to-transparent rounded-tr-3xl'></div>
+                  <CardHeader className='pb-6 relative'>
+                    <div className='w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 shadow-2xl shadow-emerald-500/25'>
+                      <ShoppingCart className='h-10 w-10 text-white' />
+                    </div>
+                    <CardTitle className='text-2xl text-white font-bold'>
+                      Web Shop
+                    </CardTitle>
+                    <CardDescription className='text-emerald-200 text-lg'>
+                      E-commerce platform
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className='space-y-4 text-base'>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>Product catalog</span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>Order processing</span>
+                      </li>
+                      <li className='flex items-center'>
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Payment integration
                         </span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Product and inventory management
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-blue-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Route creation and management
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Customer accounts
                         </span>
                       </li>
                     </ul>
@@ -285,85 +338,46 @@ export default function LandingPage() {
                 </Card>
               </div>
 
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <Package className='h-8 w-8 text-white' />
+              {/* Delivery Navigation */}
+              <div className='relative group'>
+                <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-slate-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
+                <Card className='relative group transition-all duration-700 hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-4 border-0 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl h-full overflow-hidden'>
+                  <div className='absolute top-0 left-0 w-18 h-18 bg-gradient-to-br from-blue-500/20 to-transparent rounded-br-3xl'></div>
+                  <CardHeader className='pb-6 relative'>
+                    <div className='w-20 h-20 bg-gradient-to-br from-blue-600 to-slate-700 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-2xl shadow-blue-500/25'>
+                      <Navigation className='h-10 w-10 text-white' />
                     </div>
-                    <CardTitle className='text-xl'>Web Shop</CardTitle>
-                    <CardDescription>
-                      Complete e-commerce solution
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className='space-y-3 text-sm'>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Order management system
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Secure online payment processing
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Order history and tracking
-                        </span>
-                      </li>
-                      <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-sky-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Customer account management
-                        </span>
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <Truck className='h-8 w-8 text-white' />
-                    </div>
-                    <CardTitle className='text-xl'>
+                    <CardTitle className='text-2xl text-white font-bold'>
                       Delivery Navigation
                     </CardTitle>
-                    <CardDescription>
-                      Optimized delivery management
+                    <CardDescription className='text-blue-200 text-lg'>
+                      Smart logistics routing
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className='space-y-3 text-sm'>
+                    <ul className='space-y-4 text-base'>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Intelligent route generation
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Route optimization
                         </span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Real-time navigation
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Real-time tracking
                         </span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Order completion tracking
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Driver management
                         </span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-cyan-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Contactless payment options
+                        <CheckCircle className='mr-4 h-5 w-5 text-blue-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Delivery scheduling
                         </span>
                       </li>
                     </ul>
@@ -371,41 +385,42 @@ export default function LandingPage() {
                 </Card>
               </div>
 
-              <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                <Card className='group transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 shadow-lg bg-card rounded-xl h-full'>
-                  <CardHeader className='pb-4'>
-                    <div className='w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300'>
-                      <BarChart3 className='h-8 w-8 text-white' />
+              {/* Data Analysis */}
+              <div className='relative group'>
+                <div className='absolute -inset-1 bg-gradient-to-r from-emerald-600 to-slate-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
+                <Card className='relative group transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/25 hover:-translate-y-4 border-0 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl h-full overflow-hidden'>
+                  <div className='absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-emerald-500/20 to-transparent rounded-tl-3xl'></div>
+                  <CardHeader className='pb-6 relative'>
+                    <div className='w-20 h-20 bg-gradient-to-br from-emerald-600 to-slate-700 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-500 shadow-2xl shadow-emerald-500/25'>
+                      <LineChart className='h-10 w-10 text-white' />
                     </div>
-                    <CardTitle className='text-xl'>Data Analysis</CardTitle>
-                    <CardDescription>
-                      Powerful business intelligence
+                    <CardTitle className='text-2xl text-white font-bold'>
+                      Data Analysis
+                    </CardTitle>
+                    <CardDescription className='text-emerald-200 text-lg'>
+                      Business intelligence
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className='space-y-3 text-sm'>
+                    <ul className='space-y-4 text-base'>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Comprehensive data integration
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Performance metrics
                         </span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Real-time business analytics
-                        </span>
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>Custom reports</span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Predictive trend analysis
-                        </span>
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>Trend analysis</span>
                       </li>
                       <li className='flex items-center'>
-                        <CheckCircle className='mr-3 h-4 w-4 text-indigo-600 flex-shrink-0' />
-                        <span className='text-muted-foreground'>
-                          Customizable reporting
+                        <CheckCircle className='mr-4 h-5 w-5 text-emerald-400 flex-shrink-0' />
+                        <span className='text-slate-300'>
+                          Data visualization
                         </span>
                       </li>
                     </ul>
@@ -413,464 +428,578 @@ export default function LandingPage() {
                 </Card>
               </div>
             </div>
-          </section>,
-          '[background-size:30px_30px]'
-        )}
-        {/* Benefits Section */}{' '}
-        {backgroundDotWrapper(
-          <section
-            id='benefits'
-            className='w-full py-20 md:py-32 bg-muted/30 relative lg:py-40 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-background dark:via-blue-900/10 dark:to-indigo-900/10 overflow-hidden'
-          >
-            <div className='container'>
-              <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
-                <Badge variant='outline' className='mb-4'>
-                  <CheckCircle className='w-3 h-3 mr-1' />
-                  {t('benefitsSection.badge')}
-                </Badge>
-                <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                  {t('benefitsSection.title')}
-                </h2>
-                <p className='max-w-[900px] text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                  {t('benefitsSection.desc')}
-                </p>
-              </div>
-              <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-                {[
-                  {
-                    icon: CheckCircle,
-                    title: 'Increased Efficiency',
-                    description:
-                      'Streamline operations and reduce manual tasks with our integrated tools, boosting productivity by up to 40%.',
-                    color: 'from-blue-500 to-blue-600',
-                  },
-                  {
-                    icon: CheckCircle,
-                    title: 'Cost Reduction',
-                    description:
-                      'Optimize resources and reduce operational costs with data-driven insights, saving up to 30% annually.',
-                    color: 'from-sky-500 to-sky-600',
-                  },
-                  {
-                    icon: CheckCircle,
-                    title: 'Enhanced Customer Experience',
-                    description:
-                      'Provide seamless service from order to delivery with our integrated platform, improving satisfaction rates.',
-                    color: 'from-cyan-500 to-cyan-600',
-                  },
-                  {
-                    icon: CheckCircle,
-                    title: 'Data-Driven Decisions',
-                    description:
-                      'Make informed business decisions based on comprehensive analytics and real-time insights.',
-                    color: 'from-indigo-500 to-indigo-600',
-                  },
-                  {
-                    icon: CheckCircle,
-                    title: 'Scalable Solution',
-                    description:
-                      'Grow your business with a platform that scales with your needs, from startup to enterprise.',
-                    color: 'from-blue-600 to-blue-700',
-                  },
-                  {
-                    icon: CheckCircle,
-                    title: 'Secure Infrastructure',
-                    description:
-                      'Protect your data and transactions with enterprise-grade security and compliance standards.',
-                    color: 'from-indigo-600 to-indigo-700',
-                  },
-                ].map((benefit, index) => (
+          </div>
+        </section>
+
+        <section
+          id='features'
+          className='relative w-full py-24 md:py-32 bg-slate-950'
+        >
+          <div className='absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-bl-[3rem]'></div>
+          <div className='absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-tr-[2.5rem]'></div>
+
+          <div className='container relative'>
+            <div className='flex flex-col items-center justify-center space-y-6 text-center mb-20 max-w-4xl mx-auto'>
+              <Badge
+                variant='outline'
+                className='border-emerald-500/30 text-emerald-300 bg-emerald-900/20 rounded-full px-6 py-3'
+              >
+                <Zap className='w-4 h-4 mr-2' />
+                Key Benefits
+              </Badge>
+              <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-emerald-200 to-blue-200 bg-clip-text text-transparent'>
+                Why businesses choose OrderLink
+              </h2>
+              <p className='max-w-[900px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
+                Streamline operations, reduce costs, and scale your business
+                with our comprehensive logistics platform.
+              </p>
+            </div>
+            <div className='mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3'>
+              {[
+                {
+                  icon: Target,
+                  title: 'Operational Efficiency',
+                  description:
+                    'Streamline all business processes with integrated modules that eliminate redundancy and boost productivity across your organization.',
+                  gradient: 'from-blue-600 to-blue-700',
+                  bgGradient: 'from-blue-900/20 to-blue-800/20',
+                  iconColor: 'text-blue-400',
+                },
+                {
+                  icon: TrendingUp,
+                  title: 'Scalable Growth',
+                  description:
+                    'Grow your business confidently with a platform that scales seamlessly from startup to enterprise level operations.',
+                  gradient: 'from-emerald-600 to-emerald-700',
+                  bgGradient: 'from-emerald-900/20 to-emerald-800/20',
+                  iconColor: 'text-emerald-400',
+                },
+                {
+                  icon: Zap,
+                  title: 'Real-time Insights',
+                  description:
+                    'Make informed decisions with comprehensive analytics and reporting that provide instant visibility into your operations.',
+                  gradient: 'from-blue-600 to-emerald-600',
+                  bgGradient: 'from-blue-900/20 to-emerald-900/20',
+                  iconColor: 'text-blue-400',
+                },
+                {
+                  icon: Shield,
+                  title: 'Secure & Reliable',
+                  description:
+                    'Trust your business data with enterprise-grade security, regular backups, and 99.9% uptime guarantee.',
+                  gradient: 'from-slate-600 to-slate-700',
+                  bgGradient: 'from-slate-800/50 to-slate-700/50',
+                  iconColor: 'text-slate-400',
+                },
+                {
+                  icon: Users,
+                  title: 'Team Collaboration',
+                  description:
+                    'Enable seamless collaboration across departments with role-based access and integrated communication tools.',
+                  gradient: 'from-emerald-600 to-blue-600',
+                  bgGradient: 'from-emerald-900/20 to-blue-900/20',
+                  iconColor: 'text-emerald-400',
+                },
+                {
+                  icon: Workflow,
+                  title: 'Process Automation',
+                  description:
+                    'Automate repetitive tasks and workflows to reduce manual errors and free up your team for strategic work.',
+                  gradient: 'from-blue-600 to-slate-600',
+                  bgGradient: 'from-blue-900/20 to-slate-900/20',
+                  iconColor: 'text-blue-400',
+                },
+              ].map((capability, index) => (
+                <div
+                  key={index}
+                  className={`group flex flex-col items-center space-y-6 rounded-3xl border border-slate-700/50 p-10 shadow-2xl bg-gradient-to-br ${capability.bgGradient} hover:shadow-blue-500/10 transition-all duration-700 hover:-translate-y-4 h-full relative overflow-hidden backdrop-blur-sm`}
+                >
+                  <div className='absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-white/5 to-transparent rounded-bl-3xl'></div>
+
                   <div
-                    key={index}
-                    className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-2xl'
+                    className={`rounded-3xl bg-gradient-to-br ${capability.gradient} p-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-2xl`}
                   >
-                    <div className='group flex flex-col items-center space-y-4 rounded-2xl border-0 p-8 shadow-lg bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full'>
-                      <div
-                        className={`rounded-full bg-gradient-to-br ${benefit.color} p-4 group-hover:scale-110 transition-transform duration-300`}
-                      >
-                        <benefit.icon className='h-8 w-8 text-white' />
+                    <capability.icon className='h-10 w-10 text-white' />
+                  </div>
+                  <h3 className='text-2xl font-bold text-center text-white'>
+                    {capability.title}
+                  </h3>
+                  <p className='text-center text-slate-300 leading-relaxed text-lg'>
+                    {capability.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id='pricing'
+          className='relative w-full py-24 md:py-32 bg-gradient-to-b from-slate-900 to-slate-950'
+        >
+          <div className='container relative'>
+            {/* Header Section */}
+            <div className='flex flex-col items-center justify-center space-y-6 text-center mb-20 max-w-4xl mx-auto'>
+              <Badge
+                variant='outline'
+                className='border-blue-500/30 text-blue-300 bg-blue-900/20 rounded-full px-6 py-3'
+              >
+                <Package className='w-4 h-4 mr-2' />
+                Flexible Pricing
+              </Badge>
+              <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+                Modular & Transparent
+              </h2>
+              <p className='max-w-[900px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
+                Bezahle nur, was du brauchst – kombiniere Module & Nutzeranzahl
+                individuell.
+              </p>
+            </div>
+
+            {/* Pricing Cards - Enhanced Layout */}
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto mb-24'>
+              {/* Module Pricing Card */}
+              <Card className='rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300'>
+                <CardHeader className='pb-6'>
+                  <div className='flex items-center gap-3 mb-2'>
+                    <div className='p-2 rounded-lg bg-blue-500/20'>
+                      <Settings className='w-5 h-5 text-blue-400' />
+                    </div>
+                    <CardTitle className='text-2xl font-bold text-white'>
+                      Module
+                    </CardTitle>
+                  </div>
+                  <CardDescription className='text-blue-200 text-lg'>
+                    Monatliche Preise pro Tenant
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className='space-y-6'>
+                  <div className='space-y-4'>
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/50 border border-emerald-500/20'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-emerald-500/20'>
+                          <Package className='w-4 h-4 text-emerald-400' />
+                        </div>
+                        <span className='font-semibold text-white'>Core</span>
+                        <span className='text-slate-400 text-sm'>
+                          (AdminTool Basis)
+                        </span>
                       </div>
-                      <h3 className='text-xl font-bold text-center'>
-                        {benefit.title}
-                      </h3>
-                      <p className='text-center text-muted-foreground leading-relaxed'>
-                        {benefit.description}
-                      </p>
+                      <span className='text-emerald-400 font-bold'>
+                        Inklusive
+                      </span>
+                    </div>
+
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-blue-500/20'>
+                          <BarChart3 className='w-4 h-4 text-blue-400' />
+                        </div>
+                        <span className='font-semibold text-white'>
+                          Insight
+                        </span>
+                        <span className='text-slate-400 text-sm'>
+                          (Statistiken)
+                        </span>
+                      </div>
+                      <span className='text-white font-bold'>+10 €</span>
+                    </div>
+
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-blue-500/20'>
+                          <Workflow className='w-4 h-4 text-blue-400' />
+                        </div>
+                        <span className='font-semibold text-white'>Flow</span>
+                        <span className='text-slate-400 text-sm'>
+                          (Lieferplanung & App)
+                        </span>
+                      </div>
+                      <span className='text-white font-bold'>+15 €</span>
+                    </div>
+
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-blue-500/20'>
+                          <Shield className='w-4 h-4 text-blue-400' />
+                        </div>
+                        <span className='font-semibold text-white'>Access</span>
+                        <span className='text-slate-400 text-sm'>
+                          (Rollen & Rechte)
+                        </span>
+                      </div>
+                      <span className='text-white font-bold'>+5 €</span>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+
+              {/* User Packages Card */}
+              <Card className='rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300'>
+                <CardHeader className='pb-6'>
+                  <div className='flex items-center gap-3 mb-2'>
+                    <div className='p-2 rounded-lg bg-blue-500/20'>
+                      <Users className='w-5 h-5 text-blue-400' />
+                    </div>
+                    <CardTitle className='text-2xl font-bold text-white'>
+                      Nutzerpakete
+                    </CardTitle>
+                  </div>
+                  <CardDescription className='text-blue-200 text-lg'>
+                    Monatlich, pro Instanz
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className='space-y-6'>
+                  <div className='space-y-4'>
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/50 border border-emerald-500/20'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-emerald-500/20'>
+                          <Users className='w-4 h-4 text-emerald-400' />
+                        </div>
+                        <span className='font-semibold text-white'>Core</span>
+                        <span className='text-slate-400 text-sm'>
+                          (bis 3 Nutzer)
+                        </span>
+                      </div>
+                      <span className='text-emerald-400 font-bold'>
+                        Inklusive
+                      </span>
+                    </div>
+
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-blue-500/20'>
+                          <Users className='w-4 h-4 text-blue-400' />
+                        </div>
+                        <span className='font-semibold text-white'>Team</span>
+                        <span className='text-slate-400 text-sm'>
+                          (bis 5 Nutzer)
+                        </span>
+                      </div>
+                      <span className='text-white font-bold'>+5 €</span>
+                    </div>
+
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-blue-500/20'>
+                          <Users className='w-4 h-4 text-blue-400' />
+                        </div>
+                        <span className='font-semibold text-white'>Pro</span>
+                        <span className='text-slate-400 text-sm'>
+                          (bis 7 Nutzer)
+                        </span>
+                      </div>
+                      <span className='text-white font-bold'>+10 €</span>
+                    </div>
+
+                    <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
+                      <div className='flex items-center gap-3'>
+                        <div className='p-1.5 rounded-md bg-blue-500/20'>
+                          <Users className='w-4 h-4 text-blue-400' />
+                        </div>
+                        <span className='font-semibold text-white'>
+                          Enterprise
+                        </span>
+                        <span className='text-slate-400 text-sm'>
+                          (ab 10 Nutzer)
+                        </span>
+                      </div>
+                      <span className='text-blue-300 font-bold italic'>
+                        individuell
+                      </span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Setup Fee - Enhanced Design */}
+            <div className='mb-24'>
+              <Card className='max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-slate-800/80 to-slate-900/80 border border-emerald-500/30 p-8 text-center backdrop-blur-sm'>
+                <CardContent className='space-y-4'>
+                  <h3 className='text-3xl font-bold text-white mb-2'>
+                    Einmalige Einrichtung
+                  </h3>
+                  <p className='text-slate-300 text-lg mb-4'>
+                    Für Hosting, Domain, Grundkonfiguration & Infrastruktur
+                  </p>
+                  <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/20 border border-emerald-500/30'>
+                    <span className='text-emerald-400 font-bold text-2xl'>
+                      +49 € einmalig
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Example Packages - Enhanced Grid */}
+            <div>
+              <h3 className='text-3xl font-bold text-white text-center mb-12'>
+                Beispielpakete
+              </h3>
+              <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+                {[
+                  {
+                    name: 'Core',
+                    price: '0 €',
+                    modules: ['AdminTool (bis 3 Nutzer)'],
+                    popular: false,
+                  },
+                  {
+                    name: 'Insight Core',
+                    price: '10 €',
+                    modules: ['AdminTool', 'Insight', '3 Nutzer'],
+                    popular: true,
+                  },
+                  {
+                    name: 'Full Pro',
+                    price: '30 €',
+                    modules: ['Alle Module', 'bis 7 Nutzer'],
+                    popular: false,
+                  },
+                ].map((pkg, i) => (
+                  <Card
+                    key={i}
+                    className={`relative rounded-3xl p-6 transition-all duration-300 hover:scale-105 ${
+                      pkg.popular
+                        ? 'bg-gradient-to-br from-blue-900/40 to-slate-800/80 border-2 border-blue-500/50 shadow-lg shadow-blue-500/20'
+                        : 'bg-slate-800/80 border border-blue-500/20'
+                    } backdrop-blur-md`}
+                  >
+                    {pkg.popular && (
+                      <div className='absolute -top-3 left-1/2 transform -translate-x-1/2'>
+                        <Badge className='bg-blue-500 text-white px-4 py-1 rounded-full'>
+                          Beliebt
+                        </Badge>
+                      </div>
+                    )}
+                    <CardHeader className='text-center pb-4'>
+                      <CardTitle className='text-white text-2xl mb-2'>
+                        {pkg.name}
+                      </CardTitle>
+                      <div className='text-3xl font-bold text-emerald-400 mb-1'>
+                        {pkg.price}
+                      </div>
+                      <CardDescription className='text-slate-400'>
+                        /Monat
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className='pt-4'>
+                      <ul className='space-y-3 mb-6'>
+                        {pkg.modules.map((m, j) => (
+                          <li
+                            key={j}
+                            className='flex items-center text-slate-300'
+                          >
+                            <CheckCircle className='h-5 w-5 mr-3 text-emerald-400 flex-shrink-0' />
+                            <span>{m}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button
+                        asChild
+                        className={`w-full ${
+                          pkg.popular
+                            ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                            : 'bg-slate-700 hover:bg-slate-600 text-white border border-blue-500/30'
+                        } transition-all duration-300`}
+                      >
+                        <a href='#'>Paket wählen</a>
+                      </Button>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
-          </section>,
-          '[background-size:20px_20px]'
-        )}
-        {/* Pricing Section */}
-        {backgroundDotWrapper(
-          <section id='pricing' className='w-full py-20 md:py-32 bg-background'>
-            <div className='container'>
-              <div className='flex flex-col items-center justify-center space-y-4 text-center mb-16 max-w-4xl mx-auto'>
-                <Badge variant='outline' className='mb-4'>
-                  <Star className='w-3 h-3 mr-1' />
-                  Flexible Pricing
-                </Badge>
-                <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-                  Choose Your Perfect Plan
-                </h2>
-                <p className='max-w-3xl text-muted-foreground text-lg md:text-xl leading-relaxed'>
-                  Modular pricing that grows with your business. Mix and match
-                  features to create the perfect solution for your team.
-                </p>
-              </div>
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
-                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                  <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
-                    <CardHeader className='pb-6'>
-                      <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4'>
-                        <Package className='h-6 w-6 text-white' />
-                      </div>
-                      <CardTitle className='text-2xl'>Core Modules</CardTitle>
-                      <CardDescription>
-                        Essential features for every business
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className='space-y-4'>
-                      <div className='space-y-3'>
-                        <div className='flex justify-between items-center'>
-                          <span className='font-medium'>AdminTool</span>
-                          <Badge variant='secondary'>Included</Badge>
-                        </div>
-                        <div className='flex justify-between items-center'>
-                          <span className='text-muted-foreground'>
-                            Insight (Analytics)
-                          </span>
-                          <span className='font-semibold'>+€10/month</span>
-                        </div>
-                        <div className='flex justify-between items-center'>
-                          <span className='text-muted-foreground'>
-                            Flow (Navigation)
-                          </span>
-                          <span className='font-semibold'>+€15/month</span>
-                        </div>
-                        <div className='flex justify-between items-center'>
-                          <span className='text-muted-foreground'>
-                            Access (Rights Management)
-                          </span>
-                          <span className='font-semibold'>+€5/month</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+          </div>
+        </section>
 
-                <div className='p-[1px] bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-xl'>
-                  <Card className='relative overflow-hidden border-0 shadow-xl bg-card rounded-xl h-full'>
-                    <CardHeader className='pb-6'>
-                      <div className='w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
-                        <Users className='h-6 w-6 text-white' />
-                      </div>
-                      <CardTitle className='text-2xl'>User Tiers</CardTitle>
-                      <CardDescription>Scalable team sizes</CardDescription>
-                    </CardHeader>
-                    <CardContent className='space-y-4'>
-                      <div className='space-y-3'>
-                        <div className='flex justify-between items-center'>
-                          <span className='font-medium'>
-                            Core (up to 3 users)
-                          </span>
-                          <Badge variant='secondary'>Included</Badge>
-                        </div>
-                        <div className='flex justify-between items-center'>
-                          <span className='text-muted-foreground'>
-                            Team (up to 5 users)
-                          </span>
-                          <span className='font-semibold'>+€5/month</span>
-                        </div>
-                        <div className='flex justify-between items-center'>
-                          <span className='text-muted-foreground'>
-                            Pro (up to 7 users)
-                          </span>
-                          <span className='font-semibold'>+€10/month</span>
-                        </div>
-                        <div className='flex justify-between items-center'>
-                          <span className='text-muted-foreground'>
-                            Enterprise (11+ users)
-                          </span>
-                          <span className='font-semibold'>Custom</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div className='relative overflow-hidden border-2 border-blue-200 dark:border-blue-800 shadow-xl bg-card rounded-xl'>
-                  <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500'></div>
-                  <CardHeader className='pb-6'>
-                    <Badge className='w-fit mb-2 bg-gradient-to-r from-blue-500 to-indigo-500'>
-                      Most Popular
-                    </Badge>
-                    <div className='w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4'>
-                      <Star className='h-6 w-6 text-white' />
-                    </div>
-                    <CardTitle className='text-2xl'>Starter Package</CardTitle>
-                    <CardDescription>Perfect for growing teams</CardDescription>
-                  </CardHeader>
-                  <CardContent className='space-y-6'>
-                    <div className='space-y-3'>
-                      <div className='flex items-center gap-2'>
-                        <CheckCircle className='h-4 w-4 text-blue-600' />
-                        <span className='text-muted-foreground'>
-                          AdminTool included
-                        </span>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                        <CheckCircle className='h-4 w-4 text-blue-600' />
-                        <span className='text-muted-foreground'>
-                          Insight Analytics module
-                        </span>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                        <CheckCircle className='h-4 w-4 text-blue-600' />
-                        <span className='text-muted-foreground'>
-                          Up to 3 users
-                        </span>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                        <CheckCircle className='h-4 w-4 text-blue-600' />
-                        <span className='text-muted-foreground'>
-                          24/7 support
-                        </span>
-                      </div>
-                    </div>
-                    <div className='pt-4 border-t border-border'>
-                      <div className='text-3xl font-bold text-blue-600'>
-                        €10
-                      </div>
-                      <div className='text-sm text-muted-foreground'>
-                        per month + setup fee
-                      </div>
-                    </div>
-                  </CardContent>
-                </div>
-              </div>
-              <div className='text-center mt-12'>
-                <Button
-                  size='lg'
-                  className='px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl hover:shadow-2xl transition-all duration-300'
-                >
-                  <Link href='#contact'>Configure Your Package</Link>
-                </Button>
-                <p className='text-sm text-muted-foreground mt-4'>
-                  One-time setup fee of €49. No hidden costs.
-                </p>
-              </div>
-            </div>
-          </section>,
-          '[background-size:22px_22px]'
-        )}
-        {/* Contact Section */}{' '}
         <section
           id='contact'
-          className='w-full py-20 md:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white'
+          className='relative w-full py-24 md:py-32 bg-gradient-to-br from-slate-950 via-blue-950/30 to-emerald-950/20'
         >
-          <div className='container'>
-            <div className='flex flex-col items-center justify-center space-y-8 text-center max-w-4xl mx-auto'>
-              <div className='space-y-6'>
-                <Badge
-                  variant='secondary'
-                  className='bg-white/20 text-white hover:bg-white/30'
-                >
-                  <ArrowRight className='w-3 h-3 mr-1' />
-                  {t('contactSection.badge')}
-                </Badge>
-                <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl'>
-                  {t('contactSection.headline')}
-                </h2>
-                <p className='max-w-[900px] text-blue-100 text-lg md:text-xl leading-relaxed'>
-                  {t('contactSection.desc')}
-                </p>
-              </div>
-              <div className='flex flex-col sm:flex-row gap-4 w-full max-w-md'>
-                <Button
-                  size='lg'
-                  className='flex-1 bg-white text-blue-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
-                >
-                  {t('contactSection.cta')}
-                </Button>
-                <Button
-                  size='lg'
-                  variant='outline'
-                  className='flex-1 border-white/50 text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:border-white/70 transition-all duration-300 font-medium'
-                >
-                  {t('contactSection.scheduleDemo')}
-                </Button>
-              </div>
-              <p className='text-sm text-blue-200'>
-                {t('contactSection.responseTime')}
+          <div className='absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-transparent rounded-br-[5rem]'></div>
+          <div className='absolute bottom-0 right-0 w-36 h-36 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-[4.5rem]'></div>
+
+          <div className='container relative'>
+            <div className='flex flex-col items-center justify-center space-y-10 text-center max-w-4xl mx-auto'>
+              <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+                Ready to streamline your business?
+              </h2>
+              <p className='max-w-[700px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
+                Join thousands of businesses already using OrderLink to manage
+                their operations more efficiently.
               </p>
+              <div className='flex flex-col gap-6 min-[400px]:flex-row'>
+                <Button
+                  asChild
+                  size='lg'
+                  className='px-12 py-6 text-xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 rounded-2xl text-white font-bold'
+                >
+                  <Link href='#pricing'>
+                    Start Your Free Trial <Rocket className='ml-3 h-6 w-6' />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant='outline'
+                  size='lg'
+                  className='px-12 py-6 text-xl border-2 border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300 bg-slate-950/50 backdrop-blur-sm text-blue-200 hover:text-white rounded-2xl font-semibold'
+                >
+                  <Link href='#modules'>Learn More</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
       </main>
-      <footer className='w-full border-t py-12 bg-muted/30 border-border'>
-        <div className='container'>
-          <div className='grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto'>
-            <div className='space-y-4'>
-              <div className='flex items-center gap-2'>
-                <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg'>
-                  <Globe className='h-5 w-5 text-white' />
+
+      <footer className='w-full border-t border-blue-500/20 bg-slate-950/80 backdrop-blur-2xl'>
+        <div className='container py-16'>
+          <div className='grid gap-12 md:grid-cols-2 lg:grid-cols-4'>
+            <div className='space-y-6'>
+              <div className='flex items-center gap-4'>
+                <div className='relative'>
+                  <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
+                  <div className='relative flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
+                    <Package className='h-7 w-7 text-white' />
+                  </div>
                 </div>
-                <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
-                  OrderLink
-                </span>
+                <div className='flex flex-col'>
+                  <span className='text-2xl font-black bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+                    OrderLink
+                  </span>
+                  <span className='text-xs text-blue-300 font-medium tracking-wider'>
+                    LOGISTICS PLATFORM
+                  </span>
+                </div>
               </div>
-              <p className='text-sm text-muted-foreground max-w-xs'>
-                Transforming logistics operations with comprehensive business
-                solutions.
+              <p className='text-slate-400 leading-relaxed'>
+                Comprehensive business management platform for modern logistics
+                operations.
               </p>
             </div>
-            <div className='space-y-4'>
-              <h4 className='font-semibold'>{t('footer.product')}</h4>
-              <div className='space-y-2'>
-                <Link
-                  href='#features'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('nav.features')}
-                </Link>
-                <Link
-                  href='#pricing'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('nav.pricing')}
-                </Link>
-                <Link
-                  href='#'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('footer.integrations')}
-                </Link>
-              </div>
+            <div className='space-y-6'>
+              <h3 className='text-lg font-semibold text-white'>Modules</h3>
+              <ul className='space-y-3'>
+                <li>
+                  <Link
+                    href='#modules'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Admin Tool
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#modules'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Web Shop
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#modules'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Delivery Navigation
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#modules'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Data Analysis
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className='space-y-4'>
-              <h4 className='font-semibold'>{t('footer.company')}</h4>
-              <div className='space-y-2'>
-                <Link
-                  href='#'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('footer.aboutUs')}
-                </Link>
-                <Link
-                  href='#'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('footer.careers')}
-                </Link>
-                <Link
-                  href='#contact'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('nav.contact')}
-                </Link>
-              </div>
+            <div className='space-y-6'>
+              <h3 className='text-lg font-semibold text-white'>Company</h3>
+              <ul className='space-y-3'>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Blog
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className='space-y-4'>
-              <h4 className='font-semibold'>{t('footer.legal')}</h4>
-              <div className='space-y-2'>
-                <Link
-                  href='#'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('footer.privacy')}
-                </Link>
-                <Link
-                  href='#'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('footer.terms')}
-                </Link>
-                <Link
-                  href='#'
-                  className='block text-sm text-muted-foreground hover:text-blue-600 transition-colors'
-                >
-                  {t('footer.cookiePolicy')}
-                </Link>
-              </div>
+            <div className='space-y-6'>
+              <h3 className='text-lg font-semibold text-white'>Support</h3>
+              <ul className='space-y-3'>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Documentation
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Help Center
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='#'
+                    className='text-slate-400 hover:text-blue-300 transition-colors'
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className='border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center max-w-6xl mx-auto'>
-            <p className='text-sm text-muted-foreground'>
-              {t('footer.rights')}
+          <div className='mt-16 pt-8 border-t border-blue-500/20 text-center'>
+            <p className='text-slate-400'>
+              © 2024 OrderLink. All rights reserved.
             </p>
-            <div className='flex gap-4 mt-4 sm:mt-0'>
-              <Link
-                href='#'
-                className='text-muted-foreground hover:text-blue-600 transition-colors'
-              >
-                <span className='sr-only'>Twitter</span>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path d='M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84' />
-                </svg>
-              </Link>
-              <Link
-                href='#'
-                className='text-muted-foreground hover:text-blue-600 transition-colors'
-              >
-                <span className='sr-only'>LinkedIn</span>
-                <svg
-                  className='h-5 w-5'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z'
-                    clipRule='evenodd'
-                  />
-                </svg>
-              </Link>
-            </div>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-const backgroundGridWrapper = (
-  content: React.ReactNode,
-  size = '[background-size:25px_25px]'
-) => (
-  <div className='relative w-full'>
-    <div
-      className={cn(
-        'absolute inset-0 z-0',
-        size,
-        '[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]',
-        'dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]'
-      )}
-    />
-    <div className='pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black' />
-    <div className='relative z-20'>{content}</div>
-  </div>
-);
-const backgroundDotWrapper = (
-  content: React.ReactNode,
-  size = '[background-size:25px_25px]'
-) => (
-  <div className='relative w-full'>
-    <div
-      className={cn(
-        'absolute inset-0 z-0',
-        size,
-        '[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]',
-        'dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]'
-      )}
-    />
-    <div className='pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black' />
-    <div className='relative z-20'>{content}</div>
-  </div>
-);
