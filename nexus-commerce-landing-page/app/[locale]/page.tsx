@@ -757,7 +757,7 @@ export default function LandingPage() {
                     price: '0 €',
                     modules: ['AdminTool (bis 3 Nutzer)'],
                     moduleNames: [],
-                    userGroups: ['Core'],
+                    userGroups: [UserTier.CORE],
                     popular: false,
                   },
                   {
