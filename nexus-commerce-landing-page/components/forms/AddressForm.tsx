@@ -1,5 +1,5 @@
 'use client';
-import { useActionState, useState } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -21,16 +21,18 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { useTranslations } from 'next-intl';
 import { useAddressStore } from '@/lib/stores/useAddressStore';
-import CustomeToast from '../toasts/CustomeErrorToast';
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 import { Arrow } from '@radix-ui/react-dropdown-menu';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   name_5020537749: z.tuple([z.string(), z.string().optional()]),
 });
 
 export default function AddressForm() {
+  const router = useRouter();
+
   const t = useTranslations('Dashboard.Ressource.Address');
 
   const [formState, action, isPending] = useActionState(createAddress, {
@@ -46,7 +48,6 @@ export default function AddressForm() {
   const setPostCode = useAddressStore((s) => s.setPostCode);
   const setStreetName = useAddressStore((s) => s.setStreetName);
   const setStreetNumber = useAddressStore((s) => s.setStreetNumber);
-  const reset = useAddressStore((s) => s.reset);
 
   const country = useAddressStore((s) => s.address.country);
   const stateStore = useAddressStore((s) => s.address.state);
@@ -58,32 +59,19 @@ export default function AddressForm() {
   const [_countryName, setCountryName] = useState<string>(country);
   const [stateName, setStateName] = useState<string>(stateStore);
 
-  React.useEffect(() => {
-    if (formState.success) {
-      toast.custom(() => (
-        <CustomeToast
-          variant='success'
-          message='Address created successfully'
-        />
-      ));
-      reset();
+  useEffect(() => {
+    if (formState.success) router.push('/onboarding/company');
+
+    if (formState.errors?.title) {
+      toast.error(`An error occurred: ${formState.errors?.title}`);
     }
-  }, [formState.success, reset]);
+  }, [formState]);
 
   React.useEffect(() => {
-    if (
-      formState.errors &&
-      Object.keys(formState.errors).length > 0 &&
-      formState.errors.title.length > 0
-    ) {
-      toast.custom(() => (
-        <CustomeToast
-          variant='error'
-          message={`An error occurred ${formState.errors?.title}`}
-        />
-      ));
+    if (formState.success) {
+      toast.success('Address created successfully');
     }
-  }, [formState.errors]);
+  }, [formState.success]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

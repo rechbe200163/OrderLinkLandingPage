@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import '../globals.css';
 import { ThemeProvider } from '@/components/ui/dark-mode/theme-provider';
+import { Toaster } from 'sonner';
 export default async function LocaleLayout({
   children,
   params,
@@ -28,6 +29,7 @@ export default async function LocaleLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster richColors closeButton />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
