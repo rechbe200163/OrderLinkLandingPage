@@ -33,19 +33,19 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
-export enum UserTier {
-  CORE = 'CORE',
-  TEAM = 'TEAM',
-  PRO = 'PRO',
-  ENTERPRISE = 'ENTERPRISE',
-}
-export enum ModulePackageName {
-  INSIGHT = 'INSIGHT', // Statistiken
-  FLOW = 'FLOW', // Navigation
-  ACCESS = 'ACCESS', // Custom Roles
-}
+import {
+  MODULE_NAMES,
+  ModuleName,
+  ModulePackageName,
+  UserTier,
+} from '@/lib/types';
+import { useModuleStore } from '@/lib/stores/useModuleStore';
+import { useUserTierStore } from '@/lib/stores/useUserGroupStore';
+import { useRouter } from 'next/navigation';
+import Module from 'module';
 
 export default function LandingPage() {
+  const router = useRouter();
   const words = [
     'operations',
     'logistics',
@@ -54,6 +54,27 @@ export default function LandingPage() {
     'growth',
     'success',
   ];
+
+  const setModules = useModuleStore((state) => state.addModule);
+  const setUserTier = useUserTierStore((state) => state.addUserTier);
+
+  const modules = useModuleStore((state) => state.modules);
+  const userTier = useUserTierStore((state) => state.userTier);
+
+  const resetModules = useModuleStore((state) => state.resetModules);
+  const resetUserTier = useUserTierStore((state) => state.resetUserTier);
+
+  const handleOnclick = (moduleNames: ModuleName[], userTiers: UserTier) => {
+    if (modules.length > 0 || userTier) {
+      resetModules();
+      resetUserTier();
+    }
+    moduleNames.forEach((moduleName) => {
+      setModules(moduleName);
+    });
+    setUserTier(userTiers);
+    router.push('onboarding/address');
+  };
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -757,15 +778,15 @@ export default function LandingPage() {
                     price: '0 €',
                     modules: ['AdminTool (bis 3 Nutzer)'],
                     moduleNames: [],
-                    userGroups: [UserTier.CORE],
+                    userTiers: UserTier.CORE,
                     popular: false,
                   },
                   {
                     name: 'Insight Core',
                     price: '10 €',
                     modules: ['AdminTool', 'Insight', '3 Nutzer'],
-                    moduleNames: [ModulePackageName.INSIGHT],
-                    userGroups: [UserTier.CORE],
+                    moduleNames: [MODULE_NAMES[0]],
+                    userTiers: UserTier.CORE,
                     popular: true,
                   },
                   {
@@ -773,11 +794,11 @@ export default function LandingPage() {
                     price: '30 €',
                     modules: ['Alle Module', 'bis 7 Nutzer'],
                     moduleNames: [
-                      ModulePackageName.ACCESS,
-                      ModulePackageName.INSIGHT,
-                      ModulePackageName.FLOW,
+                      MODULE_NAMES[0],
+                      MODULE_NAMES[1],
+                      MODULE_NAMES[2],
                     ],
-                    userGroups: [UserTier.ENTERPRISE],
+                    userTiers: UserTier.ENTERPRISE,
                     popular: false,
                   },
                 ].map((pkg, i) => (
@@ -820,20 +841,16 @@ export default function LandingPage() {
                         ))}
                       </ul>
                       <Button
-                        asChild
+                        onClick={() =>
+                          handleOnclick(pkg.moduleNames, pkg.userTiers)
+                        }
                         className={`w-full ${
                           pkg.popular
                             ? 'bg-blue-600 hover:bg-blue-700 text-white'
                             : 'bg-slate-700 hover:bg-slate-600 text-white border border-blue-500/30'
                         } transition-all duration-300`}
                       >
-                        <Link
-                          href={`/billing?${generateSearchParams(
-                            pkg
-                          ).toString()}`}
-                        >
-                          Paket wählen
-                        </Link>
+                        Paket wählen
                       </Button>
                     </CardContent>
                   </Card>
@@ -1029,18 +1046,4 @@ export default function LandingPage() {
       </footer>
     </div>
   );
-}
-
-function generateSearchParams(pkg: {
-  moduleNames: string[];
-  userGroups: UserTier[];
-}) {
-  const params = new URLSearchParams();
-
-  pkg.moduleNames.forEach((m) => params.append('moduleNames', String(m)));
-
-  // userGroups is UserTier[]
-  pkg.userGroups.forEach((g) => params.append('userGroups', String(g)));
-
-  return params;
 }
