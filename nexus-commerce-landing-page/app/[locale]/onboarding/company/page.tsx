@@ -19,8 +19,16 @@ import {
   Hash,
   ArrowRight,
 } from 'lucide-react';
+import { useProgressStore } from '@/lib/stores/useProgressStore';
+import { console } from 'inspector';
+import { useRouter } from 'next/navigation';
+import ProgressIndicators from '@/components/helpers/ProgressIndicators';
 
 const OnboardingCompanyPage = () => {
+  const router = useRouter();
+
+  const setProgress = useProgressStore((state) => state.setProgress);
+
   const setEmail = useCompanyStore((state) => state.setEmail);
   const setPhoneNumber = useCompanyStore((state) => state.setPhoneNumber);
   const setIban = useCompanyStore((state) => state.setIban);
@@ -142,6 +150,10 @@ const OnboardingCompanyPage = () => {
                 <div className='flex flex-col gap-4 pt-8 md:col-span-2'>
                   <Button
                     size='lg'
+                    onClick={() => {
+                      setProgress('COMPANY');
+                      router.push('/onboarding/review');
+                    }}
                     className='w-full px-8 py-6 text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-[1.02] rounded-xl text-white font-bold'
                   >
                     Continue Setup <ArrowRight className='ml-3 h-5 w-5' />
@@ -159,27 +171,9 @@ const OnboardingCompanyPage = () => {
               </CardContent>
             </Card>
           </div>
-
-          {/* Progress Indicator */}
-          <div className='flex items-center justify-center mt-12 space-x-4'>
-            <div className='flex items-center space-x-2'>
-              <div className='w-3 h-3 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full'></div>
-              <span className='text-sm text-slate-500'>Address Setup</span>
-            </div>
-
-            <div className='w-8 h-0.5 bg-slate-700'></div>
-            <div className='flex items-center space-x-2'>
-              <div className='w-3 h-3 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full'></div>
-              <span className='text-sm text-slate-400'>Company Details</span>
-            </div>
-
-            <div className='w-8 h-0.5 bg-slate-700'></div>
-            <div className='flex items-center space-x-2'>
-              <div className='w-3 h-3 bg-slate-700 rounded-full'></div>
-              <span className='text-sm text-slate-500'>Complete</span>
-            </div>
-          </div>
         </div>
+        {/* Progress indicator */}
+        <ProgressIndicators />
       </div>
     </div>
   );

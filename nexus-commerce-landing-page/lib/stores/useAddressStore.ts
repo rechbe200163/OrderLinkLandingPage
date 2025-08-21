@@ -26,12 +26,16 @@ export const useAddressStore = create<AddressState>()(
   persist(
     (set) => ({
       address: initial,
-      setCountry: (v) => set((s) => ({ address: { ...s.address, country: v } })),
+      setCountry: (v) =>
+        set((s) => ({ address: { ...s.address, country: v } })),
       setState: (v) => set((s) => ({ address: { ...s.address, state: v } })),
       setCity: (v) => set((s) => ({ address: { ...s.address, city: v } })),
-      setPostCode: (v) => set((s) => ({ address: { ...s.address, postCode: v } })),
-      setStreetName: (v) => set((s) => ({ address: { ...s.address, streetName: v } })),
-      setStreetNumber: (v) => set((s) => ({ address: { ...s.address, streetNumber: v } })),
+      setPostCode: (v) =>
+        set((s) => ({ address: { ...s.address, postCode: v } })),
+      setStreetName: (v) =>
+        set((s) => ({ address: { ...s.address, streetName: v } })),
+      setStreetNumber: (v) =>
+        set((s) => ({ address: { ...s.address, streetNumber: v } })),
       reset: () => set({ address: initial }),
     }),
     {
