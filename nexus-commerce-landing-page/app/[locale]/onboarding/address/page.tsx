@@ -33,7 +33,7 @@ const OnboardingAddressPage = () => {
         </div>
 
         {/* Progress indicator */}
-        <ProgressIndicators />
+        <ProgressIndicators step='ADDRESS' />
       </div>
     </div>
   );
