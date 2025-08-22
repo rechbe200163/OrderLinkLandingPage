@@ -20,14 +20,18 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { useProgressStore } from '@/lib/stores/useProgressStore';
-import { console } from 'inspector';
 import { useRouter } from 'next/navigation';
 import ProgressIndicators from '@/components/helpers/ProgressIndicators';
+import { useEffect } from 'react';
 
 const OnboardingCompanyPage = () => {
   const router = useRouter();
 
   const setProgress = useProgressStore((state) => state.setProgress);
+
+  useEffect(() => {
+    setProgress('COMPANY');
+  }, [setProgress]);
 
   const setEmail = useCompanyStore((state) => state.setEmail);
   const setPhoneNumber = useCompanyStore((state) => state.setPhoneNumber);
@@ -151,7 +155,6 @@ const OnboardingCompanyPage = () => {
                   <Button
                     size='lg'
                     onClick={() => {
-                      setProgress('COMPANY');
                       router.push('/onboarding/review');
                     }}
                     className='w-full px-8 py-6 text-lg bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-[1.02] rounded-xl text-white font-bold'
