@@ -63,7 +63,3 @@ export interface CreateSiteConfig {
   iban: string;
   companyNumber: string;
 }
-
-export type ProgressStep = 'ADDRESS' | 'COMPANY' | 'REVIEW';
-
-export type ProgressSet = Set<ProgressStep>;
