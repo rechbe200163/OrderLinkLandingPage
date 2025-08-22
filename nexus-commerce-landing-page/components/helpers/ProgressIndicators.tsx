@@ -1,7 +1,6 @@
 'use client';
 import { useProgressStore } from '@/lib/stores/useProgressStore';
 import React from 'react';
-import { ProgressSet } from '@/lib/types';
 
 const ProgressIndicators = () => {
   const progress = useProgressStore((state) => state.progress);
@@ -12,7 +11,7 @@ const ProgressIndicators = () => {
       <div className='flex items-center space-x-2'>
         <div
           className={`w-3 h-3 ${
-            progress && progress.has('ADDRESS')
+            progress && progress.includes('ADDRESS')
               ? 'bg-gradient-to-r from-blue-500 to-emerald-500'
               : 'bg-slate-700'
           } rounded-full`}
@@ -24,7 +23,7 @@ const ProgressIndicators = () => {
       <div className='flex items-center space-x-2'>
         <div
           className={`w-3 h-3 ${
-            progress && progress.has('COMPANY')
+            progress && progress.includes('COMPANY')
               ? 'bg-gradient-to-r from-blue-500 to-emerald-500'
               : 'bg-slate-700'
           } rounded-full`}
@@ -36,7 +35,7 @@ const ProgressIndicators = () => {
       <div className='flex items-center space-x-2'>
         <div
           className={`w-3 h-3 ${
-            progress && progress.has('REVIEW')
+            progress && progress.includes('REVIEW')
               ? 'bg-gradient-to-r from-blue-500 to-emerald-500'
               : 'bg-slate-700'
           } rounded-full`}

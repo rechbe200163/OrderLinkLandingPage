@@ -66,4 +66,4 @@ export interface CreateSiteConfig {
 
 export type ProgressStep = 'ADDRESS' | 'COMPANY' | 'REVIEW';
 
-export type ProgressSet = Set<ProgressStep>;
+export type ProgressSet = ProgressStep[];
