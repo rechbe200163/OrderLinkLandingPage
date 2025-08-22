@@ -25,13 +25,15 @@ export const useCompanyStore = create<CompanyStore>()(
     (set) => ({
       company: initial,
       setCompanyName: (name) =>
-        set({ company: { ...initial, companyName: name } }),
-      setEmail: (email) => set({ company: { ...initial, email } }),
+        set((state) => ({ company: { ...state.company, companyName: name } })),
+      setEmail: (email) =>
+        set((state) => ({ company: { ...state.company, email } })),
       setPhoneNumber: (phoneNumber) =>
-        set({ company: { ...initial, phoneNumber } }),
-      setIban: (iban) => set({ company: { ...initial, iban } }),
+        set((state) => ({ company: { ...state.company, phoneNumber } })),
+      setIban: (iban) =>
+        set((state) => ({ company: { ...state.company, iban } })),
       setCompanyNumber: (companyNumber) =>
-        set({ company: { ...initial, companyNumber } }),
+        set((state) => ({ company: { ...state.company, companyNumber } })),
       resetCompany: () => set({ company: initial }),
     }),
     {

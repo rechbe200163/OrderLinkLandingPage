@@ -33,15 +33,17 @@ const OnboardingCompanyPage = () => {
     setProgress('COMPANY');
   }, [setProgress]);
 
-  const setEmail = useCompanyStore((state) => state.setEmail);
-  const setPhoneNumber = useCompanyStore((state) => state.setPhoneNumber);
   const setIban = useCompanyStore((state) => state.setIban);
-  const setCompanyNumber = useCompanyStore((state) => state.setCompanyNumber);
+  const setEmail = useCompanyStore((state) => state.setEmail);
   const resetCompany = useCompanyStore((state) => state.resetCompany);
+  const setCompanyName = useCompanyStore((state) => state.setCompanyName);
+  const setPhoneNumber = useCompanyStore((state) => state.setPhoneNumber);
+  const setCompanyNumber = useCompanyStore((state) => state.setCompanyNumber);
 
+  const iban = useCompanyStore((state) => state.company.iban);
   const email = useCompanyStore((state) => state.company.email);
   const phoneNumber = useCompanyStore((state) => state.company.phoneNumber);
-  const iban = useCompanyStore((state) => state.company.iban);
+  const companyName = useCompanyStore((state) => state.company.companyName);
   const companyNumber = useCompanyStore((state) => state.company.companyNumber);
 
   return (
@@ -91,6 +93,19 @@ const OnboardingCompanyPage = () => {
 
               <CardContent className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
                 {/* Email Field */}
+                <div className='space-y-3'>
+                  <label className='flex items-center text-sm font-medium text-slate-300'>
+                    <Mail className='w-4 h-4 mr-2 text-blue-400' />
+                    Company Name
+                  </label>
+                  <Input
+                    required
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                    placeholder='ACME'
+                    className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+                  />
+                </div>
                 <div className='space-y-3'>
                   <label className='flex items-center text-sm font-medium text-slate-300'>
                     <Mail className='w-4 h-4 mr-2 text-blue-400' />
