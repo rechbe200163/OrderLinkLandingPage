@@ -11,18 +11,18 @@ type ProgressStore = {
 export const useProgressStore = create<ProgressStore>()(
   persist(
     (set) => ({
-      progress: new Set<ProgressStep>([]),
+      progress: [],
 
       setProgress: (step) =>
-        set((state) => {
-          state.progress.add(step);
-          return { progress: state.progress };
-        }),
+        set((state) =>
+          state.progress.includes(step)
+            ? state
+            : { progress: [...state.progress, step] }
+        ),
       removeProgress: (step) =>
-        set((state) => {
-          state.progress.delete(step);
-          return { progress: state.progress };
-        }),
+        set((state) => ({
+          progress: state.progress.filter((s) => s !== step),
+        })),
     }),
     {
       name: 'progress-storage',
