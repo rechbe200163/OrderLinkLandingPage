@@ -62,4 +62,16 @@ export interface CreateSiteConfig {
   phoneNumber: string;
   iban: string;
   companyNumber: string;
+  addressId: string;
+}
+
+export interface Address {
+  addressId: string;
+  country: string;
+  state: string;
+  city: string;
+  postCode: string;
+  streetName: string;
+  streetNumber: string;
+  data?: any;
 }

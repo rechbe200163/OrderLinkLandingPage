@@ -13,6 +13,7 @@ export async function finalizeOnboarding(
     phoneNumber: String(formData.get('phoneNumber') || ''),
     iban: String(formData.get('iban') || ''),
     companyNumber: String(formData.get('companyNumber') || ''),
+    addressId: String(formData.get('addressId') || ''),
   };
   try {
     const baseUrl =

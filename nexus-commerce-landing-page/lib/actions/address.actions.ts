@@ -1,6 +1,6 @@
 'use server';
 import { FormState } from '../form.types';
-import { CreateAddress } from '@/lib/types';
+import { Address, CreateAddress } from '@/lib/types';
 export async function createAddress(
   _prevState: FormState,
   formData: FormData
@@ -36,12 +36,15 @@ export async function createAddress(
       const text = await res.text().catch(() => '');
       throw new Error(`Create address failed (${res.status}): ${text}`);
     }
-    const json = await res.json().catch(() => ({} as any));
-    const id = (json && (json.id || json.data?.id || json.data)) ?? undefined;
-    if (!id) {
-      throw new Error('API response missing address id');
+    const json: Address = await res.json().catch(() => ({} as any));
+    const addressId =
+      (json && (json.addressId || json.data?.addressId || json.data)) ??
+      undefined;
+    if (!addressId) {
+      throw new Error('API response missing address addressId');
     }
-    return { success: true, data: String(id) };
+    console.log('Created address with addressId:', addressId);
+    return { success: true, data: String(addressId) };
   } catch (err: any) {
     return {
       success: false,

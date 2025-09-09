@@ -245,9 +245,8 @@ export default function LandingPage() {
               <div className='flex items-center justify-center lg:justify-end'>
                 <div className='relative scale-90 sm:scale-100 md:scale-110 lg:scale-125 xl:scale-150'>
                   <div className='absolute inset-0 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl transform rotate-6 animate-pulse'></div>
-                  <div className='absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-blue-400 to-emerald-500 rounded-2xl opacity-80 animate-bounce'></div>
+                  <div className='absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-blue-400 to-emerald-500 rounded-2xl opacity-80 animate-pulse'></div>
                   <div className='absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-2xl opacity-70 animate-pulse'></div>
-                  <div className='absolute top-1/2 -right-8 w-6 h-6 bg-emerald-400 rounded-full opacity-60 animate-ping'></div>
                   <Image
                     src='/dashboard-preview-1.png'
                     alt='OrderLink Dashboard'

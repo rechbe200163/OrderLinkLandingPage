@@ -15,12 +15,15 @@ const initialState: FormState = { success: false };
 
 export default function AddressForm() {
   const router = useRouter();
-  const [state, formAction, isPending] = useActionState(createAddress, initialState);
+  const [state, formAction, isPending] = useActionState(
+    createAddress,
+    initialState
+  );
 
   useEffect(() => {
     if (state.success && state.data) {
       localStorage.setItem('addressId', String(state.data));
-      router.push('/onboarding/company');
+      router.push(`/onboarding/company/${state.data}`);
     }
   }, [state, router]);
 
@@ -42,7 +45,9 @@ export default function AddressForm() {
             <h2 className='text-2xl font-bold bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
               Address Information
             </h2>
-            <p className='text-slate-300 text-sm'>Please provide your address details</p>
+            <p className='text-slate-300 text-sm'>
+              Please provide your address details
+            </p>
           </div>
         </div>
 
@@ -50,27 +55,79 @@ export default function AddressForm() {
           <LocationSelector />
 
           <div className='space-y-2'>
-            <Label htmlFor='city' className='text-white font-semibold text-base'>City<span className='text-red-400 ml-1'>*</span></Label>
-            <Input id='city' name='city' placeholder='Stubenberg' required className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300' />
+            <Label
+              htmlFor='city'
+              className='text-white font-semibold text-base'
+            >
+              City<span className='text-red-400 ml-1'>*</span>
+            </Label>
+            <Input
+              id='city'
+              name='city'
+              placeholder='Stubenberg'
+              required
+              className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300'
+            />
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='postCode' className='text-white font-semibold text-base'>Post Code<span className='text-red-400 ml-1'>*</span></Label>
-            <Input id='postCode' name='postCode' placeholder='8223' required className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300' />
+            <Label
+              htmlFor='postCode'
+              className='text-white font-semibold text-base'
+            >
+              Post Code<span className='text-red-400 ml-1'>*</span>
+            </Label>
+            <Input
+              id='postCode'
+              name='postCode'
+              placeholder='8223'
+              required
+              className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300'
+            />
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='streetName' className='text-white font-semibold text-base'>Street Name<span className='text-red-400 ml-1'>*</span></Label>
-            <Input id='streetName' name='streetName' placeholder='Hauptstraße' required className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300' />
+            <Label
+              htmlFor='streetName'
+              className='text-white font-semibold text-base'
+            >
+              Street Name<span className='text-red-400 ml-1'>*</span>
+            </Label>
+            <Input
+              id='streetName'
+              name='streetName'
+              placeholder='Hauptstraße'
+              required
+              className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300'
+            />
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='streetNumber' className='text-white font-semibold text-base'>Street Number<span className='text-red-400 ml-1'>*</span></Label>
-            <Input id='streetNumber' name='streetNumber' placeholder='123' required className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300' />
+            <Label
+              htmlFor='streetNumber'
+              className='text-white font-semibold text-base'
+            >
+              Street Number<span className='text-red-400 ml-1'>*</span>
+            </Label>
+            <Input
+              id='streetNumber'
+              name='streetNumber'
+              placeholder='123'
+              required
+              className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 rounded-xl px-4 py-3 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300'
+            />
           </div>
 
-          <Button type='submit' disabled={isPending} className='group flex items-center overflow-hidden transition-all duration-500 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 rounded-2xl px-8 py-4 font-semibold text-lg mt-8 w-full'>
-            {isPending ? <Loader2Icon className='mr-2 h-5 w-5 animate-spin' /> : <span className='transition-all duration-300'>Next Step</span>}
+          <Button
+            type='submit'
+            disabled={isPending}
+            className='group flex items-center overflow-hidden transition-all duration-500 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 rounded-2xl px-8 py-4 font-semibold text-lg mt-8 w-full'
+          >
+            {isPending ? (
+              <Loader2Icon className='mr-2 h-5 w-5 animate-spin' />
+            ) : (
+              <span className='transition-all duration-300'>Next Step</span>
+            )}
           </Button>
         </form>
       </Card>
