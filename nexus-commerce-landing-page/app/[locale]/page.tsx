@@ -43,17 +43,36 @@ import { useModuleStore } from '@/lib/stores/useModuleStore';
 import { useUserTierStore } from '@/lib/stores/useUserGroupStore';
 import { useRouter } from 'next/navigation';
 import Module from 'module';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@/components/ui/navigation-menu';
+
+const words = [
+  'operations',
+  'logistics',
+  'business',
+  'delivery',
+  'growth',
+  'success',
+];
+
+const navigationLinks = [
+  { href: '#modules', label: 'Modules', active: true },
+  { href: '#features', label: 'Features' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: 'onboarding/address', label: 'Get Started' },
+];
 
 export default function LandingPage() {
   const router = useRouter();
-  const words = [
-    'operations',
-    'logistics',
-    'business',
-    'delivery',
-    'growth',
-    'success',
-  ];
 
   const setModules = useModuleStore((state) => state.addModule);
   const setUserTier = useUserTierStore((state) => state.addUserTier);
@@ -127,41 +146,58 @@ export default function LandingPage() {
                 Get Started
               </Button>
             </nav>
-            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild className='md:hidden'>
-                <Button variant='ghost' size='icon' className='text-slate-300'>
-                  <Menu className='h-6 w-6' />
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  className='group size-8 md:hidden'
+                  variant='ghost'
+                  size='icon'
+                >
+                  <svg
+                    className='pointer-events-none'
+                    width={16}
+                    height={16}
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      d='M4 12L20 12'
+                      className='origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]'
+                    />
+                    <path
+                      d='M4 12H20'
+                      className='origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45'
+                    />
+                    <path
+                      d='M4 12H20'
+                      className='origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]'
+                    />
+                  </svg>
                 </Button>
-              </SheetTrigger>
-              <SheetContent
-                side='right'
-                className='w-[300px] sm:w-[400px] bg-slate-950 border-blue-500/20'
-              >
-                <nav className='flex flex-col space-y-6 mt-8'>
-                  <Link
-                    href='#modules'
-                    className='text-lg font-medium text-slate-300 hover:text-blue-300 transition-colors'
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Modules
-                  </Link>
-                  <Link
-                    href='#features'
-                    className='text-lg font-medium text-slate-300 hover:text-blue-300 transition-colors'
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Features
-                  </Link>
-                  <Link
-                    href='#pricing'
-                    className='text-lg font-medium text-slate-300 hover:text-blue-300 transition-colors'
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Pricing
-                  </Link>
-                </nav>
-              </SheetContent>
-            </Sheet>
+              </PopoverTrigger>
+              <PopoverContent align='start' className='w-36 p-1 md:hidden'>
+                <NavigationMenu className='max-w-none *:w-full'>
+                  <NavigationMenuList className='flex-col items-start gap-0 md:gap-2'>
+                    {navigationLinks.map((link, index) => (
+                      <NavigationMenuItem key={index} className='w-full'>
+                        <NavigationMenuLink
+                          href={link.href}
+                          className='py-1.5'
+                          active={link.active}
+                        >
+                          {link.label}
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                    ))}
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
       </header>

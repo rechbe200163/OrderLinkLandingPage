@@ -142,11 +142,15 @@ const LocationSelector = ({
       <Popover open={openCountryDropdown} onOpenChange={setOpenCountryDropdown}>
         <PopoverTrigger asChild>
           <Button
+            type='button'
             variant='outline'
             role='combobox'
             aria-expanded={openCountryDropdown}
             disabled={disabled}
-            className='w-full justify-between'
+            className={cn(
+              'w-full justify-between text-left font-normal',
+              !selectedCountry && 'text-muted-foreground'
+            )}
           >
             {selectedCountry ? (
               <div className='flex items-center gap-2'>
@@ -159,7 +163,7 @@ const LocationSelector = ({
             <ChevronsUpDown className='h-4 w-4 shrink-0 opacity-50' />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className='w-[300px] p-0'>
+        <PopoverContent align='start' className='w-[300px] p-0'>
           <Command>
             <CommandInput placeholder='Search country...' />
             <CommandList>
@@ -202,11 +206,15 @@ const LocationSelector = ({
         <Popover open={openStateDropdown} onOpenChange={setOpenStateDropdown}>
           <PopoverTrigger asChild>
             <Button
+              type='button'
               variant='outline'
               role='combobox'
               aria-expanded={openStateDropdown}
               disabled={!selectedCountry}
-              className='w-full justify-between'
+              className={cn(
+                'w-full justify-between text-left font-normal',
+                !selectedState && 'text-muted-foreground'
+              )}
             >
               {selectedState ? (
                 <span>{selectedState.name}</span>
@@ -216,7 +224,7 @@ const LocationSelector = ({
               <ChevronsUpDown className='h-4 w-4 shrink-0 opacity-50' />
             </Button>
           </PopoverTrigger>
-          <PopoverContent className='w-[300px] p-0'>
+          <PopoverContent align='start' className='w-[300px] p-0'>
             <Command>
               <CommandInput placeholder='Search state...' />
               <CommandList>
