@@ -39,7 +39,7 @@ export async function finalizeOnboarding(
       throw new Error(`Finalize onboarding failed (${res.status}): ${text}`);
     }
 
-    return { success: true };
+    return { success: true, data: company.addressId };
   } catch (err: any) {
     return {
       success: false,

@@ -21,8 +21,8 @@ function CompanyForm({ addressId }: CompanyFormProps) {
   );
 
   useEffect(() => {
-    if (state.success) {
-      router.push('/billing');
+    if (state.success && state.data) {
+      router.push(`/progress/${state.data}`);
     }
   }, [state, router]);
   return (
