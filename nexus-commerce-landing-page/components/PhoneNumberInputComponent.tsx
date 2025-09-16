@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useId, useState } from 'react';
-import { ChevronDownIcon, PhoneIcon } from 'lucide-react';
+import { ChevronDownIcon, Phone, PhoneIcon } from 'lucide-react';
 import * as RPNInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 
@@ -15,33 +15,24 @@ export default function PhoneNumberInputComponent() {
 
   return (
     <div className='*:not-first:mt-2' dir='ltr'>
-      <Label htmlFor={id}>PhoneIcon number input</Label>
+      <Label
+        htmlFor={id}
+        className='flex items-center text-sm font-medium text-slate-300'
+      >
+        <Phone className='w-4 h-4 mr-2 text-blue-400' />
+        Phone Number
+      </Label>
       <RPNInput.default
-        className='flex rounded-md shadow-xs'
+        className='flex shadow-xs'
         international
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
         inputComponent={PhoneInput}
         id={id}
-        placeholder='Enter phone number'
+        placeholder='+1 555 555 5555'
         value={value}
         onChange={(newValue) => setValue(newValue ?? '')}
       />
-      <p
-        className='text-muted-foreground mt-2 text-xs'
-        role='region'
-        aria-live='polite'
-      >
-        Built with{' '}
-        <a
-          className='hover:text-foreground underline'
-          href='https://gitlab.com/catamphetamine/react-phone-number-input'
-          target='_blank'
-          rel='noopener nofollow'
-        >
-          react-phone-number-input
-        </a>
-      </p>
     </div>
   );
 }
@@ -52,8 +43,10 @@ const PhoneInput = ({ className, ...props }: React.ComponentProps<'input'>) => {
       data-slot='phone-input'
       className={cn(
         '-ms-px rounded-s-none shadow-none focus-visible:z-10',
+        'bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl rounded-l-none h-12 text-lg',
         className
       )}
+      required
       {...props}
     />
   );
@@ -79,7 +72,7 @@ const CountrySelect = ({
   };
 
   return (
-    <div className='border-input bg-background text-muted-foreground focus-within:border-ring focus-within:ring-ring/50 hover:bg-accent hover:text-foreground has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 relative inline-flex items-center self-stretch rounded-s-md border py-2 ps-3 pe-2 transition-[color,box-shadow] outline-none focus-within:z-10 focus-within:ring-[3px] has-disabled:pointer-events-none has-disabled:opacity-50'>
+    <div className='bg-slate-800/50 border-blue-500/30 text-muted-foreground focus-within:border-ring focus-within:ring-ring/50 hover:bg-accent hover:text-foreground has-aria-invalid:border-destructive/60 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 relative inline-flex items-center self-stretch rounded-s-xl border py-2 ps-3 pe-2 transition-[color,box-shadow] outline-none focus-within:z-10 focus-within:ring-[3px] has-disabled:pointer-events-none has-disabled:opacity-50'>
       <div className='inline-flex items-center gap-1' aria-hidden='true'>
         <FlagComponent country={value} countryName={value} aria-hidden='true' />
         <span className='text-muted-foreground/80'>
@@ -114,7 +107,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
   const Flag = flags[country];
 
   return (
-    <span className='w-5 overflow-hidden rounded-sm'>
+    <span className='w-5 overflow-hidden rounded-sm '>
       {Flag ? (
         <Flag title={countryName} />
       ) : (

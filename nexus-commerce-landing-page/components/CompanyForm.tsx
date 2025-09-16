@@ -4,9 +4,12 @@ import { FormState } from '@/lib/form.types';
 import { useRouter } from 'next/navigation';
 import React, { useActionState, useEffect } from 'react';
 import { CardContent } from './ui/card';
-import { CreditCard, Hash, Mail, Phone } from 'lucide-react';
+import { CreditCard, Hash, Mail, PenLine, Phone } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import PhoneNumberInputComponent from './PhoneNumberInputComponent';
+import { Label } from './ui/label';
+import GenericInputMaskComponent from './InputWithMask';
 const initialState: FormState = { success: false };
 
 interface CompanyFormProps {
@@ -31,10 +34,10 @@ function CompanyForm({ addressId }: CompanyFormProps) {
         <input type='hidden' name='addressId' value={addressId} />
 
         <div className='space-y-3'>
-          <label className='flex items-center text-sm font-medium text-slate-300'>
-            <Mail className='w-4 h-4 mr-2 text-blue-400' />
+          <Label className='flex items-center text-sm font-medium text-slate-300'>
+            <PenLine className='w-4 h-4 mr-2 text-blue-400' />
             Company Name
-          </label>
+          </Label>
           <Input
             name='companyName'
             required
@@ -43,10 +46,10 @@ function CompanyForm({ addressId }: CompanyFormProps) {
           />
         </div>
         <div className='space-y-3'>
-          <label className='flex items-center text-sm font-medium text-slate-300'>
+          <Label className='flex items-center text-sm font-medium text-slate-300'>
             <Mail className='w-4 h-4 mr-2 text-blue-400' />
             Company Email
-          </label>
+          </Label>
           <Input
             name='email'
             type='email'
@@ -57,36 +60,25 @@ function CompanyForm({ addressId }: CompanyFormProps) {
         </div>
 
         <div className='space-y-3'>
-          <label className='flex items-center text-sm font-medium text-slate-300'>
-            <Phone className='w-4 h-4 mr-2 text-emerald-400' />
-            Phone Number
-          </label>
-          <Input
-            name='phoneNumber'
-            required
-            placeholder='+1 (555) 123-4567'
-            className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-lg'
-          />
+          <PhoneNumberInputComponent />
         </div>
 
         <div className='space-y-3'>
-          <label className='flex items-center text-sm font-medium text-slate-300'>
+          <Label className='flex items-center text-sm font-medium text-slate-300'>
             <CreditCard className='w-4 h-4 mr-2 text-blue-400' />
             IBAN
-          </label>
-          <Input
-            name='iban'
-            required
+          </Label>
+          <GenericInputMaskComponent
             placeholder='GB29 NWBK 6016 1331 9268 19'
-            className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+            mask='AA99 9999 9999 9999 9999'
           />
         </div>
 
         <div className='space-y-3'>
-          <label className='flex items-center text-sm font-medium text-slate-300'>
-            <Hash className='w-4 h-4 mr-2 text-emerald-400' />
+          <Label className='flex items-center text-sm font-medium text-slate-300'>
+            <Hash className='w-4 h-4 mr-2 text-blue-400' />
             Company Registration Number
-          </label>
+          </Label>
           <Input
             name='companyNumber'
             required
