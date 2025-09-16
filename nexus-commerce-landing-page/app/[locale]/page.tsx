@@ -29,7 +29,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
@@ -48,12 +47,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from '@/components/ui/navigation-menu';
 
 const words = [
   'operations',
@@ -65,11 +58,15 @@ const words = [
 ];
 
 const navigationLinks = [
-  { href: '#modules', label: 'Modules', active: true },
+  { href: '#modules', label: 'Modules' },
   { href: '#features', label: 'Features' },
   { href: '#pricing', label: 'Pricing' },
-  { href: 'onboarding/address', label: 'Get Started' },
-];
+] as const;
+
+const primaryNavigationLink = {
+  href: 'onboarding/address',
+  label: 'Get Started',
+} as const;
 
 export default function LandingPage() {
   const router = useRouter();
@@ -92,10 +89,10 @@ export default function LandingPage() {
       setModules(moduleName);
     });
     setUserTier(userTiers);
-    router.push('onboarding/address');
+    router.push(primaryNavigationLink.href);
   };
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className='min-h-screen w-full bg-gradient-to-br from-slate-950 via-blue-950/50 to-emerald-950/30 text-white overflow-x-hidden'>
@@ -142,60 +139,50 @@ export default function LandingPage() {
                 Pricing
                 <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
               </Link>
-              <Button className='bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-6 py-3 font-semibold'>
-                Get Started
+              <Button
+                asChild
+                className='bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-6 py-3 font-semibold'
+              >
+                <Link href={primaryNavigationLink.href}>
+                  {primaryNavigationLink.label}
+                </Link>
               </Button>
             </nav>
-            <Popover>
+            <Popover open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <PopoverTrigger asChild>
                 <Button
                   className='group size-8 md:hidden'
                   variant='ghost'
                   size='icon'
+                  aria-label='Toggle navigation'
                 >
-                  <svg
-                    className='pointer-events-none'
-                    width={16}
-                    height={16}
-                    viewBox='0 0 24 24'
-                    fill='none'
-                    stroke='currentColor'
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      d='M4 12L20 12'
-                      className='origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]'
-                    />
-                    <path
-                      d='M4 12H20'
-                      className='origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45'
-                    />
-                    <path
-                      d='M4 12H20'
-                      className='origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]'
-                    />
-                  </svg>
+                  <Menu className='h-5 w-5' />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent align='start' className='w-36 p-1 md:hidden'>
-                <NavigationMenu className='max-w-none *:w-full'>
-                  <NavigationMenuList className='flex-col items-start gap-0 md:gap-2'>
-                    {navigationLinks.map((link, index) => (
-                      <NavigationMenuItem key={index} className='w-full'>
-                        <NavigationMenuLink
-                          href={link.href}
-                          className='py-1.5'
-                          active={link.active}
-                        >
-                          {link.label}
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    ))}
-                  </NavigationMenuList>
-                </NavigationMenu>
+              <PopoverContent align='end' className='w-52 p-3 md:hidden'>
+                <div className='grid gap-1'>
+                  {navigationLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className='flex items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800/60 focus:bg-slate-800/60 focus:outline-none'
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                  <Button
+                    asChild
+                    className='mt-2 w-full bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-4 py-2 font-semibold'
+                  >
+                    <Link
+                      href={primaryNavigationLink.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {primaryNavigationLink.label}
+                    </Link>
+                  </Button>
+                </div>
               </PopoverContent>
             </Popover>
           </div>
