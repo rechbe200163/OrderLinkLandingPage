@@ -14,8 +14,8 @@ export default function LandingPage() {
       <main className='w-full'>
         <ModulesSection />
         <FeatureSection />
-        <PricingSection />
         <ContactSection />
+        <PricingSection />
       </main>
 
       <FooterComponent />
