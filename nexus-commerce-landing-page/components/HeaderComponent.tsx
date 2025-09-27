@@ -11,7 +11,7 @@ const navigationLinks = [
 ] as const;
 
 const primaryNavigationLink = {
-  href: 'onboarding/address',
+  href: '/onboarding',
   label: 'Get Started',
 } as const;
 
@@ -115,3 +115,5 @@ const HeaderComponent = () => {
 };
 
 export default HeaderComponent;
+
+

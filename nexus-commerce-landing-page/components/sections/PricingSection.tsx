@@ -292,7 +292,7 @@ const PricingSection = () => {
                         : 'bg-slate-700 hover:bg-slate-600 text-white border border-blue-500/30'
                     } transition-all duration-300`}
                   >
-                    <Link href='/onboarding/address'>Paket wählen</Link>
+                    <Link href='/onboarding'>Paket wählen</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -305,3 +305,4 @@ const PricingSection = () => {
 };
 
 export default PricingSection;
+

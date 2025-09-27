@@ -47,7 +47,7 @@ export const MODULE_NAMES = [
 ] as const;
 export type ModuleName = (typeof MODULE_NAMES)[number];
 
-export interface CreateAddress {
+export interface OnboardingAddress {
   country: string;
   state: string;
   city: string;
@@ -56,22 +56,21 @@ export interface CreateAddress {
   streetNumber: string;
 }
 
-export interface CreateSiteConfig {
+export interface OnboardingSiteConfig {
   companyName: string;
   email: string;
   phoneNumber: string;
   iban: string;
   companyNumber: string;
-  addressId: string;
 }
 
-export interface Address {
-  addressId: string;
-  country: string;
-  state: string;
-  city: string;
-  postCode: string;
-  streetName: string;
-  streetNumber: string;
-  data?: any;
+export interface CreateOnboardingDto {
+  siteConfig: OnboardingSiteConfig;
+  address: OnboardingAddress;
 }
+
+export interface Address extends OnboardingAddress {
+  addressId: string;
+  data?: unknown;
+}
+

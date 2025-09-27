@@ -9,7 +9,13 @@ import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
-export default function PhoneNumberInputComponent() {
+type PhoneNumberInputProps = {
+  name?: string;
+};
+
+export default function PhoneNumberInputComponent({
+  name = 'phoneNumber',
+}: PhoneNumberInputProps) {
   const id = useId();
   const [value, setValue] = useState('');
 
@@ -20,19 +26,22 @@ export default function PhoneNumberInputComponent() {
         className='flex items-center text-sm font-medium text-slate-300'
       >
         <Phone className='w-4 h-4 mr-2 text-blue-400' />
-        Phone Number
+        Phone Number <span className='text-red-400 ml-1'>*</span>
       </Label>
       <RPNInput.default
         className='flex shadow-xs'
         international
+        name={name}
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
         inputComponent={PhoneInput}
         id={id}
+        required
         placeholder='+1 555 555 5555'
         value={value}
         onChange={(newValue) => setValue(newValue ?? '')}
       />
+      <input type='hidden' name={name} value={value} />
     </div>
   );
 }

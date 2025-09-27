@@ -135,7 +135,7 @@ const LocationSelector = ({
   };
 
   return (
-    <div className='flex gap-4'>
+    <div className='grid grid-cols-2 gap-6 '>
       <input type='hidden' name='country' value={selectedCountry?.name || ''} />
       <input type='hidden' name='state' value={selectedState?.name || ''} />
 
@@ -148,7 +148,7 @@ const LocationSelector = ({
             aria-expanded={openCountryDropdown}
             disabled={disabled}
             className={cn(
-              'w-full justify-between text-left font-normal',
+              'w-full justify-between text-left font-normal bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-lg',
               !selectedCountry && 'text-muted-foreground'
             )}
           >
@@ -212,7 +212,7 @@ const LocationSelector = ({
               aria-expanded={openStateDropdown}
               disabled={!selectedCountry}
               className={cn(
-                'w-full justify-between text-left font-normal',
+                'w-full justify-between text-left font-normal bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-lg',
                 !selectedState && 'text-muted-foreground'
               )}
             >
