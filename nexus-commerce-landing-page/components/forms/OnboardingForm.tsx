@@ -1,7 +1,6 @@
 'use client';
 
-import { useActionState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useActionState } from 'react';
 import {
   Loader2Icon,
   Building2,
@@ -31,7 +30,6 @@ import GenericInputMaskComponent from '@/components/InputWithMask';
 const initialState: FormState = { success: false };
 
 export default function OnboardingForm() {
-  const router = useRouter();
   const [state, formAction, isPending] = useActionState(
     finalizeOnboarding,
     initialState

@@ -74,3 +74,11 @@ export interface Address extends OnboardingAddress {
   data?: unknown;
 }
 
+export interface CreateAddress {
+  country: string;
+  state: string;
+  city: string;
+  postCode: string;
+  streetName: string;
+  streetNumber: string;
+}
