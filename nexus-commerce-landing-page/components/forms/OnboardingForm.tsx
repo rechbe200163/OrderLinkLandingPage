@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
 import {
   Loader2Icon,
   Building2,
@@ -26,14 +26,23 @@ import { Label } from '@/components/ui/label';
 import LocationSelector from '@/components/ui/location-input';
 import PhoneNumberInputComponent from '@/components/PhoneNumberInputComponent';
 import GenericInputMaskComponent from '@/components/InputWithMask';
+import { redirect } from 'next/dist/server/api-utils';
+import { useRouter } from 'next/navigation';
 
 const initialState: FormState = { success: false };
 
 export default function OnboardingForm() {
+  const router = useRouter();
   const [state, formAction, isPending] = useActionState(
     finalizeOnboarding,
     initialState
   );
+
+  useEffect(() => {
+    if (state.success && process.env.NEXT_PUBLIC_ADMIN_URL) {
+      router.push(process.env.NEXT_PUBLIC_ADMIN_URL);
+    }
+  }, [state]);
 
   return (
     <div className='relative group'>

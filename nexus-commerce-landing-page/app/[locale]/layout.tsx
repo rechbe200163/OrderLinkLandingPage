@@ -4,6 +4,7 @@ import { routing } from '@/i18n/routing';
 import '../globals.css';
 import { ThemeProvider } from '@/components/ui/dark-mode/theme-provider';
 import { Toaster } from 'sonner';
+import { envSet } from '@/lib/utils';
 export default async function LocaleLayout({
   children,
   params,
@@ -18,6 +19,7 @@ export default async function LocaleLayout({
   }
   console.log('LocaleLayout', locale);
 
+  if (!envSet()) throw new Error('Missing environment variables');
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
