@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useEffect } from 'react';
+import { useActionState } from 'react';
 import {
   Loader2Icon,
   Building2,
@@ -9,6 +9,8 @@ import {
   PenLine,
   Hash,
   CreditCard,
+  CheckCircle2,
+  MailCheck,
 } from 'lucide-react';
 
 import { finalizeOnboarding } from '@/lib/actions/onboarding.actions';
@@ -26,23 +28,77 @@ import { Label } from '@/components/ui/label';
 import LocationSelector from '@/components/ui/location-input';
 import PhoneNumberInputComponent from '@/components/PhoneNumberInputComponent';
 import GenericInputMaskComponent from '@/components/InputWithMask';
-import { redirect } from 'next/dist/server/api-utils';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const initialState: FormState = { success: false };
 
 export default function OnboardingForm() {
-  const router = useRouter();
   const [state, formAction, isPending] = useActionState(
     finalizeOnboarding,
     initialState
   );
 
-  useEffect(() => {
-    if (state.success && process.env.NEXT_PUBLIC_ADMIN_URL) {
-      router.push(process.env.NEXT_PUBLIC_ADMIN_URL);
-    }
-  }, [state]);
+  if (state.success) {
+    return (
+      <div className='relative group'>
+        <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
+        <Card className='relative bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-500/30 rounded-3xl overflow-hidden text-white'>
+          <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-3xl'></div>
+          <div className='absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-tr-2xl'></div>
+
+          <CardHeader className='pb-8 relative z-10'>
+            <div className='flex flex-col items-center gap-5 text-center'>
+              <div className='relative'>
+                <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
+                <div className='relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
+                  <CheckCircle2 className='h-8 w-8 text-white' />
+                </div>
+              </div>
+              <div>
+                <CardTitle className='text-3xl font-bold bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+                  You're all set!
+                </CardTitle>
+                <CardDescription className='text-slate-200 text-base mt-2'>
+                  We received your company information and are preparing your account.
+                </CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+
+          <CardContent className='relative z-10 pb-12'>
+            <div className='space-y-6 text-slate-200 text-center'>
+              <div className='mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600/20 border border-blue-400/40'>
+                <MailCheck className='h-7 w-7 text-blue-200' />
+              </div>
+              <p className='text-lg leading-relaxed'>
+                Please check your email for a confirmation message with next steps. It includes everything you need to activate your OrderLink workspace.
+              </p>
+              {state.message ? (
+                <div className='rounded-xl border border-blue-500/40 bg-blue-500/10 px-5 py-4 text-sm text-blue-100'>
+                  {state.message}
+                </div>
+              ) : null}
+              <div className='flex flex-col items-center gap-3'>
+                {process.env.NEXT_PUBLIC_ADMIN_URL ? (
+                  <Button
+                    asChild
+                    className='group flex items-center justify-center overflow-hidden transition-all duration-500 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 rounded-2xl px-8 py-4 font-semibold text-lg'
+                  >
+                    <Link href={process.env.NEXT_PUBLIC_ADMIN_URL}>
+                      Open OrderLink Admin
+                    </Link>
+                  </Button>
+                ) : null}
+                <p className='text-sm text-slate-400'>
+                  Can't find the email? Remember to check your spam folder or contact support.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className='relative group'>
