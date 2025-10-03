@@ -56,10 +56,11 @@ export default function OnboardingForm() {
               </div>
               <div>
                 <CardTitle className='text-3xl font-bold bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-                  You're all set!
+                  You&apos;re all set!
                 </CardTitle>
                 <CardDescription className='text-slate-200 text-base mt-2'>
-                  We received your company information and are preparing your account.
+                  We received your company information and are preparing your
+                  account.
                 </CardDescription>
               </div>
             </div>
@@ -71,7 +72,9 @@ export default function OnboardingForm() {
                 <MailCheck className='h-7 w-7 text-blue-200' />
               </div>
               <p className='text-lg leading-relaxed'>
-                Please check your email for a confirmation message with next steps. It includes everything you need to activate your OrderLink workspace.
+                Please check your email for a confirmation message with next
+                steps. It includes everything you need to activate your
+                OrderLink workspace.
               </p>
               {state.message ? (
                 <div className='rounded-xl border border-blue-500/40 bg-blue-500/10 px-5 py-4 text-sm text-blue-100'>
@@ -90,7 +93,8 @@ export default function OnboardingForm() {
                   </Button>
                 ) : null}
                 <p className='text-sm text-slate-400'>
-                  Can't find the email? Remember to check your spam folder or contact support.
+                  Can&apos;t find the email? Remember to check your spam folder
+                  or contact support.
                 </p>
               </div>
             </div>
