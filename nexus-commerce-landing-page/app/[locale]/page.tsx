@@ -5,6 +5,7 @@ import PricingSection from '@/components/sections/PricingSection';
 import FeatureSection from '@/components/sections/FeatureSection';
 import ModulesSection from '@/components/sections/ModulesSection';
 import FooterComponent from '@/components/FooterComponent';
+import MainSection from '@/components/sections/MainSection';
 
 export default function LandingPage() {
   return (
@@ -12,6 +13,7 @@ export default function LandingPage() {
       <HeaderComponent />
 
       <main className='w-full'>
+        <MainSection />
         <ModulesSection />
         <FeatureSection />
         <ContactSection />
