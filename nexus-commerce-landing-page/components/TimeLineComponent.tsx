@@ -20,6 +20,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { cn } from '@/lib/utils'; // optional, falls du eine cn util hast
+import Link from 'next/link';
 
 type TimelineItemType = {
   id: number;
@@ -150,18 +151,18 @@ export default function HowItWorks() {
       </Timeline>
 
       <div className='mt-12 flex flex-wrap items-center justify-center gap-3'>
-        <a
+        <Link
           href='/signup'
           className='inline-flex items-center rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:opacity-90'
         >
           Gratis testen (14 Tage)
-        </a>
-        <a
+        </Link>
+        <Link
           href='/pricing'
           className='inline-flex items-center rounded-xl border px-4 py-2 text-sm font-medium hover:bg-accent'
         >
           Preise & Pakete ansehen
-        </a>
+        </Link>
       </div>
     </section>
   );

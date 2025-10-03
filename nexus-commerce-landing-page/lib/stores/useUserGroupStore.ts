@@ -13,7 +13,7 @@ export const useUserTierStore = create<UserTierStore>()(
     (set) => ({
       userTier: null,
       addUserTier: (group: UserTier) =>
-        set((state) => ({
+        set((_state) => ({
           userTier: group,
         })),
       resetUserTier: () => set({ userTier: null }),
