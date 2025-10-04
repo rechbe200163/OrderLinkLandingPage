@@ -1,9 +1,12 @@
-import React from 'react';
+﻿import React from 'react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { Rocket } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
-const ContactSection = () => {
+const ContactSection = async () => {
+  const t = await getTranslations('ContactSection');
+
   return (
     <section
       id='contact'
@@ -15,11 +18,10 @@ const ContactSection = () => {
       <div className='container relative'>
         <div className='flex flex-col items-center justify-center space-y-10 text-center max-w-4xl mx-auto'>
           <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-            Ready to streamline your business?
+            {t('title')}
           </h2>
           <p className='max-w-[700px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
-            Join thousands of businesses already using OrderLink to manage their
-            operations more efficiently.
+            {t('description')}
           </p>
           <div className='flex flex-col gap-6 min-[400px]:flex-row'>
             <Button
@@ -28,7 +30,7 @@ const ContactSection = () => {
               className='px-12 py-6 text-xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 rounded-2xl text-white font-bold'
             >
               <Link href='#pricing'>
-                Start Your Free Trial <Rocket className='ml-3 h-6 w-6' />
+                {t('primaryCta')} <Rocket className='ml-3 h-6 w-6' />
               </Link>
             </Button>
             <Button
@@ -37,7 +39,7 @@ const ContactSection = () => {
               size='lg'
               className='px-12 py-6 text-xl border-2 border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300 bg-slate-950/50 backdrop-blur-sm text-blue-200 hover:text-white rounded-2xl font-semibold'
             >
-              <Link href='#modules'>Learn More</Link>
+              <Link href='#modules'>{t('secondaryCta')}</Link>
             </Button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Settings, Rocket, Star } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,16 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
-const words = [
-  'operations',
-  'logistics',
-  'business',
-  'delivery',
-  'growth',
-  'success',
-];
+import { getTranslations } from 'next-intl/server';
 
-const MainSection = () => {
+const MainSection = async () => {
+  const t = await getTranslations('MainSection');
+  const words = t.raw('heading.words') as string[];
+
   return (
     <section className='relative w-full py-24 md:py-32 lg:py-48 overflow-hidden'>
       <BackgroundBeams />
@@ -31,11 +27,11 @@ const MainSection = () => {
                 className='w-fit mx-auto lg:mx-0 bg-gradient-to-r from-blue-900/50 to-emerald-900/50 text-blue-200 border-blue-500/30 rounded-full px-6 py-3 text-sm font-medium'
               >
                 <Settings className='w-4 h-4 mr-2' />
-                Complete Business Management
+                {t('badge')}
               </Badge>
               <h1 className='text-5xl font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl leading-none'>
                 <span className='bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-                  Streamline your{' '}
+                  {t('heading.prefix')}{' '}
                 </span>
                 <br />
                 <span className='inline-block'>
@@ -46,9 +42,7 @@ const MainSection = () => {
                 </span>
               </h1>
               <p className='max-w-[600px] text-slate-300 text-xl md:text-2xl leading-relaxed mx-auto lg:mx-0 font-light'>
-                Comprehensive logistics and business management platform.
-                OrderLink integrates all your operations from admin tools to
-                delivery tracking in one powerful solution.
+                {t('description')}
               </p>
             </div>
             <div className='flex flex-col gap-6 min-[400px]:flex-row justify-center lg:justify-start'>
@@ -58,7 +52,7 @@ const MainSection = () => {
                 className='px-10 py-6 text-xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 rounded-2xl text-white font-bold'
               >
                 <Link href='#contact'>
-                  Start Managing <Rocket className='ml-3 h-6 w-6' />
+                  {t('primaryCta')} <Rocket className='ml-3 h-6 w-6' />
                 </Link>
               </Button>
               <Button
@@ -67,14 +61,14 @@ const MainSection = () => {
                 size='lg'
                 className='px-10 py-6 text-xl border-2 border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300 bg-slate-950/50 backdrop-blur-sm text-blue-200 hover:text-white rounded-2xl font-semibold'
               >
-                <Link href='#modules'>View Modules</Link>
+                <Link href='#modules'>{t('secondaryCta')}</Link>
               </Button>
             </div>
             <div className='flex items-center gap-12 pt-6 justify-center lg:justify-start'>
               <div className='flex items-center gap-3'>
                 <div className='w-3 h-3 bg-emerald-400 rounded-full animate-pulse'></div>
                 <span className='text-slate-400 font-medium'>
-                  10K+ Orders Daily
+                  {t('stats.orders')}
                 </span>
               </div>
               <div className='flex items-center gap-3'>
@@ -86,7 +80,9 @@ const MainSection = () => {
                     />
                   ))}
                 </div>
-                <span className='text-slate-400 font-medium'>5.0 Rating</span>
+                <span className='text-slate-400 font-medium'>
+                  {t('stats.rating')}
+                </span>
               </div>
             </div>
           </div>
@@ -97,7 +93,7 @@ const MainSection = () => {
               <div className='absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-2xl opacity-70 animate-pulse'></div>
               <Image
                 src='/dashboard-preview-1.png'
-                alt='OrderLink Dashboard'
+                alt={t('imageAlt')}
                 width={800}
                 height={600}
                 className='relative rounded-md shadow-2xl border border-slate-700/50 backdrop-blur-sm'

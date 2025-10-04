@@ -1,59 +1,252 @@
 {
-  "nav": {
-    "features": "Features",
-    "benefits": "Benefits",
-    "pricing": "Pricing",
-    "testimonials": "Testimonials",
-    "contact": "Contact",
-    "contactSales": "Contact Sales",
-    "getStarted": "Get Started"
-  },
-  "hero": {
-    "badge": "Complete Business Solution",
-    "title": "Transform Your",
-    "desc": "Streamline your entire business with our comprehensive platform featuring admin tools, e-commerce, delivery navigation, and powerful analytics.",
-    "cta": "Start Free Trial",
-    "learnMore": "Learn More",
-    "words": {
-      "workflows": "Workflows",
-      "logistics": "Logistics",
-      "inventory": "Inventory",
-      "deliveries": "Deliveries",
-      "insights": "Insights",
-      "growth": "Growth"
+  "HeaderComponent": {
+    "brand": {
+      "name": "OrderLink",
+      "tagline": "LOGISTICS PLATFORM"
     },
-    "statCompanies": "500+ Companies",
-    "statRating": "4.9/5 Rating"
+    "navigation": {
+      "modules": "Modules",
+      "features": "Features",
+      "pricing": "Pricing"
+    },
+    "primaryCta": "Get Started",
+    "mobileToggleAria": "Toggle navigation"
   },
-  "featuresSection": {
-    "badge": "Powerful Features",
-    "title": "Everything You Need in One Platform",
-    "desc": "Our comprehensive suite of tools covers every aspect of your logistics and e-commerce operations."
+  "MainSection": {
+    "badge": "Complete Business Management",
+    "heading": {
+      "prefix": "Streamline your",
+      "words": [
+        "operations",
+        "logistics",
+        "business",
+        "delivery",
+        "growth",
+        "success"
+      ]
+    },
+    "description": "Comprehensive logistics and business management platform. OrderLink integrates all your operations from admin tools to delivery tracking in one powerful solution.",
+    "primaryCta": "Start Managing",
+    "secondaryCta": "View Modules",
+    "stats": {
+      "orders": "10K+ Orders Daily",
+      "rating": "5.0 Rating"
+    },
+    "imageAlt": "OrderLink dashboard preview"
   },
-  "benefitsSection": {
+  "ModulesSection": {
+    "badge": "Core Modules",
+    "title": "Everything you need to manage your business",
+    "description": "Four powerful modules that work together seamlessly to handle every aspect of your logistics and business operations.",
+    "modules": [
+      {
+        "name": "Admin Tool",
+        "subtitle": "Complete business administration",
+        "features": [
+          "User management",
+          "System configuration",
+          "Access control",
+          "Audit logging"
+        ]
+      },
+      {
+        "name": "Web Shop",
+        "subtitle": "Integrated e-commerce capabilities",
+        "features": [
+          "Product catalog",
+          "Order processing",
+          "Payment integration",
+          "Customer accounts"
+        ]
+      },
+      {
+        "name": "Delivery Navigation",
+        "subtitle": "Smart logistics routing",
+        "features": [
+          "Route optimization",
+          "Real-time tracking",
+          "Driver management",
+          "Delivery scheduling"
+        ]
+      },
+      {
+        "name": "Data Analysis",
+        "subtitle": "Business intelligence",
+        "features": [
+          "Performance metrics",
+          "Custom reports",
+          "Trend analysis",
+          "Data visualization"
+        ]
+      }
+    ]
+  },
+  "FeatureSection": {
     "badge": "Key Benefits",
-    "title": "Why Choose OrderLink?",
-    "desc": "Transform your business operations with measurable results and improved efficiency."
+    "title": "Why businesses choose OrderLink",
+    "description": "Streamline operations, reduce costs, and scale your business with our comprehensive logistics platform.",
+    "features": [
+      {
+        "title": "Operational Efficiency",
+        "description": "Streamline all business processes with integrated modules that eliminate redundancy and boost productivity across your organization."
+      },
+      {
+        "title": "Scalable Growth",
+        "description": "Grow your business confidently with a platform that scales seamlessly from startup to enterprise-level operations."
+      },
+      {
+        "title": "Real-time Insights",
+        "description": "Make informed decisions with comprehensive analytics and reporting that provide instant visibility into your operations."
+      },
+      {
+        "title": "Secure & Reliable",
+        "description": "Trust your business data with enterprise-grade security, regular backups, and a 99.9% uptime guarantee."
+      },
+      {
+        "title": "Team Collaboration",
+        "description": "Enable seamless collaboration across departments with role-based access and integrated communication tools."
+      },
+      {
+        "title": "Process Automation",
+        "description": "Automate repetitive tasks and workflows to reduce manual errors and free up your team for strategic work."
+      }
+    ]
   },
-  "contactSection": {
-    "badge": "Get Started Today",
-    "headline": "Ready to Transform Your Business?",
-    "desc": "Join hundreds of companies already using OrderLink to streamline their operations and boost efficiency.",
-    "cta": "Start Free Trial",
-    "scheduleDemo": "Schedule Demo",
-    "responseTime": "Get a response within 24 hours • No credit card required"
+  "ContactSection": {
+    "title": "Ready to streamline your business?",
+    "description": "Join thousands of businesses already using OrderLink to manage their operations more efficiently.",
+    "primaryCta": "Start Your Free Trial",
+    "secondaryCta": "Learn More"
   },
-  "footer": {
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "cookiePolicy": "Cookie Policy",
-    "contact": "Contact",
-    "product": "Product",
-    "company": "Company",
-    "legal": "Legal",
-    "integrations": "Integrations",
-    "aboutUs": "About Us",
-    "careers": "Careers",
-    "rights": "© 2024 OrderLink. All rights reserved."
+  "PricingSection": {
+    "badge": "Flexible Pricing",
+    "title": "Modular & Transparent",
+    "description": "Pay only for what you need - mix and match modules and user seats to fit your operations.",
+    "modulesCard": {
+      "title": "Modules",
+      "subtitle": "Monthly pricing per tenant",
+      "items": [
+        {
+          "name": "Core",
+          "note": "(AdminTool base)",
+          "price": "Included"
+        },
+        {
+          "name": "Insight",
+          "note": "(Analytics)",
+          "price": "+10 €"
+        },
+        {
+          "name": "Flow",
+          "note": "(Delivery planning & app)",
+          "price": "+15 €"
+        },
+        {
+          "name": "Access",
+          "note": "(Custom roles & permissions)",
+          "price": "+5 €"
+        }
+      ]
+    },
+    "usersCard": {
+      "title": "Users",
+      "subtitle": "Monthly price per active user",
+      "items": [
+        {
+          "name": "Core",
+          "note": "(up to 3 users)",
+          "price": "Included"
+        },
+        {
+          "name": "Team",
+          "note": "(up to 5 users)",
+          "price": "+5 €"
+        },
+        {
+          "name": "Pro",
+          "note": "(up to 7 users)",
+          "price": "+10 €"
+        },
+        {
+          "name": "Enterprise",
+          "note": "(from 10 users)",
+          "price": "Custom"
+        }
+      ]
+    },
+    "setup": {
+      "title": "One-time setup",
+      "description": "Covers hosting, domain, initial configuration & infrastructure",
+      "price": "+49 € one-time"
+    },
+    "packages": {
+      "title": "Example packages",
+      "billingPeriod": "/Month",
+      "popularBadge": "Popular",
+      "cta": "Choose plan",
+      "items": [
+        {
+          "name": "Core",
+          "price": "0 €",
+          "features": [
+            "AdminTool (up to 3 users)"
+          ]
+        },
+        {
+          "name": "Insight Core",
+          "price": "10 €",
+          "features": [
+            "AdminTool",
+            "Insight",
+            "3 users"
+          ]
+        },
+        {
+          "name": "Full Pro",
+          "price": "30 €",
+          "features": [
+            "All modules",
+            "up to 7 users"
+          ]
+        }
+      ]
+    }
+  },
+  "FooterComponent": {
+    "brand": {
+      "tagline": "LOGISTICS PLATFORM",
+      "description": "Comprehensive business management platform for modern logistics operations.",
+      "name": "OrderLink"
+    },
+    "columns": {
+      "modules": {
+        "title": "Modules",
+        "links": {
+          "adminTool": "Admin Tool",
+          "webShop": "Web Shop",
+          "deliveryNavigation": "Delivery Navigation",
+          "dataAnalysis": "Data Analysis"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About Us",
+          "careers": "Careers",
+          "contact": "Contact",
+          "blog": "Blog"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "docs": "Documentation",
+          "helpCenter": "Help Center",
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Service"
+        }
+      }
+    },
+    "bottomNote": "© 2024 OrderLink. All rights reserved."
   }
 }

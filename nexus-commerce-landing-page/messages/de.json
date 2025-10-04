@@ -1,59 +1,252 @@
 {
-  "nav": {
-    "features": "Funktionen",
-    "benefits": "Vorteile",
-    "pricing": "Preise",
-    "testimonials": "Kundenstimmen",
-    "contact": "Kontakt",
-    "contactSales": "Vertrieb kontaktieren",
-    "getStarted": "Jetzt starten"
-  },
-  "hero": {
-    "badge": "Umfassende Geschäftslösung",
-    "title": "Digitalisieren Sie Ihr Unternehmen",
-    "desc": "Optimieren Sie Ihr gesamtes Unternehmen mit unserer umfassenden Plattform, die Admin-Tools, E-Commerce, Liefernavigation und leistungsstarke Analysen bietet.",
-    "cta": "Kostenlose Testversion starten",
-    "learnMore": "Mehr erfahren",
-    "words": {
-      "workflows": "Arbeitsabläufe",
-      "logistics": "Logistik",
-      "inventory": "Bestand",
-      "deliveries": "Lieferungen",
-      "insights": "Statistiken",
-      "growth": "Wachstum"
+  "HeaderComponent": {
+    "brand": {
+      "name": "OrderLink",
+      "tagline": "LOGISTIKPLATTFORM"
     },
-    "statCompanies": "500+ Unternehmen",
-    "statRating": "4,9/5 Bewertung"
+    "navigation": {
+      "modules": "Module",
+      "features": "Funktionen",
+      "pricing": "Preise"
+    },
+    "primaryCta": "Jetzt starten",
+    "mobileToggleAria": "Navigation umschalten"
   },
-  "featuresSection": {
-    "badge": "Leistungsstarke Funktionen",
-    "title": "Alles, was Sie brauchen, in einer Plattform",
-    "desc": "Unsere umfassende Suite deckt jeden Aspekt Ihrer Logistik- und E-Commerce-Operationen ab."
+  "MainSection": {
+    "badge": "Umfassendes Unternehmensmanagement",
+    "heading": {
+      "prefix": "Optimieren Sie Ihre",
+      "words": [
+        "Abläufe",
+        "Logistik",
+        "Unternehmen",
+        "Lieferungen",
+        "Wachstum",
+        "Erfolge"
+      ]
+    },
+    "description": "Umfassende Plattform für Logistik- und Unternehmenssteuerung. OrderLink bündelt alle Abläufe von Administration bis Lieferverfolgung in einer leistungsstarken Lösung.",
+    "primaryCta": "Verwaltung starten",
+    "secondaryCta": "Module ansehen",
+    "stats": {
+      "orders": "10.000+ Bestellungen täglich",
+      "rating": "Bewertung 5,0"
+    },
+    "imageAlt": "OrderLink Dashboard-Vorschau"
   },
-  "benefitsSection": {
+  "ModulesSection": {
+    "badge": "Kernmodule",
+    "title": "Alles, was Sie für Ihre Unternehmenssteuerung brauchen",
+    "description": "Vier leistungsstarke Module arbeiten nahtlos zusammen und decken jeden Bereich Ihrer Logistik- und Geschäftsprozesse ab.",
+    "modules": [
+      {
+        "name": "Admin Tool",
+        "subtitle": "Umfassende Unternehmensverwaltung",
+        "features": [
+          "Benutzerverwaltung",
+          "Systemkonfiguration",
+          "Zugriffskontrolle",
+          "Audit-Logging"
+        ]
+      },
+      {
+        "name": "Web Shop",
+        "subtitle": "Integrierte E-Commerce-Funktionen",
+        "features": [
+          "Produktkatalog",
+          "Bestellabwicklung",
+          "Zahlungsintegration",
+          "Kundenkonten"
+        ]
+      },
+      {
+        "name": "Delivery Navigation",
+        "subtitle": "Intelligente Tourenplanung",
+        "features": [
+          "Routenoptimierung",
+          "Echtzeit-Tracking",
+          "Fahrermanagement",
+          "Lieferterminplanung"
+        ]
+      },
+      {
+        "name": "Data Analysis",
+        "subtitle": "Business Intelligence",
+        "features": [
+          "Leistungskennzahlen",
+          "Individuelle Berichte",
+          "Trendanalysen",
+          "Datenvisualisierung"
+        ]
+      }
+    ]
+  },
+  "FeatureSection": {
     "badge": "Wichtige Vorteile",
-    "title": "Warum OrderLink wählen?",
-    "desc": "Transformieren Sie Ihre Geschäftsabläufe mit messbaren Ergebnissen und verbesserter Effizienz."
+    "title": "Warum Unternehmen OrderLink wählen",
+    "description": "Optimieren Sie Abläufe, senken Sie Kosten und skalieren Sie Ihr Geschäft mit unserer umfassenden Logistikplattform.",
+    "features": [
+      {
+        "title": "Betriebliche Effizienz",
+        "description": "Integrierte Module beseitigen Redundanzen und steigern die Produktivität in allen Bereichen."
+      },
+      {
+        "title": "Skalierbares Wachstum",
+        "description": "Wachsen Sie sicher mit einer Plattform, die vom Start-up bis zum Enterprise skaliert."
+      },
+      {
+        "title": "Echtzeit-Einblicke",
+        "description": "Fundierte Entscheidungen dank umfassender Analysen und Berichte mit sofortiger Transparenz."
+      },
+      {
+        "title": "Sicher & Zuverlässig",
+        "description": "Unternehmenssicherheit, regelmäßige Backups und 99,9 % Verfügbarkeit schützen Ihre Daten."
+      },
+      {
+        "title": "Teamzusammenarbeit",
+        "description": "Nahtlose Zusammenarbeit mit rollenbasiertem Zugriff und integrierten Kommunikationstools."
+      },
+      {
+        "title": "Prozessautomatisierung",
+        "description": "Automatisieren Sie Routineaufgaben, reduzieren Sie Fehler und gewinnen Sie Zeit für Strategie."
+      }
+    ]
   },
-  "contactSection": {
-    "badge": "Jetzt starten",
-    "headline": "Bereit, Ihr Geschäft zu transformieren?",
-    "desc": "Schließen Sie sich hunderten Unternehmen an, die bereits OrderLink nutzen, um ihre Abläufe zu optimieren und die Effizienz zu steigern.",
-    "cta": "Kostenlose Testversion starten",
-    "scheduleDemo": "Demo vereinbaren",
-    "responseTime": "Antwort innerhalb von 24 Stunden • Keine Kreditkarte erforderlich"
+  "ContactSection": {
+    "title": "Bereit, Ihr Geschäft zu optimieren?",
+    "description": "Schließen Sie sich tausenden Unternehmen an, die OrderLink für effizientere Abläufe nutzen.",
+    "primaryCta": "Kostenlose Testversion starten",
+    "secondaryCta": "Mehr erfahren"
   },
-  "footer": {
-    "privacy": "Datenschutz",
-    "terms": "Nutzungsbedingungen",
-    "cookiePolicy": "Cookie-Richtlinie",
-    "contact": "Kontakt",
-    "product": "Produkt",
-    "company": "Unternehmen",
-    "legal": "Rechtliches",
-    "integrations": "Integrationen",
-    "aboutUs": "Über uns",
-    "careers": "Karriere",
-    "rights": "© 2024 OrderLink. Alle Rechte vorbehalten."
+  "PricingSection": {
+    "badge": "Flexible Preisgestaltung",
+    "title": "Modular & Transparent",
+    "description": "Zahlen Sie nur, was Sie brauchen - kombinieren Sie Module und Nutzerlizenzen passgenau.",
+    "modulesCard": {
+      "title": "Module",
+      "subtitle": "Monatspreise pro Mandant",
+      "items": [
+        {
+          "name": "Core",
+          "note": "(AdminTool Basis)",
+          "price": "Inklusive"
+        },
+        {
+          "name": "Insight",
+          "note": "(Statistiken)",
+          "price": "+10 €"
+        },
+        {
+          "name": "Flow",
+          "note": "(Lieferplanung & App)",
+          "price": "+15 €"
+        },
+        {
+          "name": "Access",
+          "note": "(Individuelle Rollen & Rechte)",
+          "price": "+5 €"
+        }
+      ]
+    },
+    "usersCard": {
+      "title": "Nutzer",
+      "subtitle": "Monatsbetrag pro aktivem Nutzer",
+      "items": [
+        {
+          "name": "Core",
+          "note": "(bis 3 Nutzer)",
+          "price": "Inklusive"
+        },
+        {
+          "name": "Team",
+          "note": "(bis 5 Nutzer)",
+          "price": "+5 €"
+        },
+        {
+          "name": "Pro",
+          "note": "(bis 7 Nutzer)",
+          "price": "+10 €"
+        },
+        {
+          "name": "Enterprise",
+          "note": "(ab 10 Nutzer)",
+          "price": "Individuell"
+        }
+      ]
+    },
+    "setup": {
+      "title": "Einmalige Einrichtung",
+      "description": "Für Hosting, Domain, Grundkonfiguration und Infrastruktur",
+      "price": "+49 € einmalig"
+    },
+    "packages": {
+      "title": "Beispielpakete",
+      "billingPeriod": "/Monat",
+      "popularBadge": "Beliebt",
+      "cta": "Paket wählen",
+      "items": [
+        {
+          "name": "Core",
+          "price": "0 €",
+          "features": [
+            "AdminTool (bis 3 Nutzer)"
+          ]
+        },
+        {
+          "name": "Insight Core",
+          "price": "10 €",
+          "features": [
+            "AdminTool",
+            "Insight",
+            "3 Nutzer"
+          ]
+        },
+        {
+          "name": "Full Pro",
+          "price": "30 €",
+          "features": [
+            "Alle Module",
+            "bis 7 Nutzer"
+          ]
+        }
+      ]
+    }
+  },
+  "FooterComponent": {
+    "brand": {
+      "tagline": "LOGISTIKPLATTFORM",
+      "description": "Umfassende Plattform für moderne Logistik- und Geschäftsprozesse.",
+      "name": "OrderLink"
+    },
+    "columns": {
+      "modules": {
+        "title": "Module",
+        "links": {
+          "adminTool": "Admin Tool",
+          "webShop": "Webshop",
+          "deliveryNavigation": "Liefernavigation",
+          "dataAnalysis": "Datenanalyse"
+        }
+      },
+      "company": {
+        "title": "Unternehmen",
+        "links": {
+          "about": "Über uns",
+          "careers": "Karriere",
+          "contact": "Kontakt",
+          "blog": "Blog"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "docs": "Dokumentation",
+          "helpCenter": "Hilfecenter",
+          "privacy": "Datenschutz",
+          "terms": "Nutzungsbedingungen"
+        }
+      }
+    },
+    "bottomNote": "© 2024 OrderLink. Alle Rechte vorbehalten."
   }
 }

@@ -1,22 +1,30 @@
-'use client';
+﻿'use client';
 import { Menu, Package } from 'lucide-react';
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import Link from 'next/link';
-const navigationLinks = [
-  { href: '#modules', label: 'Modules' },
-  { href: '#features', label: 'Features' },
-  { href: '#pricing', label: 'Pricing' },
-] as const;
+import { useTranslations } from 'next-intl';
 
-const primaryNavigationLink = {
-  href: '/onboarding',
-  label: 'Get Started',
-} as const;
+const navigationItems = [
+  { href: '#modules', key: 'modules' },
+  { href: '#features', key: 'features' },
+  { href: '#pricing', key: 'pricing' },
+] as const;
 
 const HeaderComponent = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations('HeaderComponent');
+
+  const navLinks = navigationItems.map((item) => ({
+    href: item.href,
+    label: t(`navigation.${item.key}`),
+  }));
+
+  const primaryNavigationLink = {
+    href: '/onboarding',
+    label: t('primaryCta'),
+  } as const;
 
   return (
     <header className='sticky top-0 z-50 w-full border-b border-blue-500/20 bg-slate-950/80 backdrop-blur-2xl'>
@@ -33,35 +41,24 @@ const HeaderComponent = () => {
             </div>
             <div className='flex flex-col'>
               <span className='text-2xl font-black bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-                OrderLink
+                {t('brand.name')}
               </span>
               <span className='text-xs text-blue-300 font-medium tracking-wider'>
-                LOGISTICS PLATFORM
+                {t('brand.tagline')}
               </span>
             </div>
           </div>
           <nav className='hidden md:flex items-center space-x-8'>
-            <Link
-              href='#modules'
-              className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
-            >
-              Modules
-              <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
-            </Link>
-            <Link
-              href='#features'
-              className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
-            >
-              Features
-              <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
-            </Link>
-            <Link
-              href='#pricing'
-              className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
-            >
-              Pricing
-              <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
+              >
+                {link.label}
+                <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
+              </Link>
+            ))}
             <Button
               asChild
               className='bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-6 py-3 font-semibold'
@@ -77,14 +74,14 @@ const HeaderComponent = () => {
                 className='group size-8 md:hidden'
                 variant='ghost'
                 size='icon'
-                aria-label='Toggle navigation'
+                aria-label={t('mobileToggleAria')}
               >
                 <Menu className='h-5 w-5' />
               </Button>
             </PopoverTrigger>
             <PopoverContent align='end' className='w-52 p-3 md:hidden'>
               <div className='grid gap-1'>
-                {navigationLinks.map((link) => (
+                {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -115,5 +112,3 @@ const HeaderComponent = () => {
 };
 
 export default HeaderComponent;
-
-
