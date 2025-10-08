@@ -293,5 +293,75 @@
         { "name": "EU Cloud CoC", "description": "Verified" }
       ]
     }
+  },
+  "OnboardingPage": {
+    "backLink": "Back to landing page",
+    "badge": "Guided Onboarding",
+    "headline": "Finish your OrderLink setup in minutes",
+    "description": "Share a few business details so we can configure your workspace, tailor your modules, and connect you with the right commerce tools from the start.",
+    "highlights": {
+      "secure": {
+        "title": "Secure by design",
+        "description": "Your information is encrypted and reviewed by our onboarding specialists before activation."
+      },
+      "tailored": {
+        "title": "Tailored experience",
+        "description": "We personalize modules like inventory, billing, and automations based on your company profile."
+      },
+      "launch": {
+        "title": "Launch-ready setup",
+        "description": "Complete the form once and jump straight into OrderLink with ready-to-use integrations."
+      }
+    }
+  },
+  "OnboardingForm": {
+    "success": {
+      "title": "You're all set!",
+      "description": "We received your company information and are preparing your account.",
+      "instructions": "Please check your email for a confirmation message with next steps. It includes everything you need to activate your OrderLink workspace.",
+      "adminCta": "Open OrderLink Admin",
+      "helpText": "Can't find the email? Remember to check your spam folder or contact support."
+    },
+    "intro": {
+      "title": "Company Onboarding",
+      "description": "Submit your company profile and business address to finish setting up OrderLink."
+    },
+    "sections": {
+      "companyDetails": {
+        "title": "Company Details",
+        "description": "Basic information we will use to configure your workspace."
+      },
+      "businessAddress": {
+        "title": "Business Address",
+        "description": "Let us know where your company is registered."
+      }
+    },
+    "fields": {
+      "companyName": "Company Name",
+      "companyEmail": "Company Email",
+      "iban": "IBAN",
+      "companyNumber": "Company Registration Number",
+      "city": "City",
+      "postCode": "Post Code",
+      "streetName": "Street Name",
+      "streetNumber": "Street Number"
+    },
+    "actions": {
+      "submit": "Complete Setup",
+      "submitting": "Submitting..."
+    }
+  },
+  "PhoneNumberInput": {
+    "label": "Phone Number",
+    "placeholder": "+1 555 555 5555",
+    "countrySelect": "Select a country"
+  },
+  "LocationSelector": {
+    "countryPlaceholder": "Select Country...",
+    "statePlaceholder": "Select State...",
+    "searchCountry": "Search country...",
+    "searchState": "Search state...",
+    "noCountry": "No country found.",
+    "noState": "No state found."
   }
 }

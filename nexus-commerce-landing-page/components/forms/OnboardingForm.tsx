@@ -29,6 +29,7 @@ import LocationSelector from '@/components/ui/location-input';
 import PhoneNumberInputComponent from '@/components/PhoneNumberInputComponent';
 import GenericInputMaskComponent from '@/components/InputWithMask';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 const initialState: FormState = { success: false };
 
@@ -37,47 +38,40 @@ export default function OnboardingForm() {
     finalizeOnboarding,
     initialState
   );
+  const t = useTranslations('OnboardingForm');
 
   if (state.success) {
     return (
       <div className='relative group'>
-        <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
-        <Card className='relative bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-500/30 rounded-3xl overflow-hidden text-white'>
-          <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-3xl'></div>
-          <div className='absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-tr-2xl'></div>
-
-          <CardHeader className='pb-8 relative z-10'>
+        {/* dezenter Indigo-Glow */}
+        <div className='absolute -inset-1 rounded-3xl bg-indigo-500/20 blur-3xl opacity-80 transition-all duration-700 group-hover:opacity-90' />
+        <Card className='relative overflow-hidden rounded-3xl border border-slate-200 bg-white text-slate-900 shadow-2xl dark:bg-slate-900 dark:text-slate-100 dark:border-slate-800'>
+          <CardHeader className='relative z-10 pb-8'>
             <div className='flex flex-col items-center gap-5 text-center'>
-              <div className='relative'>
-                <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
-                <div className='relative flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
-                  <CheckCircle2 className='h-8 w-8 text-white' />
-                </div>
+              <div className='relative flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-lg'>
+                <CheckCircle2 className='h-8 w-8' />
               </div>
-              <div>
-                <CardTitle className='text-3xl font-bold bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-                  You&apos;re all set!
+              <div className='space-y-2'>
+                <CardTitle className='text-3xl font-bold'>
+                  {t('success.title')}
                 </CardTitle>
-                <CardDescription className='text-slate-200 text-base mt-2'>
-                  We received your company information and are preparing your
-                  account.
+                <CardDescription className='text-base text-slate-600 dark:text-slate-400'>
+                  {t('success.description')}
                 </CardDescription>
               </div>
             </div>
           </CardHeader>
 
           <CardContent className='relative z-10 pb-12'>
-            <div className='space-y-6 text-slate-200 text-center'>
-              <div className='mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600/20 border border-blue-400/40'>
-                <MailCheck className='h-7 w-7 text-blue-200' />
+            <div className='space-y-6 text-center text-slate-600 dark:text-slate-300'>
+              <div className='mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900/40 dark:bg-emerald-900/20 dark:text-emerald-400'>
+                <MailCheck className='h-7 w-7' />
               </div>
               <p className='text-lg leading-relaxed'>
-                Please check your email for a confirmation message with next
-                steps. It includes everything you need to activate your
-                OrderLink workspace.
+                {t('success.instructions')}
               </p>
               {state.message ? (
-                <div className='rounded-xl border border-blue-500/40 bg-blue-500/10 px-5 py-4 text-sm text-blue-100'>
+                <div className='rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm text-emerald-700 dark:border-emerald-900/40 dark:bg-emerald-900/20 dark:text-emerald-300'>
                   {state.message}
                 </div>
               ) : null}
@@ -85,16 +79,15 @@ export default function OnboardingForm() {
                 {process.env.NEXT_PUBLIC_ADMIN_URL ? (
                   <Button
                     asChild
-                    className='group flex items-center justify-center overflow-hidden transition-all duration-500 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 rounded-2xl px-8 py-4 font-semibold text-lg'
+                    className='group flex items-center justify-center rounded-2xl bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                   >
                     <Link href={process.env.NEXT_PUBLIC_ADMIN_URL}>
-                      Open OrderLink Admin
+                      {t('success.adminCta')}
                     </Link>
                   </Button>
                 ) : null}
-                <p className='text-sm text-slate-400'>
-                  Can&apos;t find the email? Remember to check your spam folder
-                  or contact support.
+                <p className='text-sm text-slate-500 dark:text-slate-400'>
+                  {t('success.helpText')}
                 </p>
               </div>
             </div>
@@ -106,27 +99,21 @@ export default function OnboardingForm() {
 
   return (
     <div className='relative group'>
-      <div className='absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200'></div>
-      <Card className='relative bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-500/30 rounded-3xl overflow-hidden'>
-        <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-3xl'></div>
-        <div className='absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-tr-2xl'></div>
-
-        <CardHeader className='pb-8 relative z-10'>
-          <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-white'>
+      {/* dezenter Indigo-Glow */}
+      <div className='absolute -inset-1 rounded-3xl bg-indigo-500/20 blur-3xl opacity-70 transition-all duration-700 group-hover:opacity-90' />
+      <Card className='relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl backdrop-blur-sm dark:bg-slate-900 dark:border-slate-800'>
+        <CardHeader className='relative z-10 pb-8'>
+          <div className='flex flex-col gap-6 text-slate-900 md:flex-row md:items-center md:justify-between dark:text-slate-100'>
             <div className='flex items-center gap-4'>
-              <div className='relative'>
-                <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
-                <div className='relative flex items-center justify-center w-14 h-14 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
-                  <Building2 className='h-7 w-7 text-white' />
-                </div>
+              <div className='relative flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-600 text-white shadow-md'>
+                <Building2 className='h-7 w-7' />
               </div>
-              <div>
-                <CardTitle className='text-3xl font-bold bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-                  Company Onboarding
+              <div className='space-y-1.5'>
+                <CardTitle className='text-3xl font-bold'>
+                  {t('intro.title')}
                 </CardTitle>
-                <CardDescription className='text-slate-200 text-base mt-2'>
-                  Submit your company profile and business address to finish
-                  setting up OrderLink.
+                <CardDescription className='text-base text-slate-600 dark:text-slate-400'>
+                  {t('intro.description')}
                 </CardDescription>
               </div>
             </div>
@@ -135,57 +122,66 @@ export default function OnboardingForm() {
 
         <CardContent className='relative z-10 pb-12'>
           <form action={formAction} className='space-y-10'>
+            {/* Company Details */}
             <section>
-              <header className='flex items-center gap-3 mb-6'>
-                <div className='h-10 w-10 rounded-2xl bg-blue-600/20 border border-blue-400/40 flex items-center justify-center'>
-                  <PenLine className='h-5 w-5 text-blue-200' />
+              <header className='mb-6 flex items-center gap-3'>
+                <div className='flex h-10 w-10 items-center justify-center rounded-2xl border border-indigo-200 bg-indigo-50 text-indigo-600 dark:border-indigo-900/40 dark:bg-indigo-900/20 dark:text-indigo-300'>
+                  <PenLine className='h-5 w-5' />
                 </div>
                 <div>
-                  <h2 className='text-xl font-semibold text-white'>
-                    Company Details
+                  <h2 className='text-xl font-semibold text-slate-900 dark:text-slate-100'>
+                    {t('sections.companyDetails.title')}
                   </h2>
-                  <p className='text-sm text-slate-300'>
-                    Basic information we will use to configure your workspace.
+                  <p className='text-sm text-slate-600 dark:text-slate-400'>
+                    {t('sections.companyDetails.description')}
                   </p>
                 </div>
               </header>
 
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
+              <div className='grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8'>
                 <div className='space-y-3'>
-                  <Label className='flex items-center text-sm font-medium text-slate-300'>
-                    <PenLine className='w-4 h-4 mr-2 text-blue-400' />
-                    Company Name <span className='text-red-400 ml-1'>*</span>
+                  <Label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
+                    <span className='inline-flex items-center gap-2'>
+                      <PenLine className='h-4 w-4 text-indigo-600' />
+                      {t('fields.companyName')}{' '}
+                      <span className='ml-1 text-rose-600'>*</span>
+                    </span>
                   </Label>
                   <Input
                     name='companyName'
                     required
                     placeholder='ACME'
-                    className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+                    className='h-12 rounded-xl border border-slate-300 bg-white px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20'
                   />
                 </div>
 
                 <div className='space-y-3'>
-                  <Label className='flex items-center text-sm font-medium text-slate-300'>
-                    <Mail className='w-4 h-4 mr-2 text-blue-400' />
-                    Company Email <span className='text-red-400 ml-1'>*</span>
+                  <Label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
+                    <span className='inline-flex items-center gap-2'>
+                      <Mail className='h-4 w-4 text-indigo-600' />
+                      {t('fields.companyEmail')}{' '}
+                      <span className='ml-1 text-rose-600'>*</span>
+                    </span>
                   </Label>
                   <Input
                     name='email'
                     type='email'
                     required
                     placeholder='company@example.com'
-                    className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+                    className='h-12 rounded-xl border border-slate-300 bg-white px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20'
                   />
                 </div>
 
-                <div className='space-y-3 md:col-span-2'>
+                <div className='md:col-span-2'>
                   <PhoneNumberInputComponent name='phoneNumber' />
                 </div>
 
                 <div className='space-y-3'>
-                  <Label className='flex items-center text-sm font-medium text-slate-300'>
-                    <CreditCard className='w-4 h-4 mr-2 text-blue-400' />
-                    IBAN
+                  <Label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
+                    <span className='inline-flex items-center gap-2'>
+                      <CreditCard className='h-4 w-4 text-slate-500' />
+                      {t('fields.iban')}
+                    </span>
                   </Label>
                   <GenericInputMaskComponent
                     placeholder='GB29 NWBK 6016 1331 9268 19'
@@ -195,31 +191,34 @@ export default function OnboardingForm() {
                 </div>
 
                 <div className='space-y-3'>
-                  <Label className='flex items-center text-sm font-medium text-slate-300'>
-                    <Hash className='w-4 h-4 mr-2 text-blue-400' />
-                    Company Registration Number
+                  <Label className='text-sm font-medium text-slate-700 dark:text-slate-300'>
+                    <span className='inline-flex items-center gap-2'>
+                      <Hash className='h-4 w-4 text-slate-500' />
+                      {t('fields.companyNumber')}
+                    </span>
                   </Label>
                   <Input
                     name='companyNumber'
                     required
                     placeholder='12345678'
-                    className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-lg'
+                    className='h-12 rounded-xl border border-slate-300 bg-white px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20'
                   />
                 </div>
               </div>
             </section>
 
+            {/* Business Address */}
             <section>
-              <header className='flex items-center gap-3 mb-6'>
-                <div className='h-10 w-10 rounded-2xl bg-emerald-600/20 border border-emerald-400/40 flex items-center justify-center'>
-                  <MapPinHouse className='h-5 w-5 text-emerald-200' />
+              <header className='mb-6 flex items-center gap-3'>
+                <div className='flex h-10 w-10 items-center justify-center rounded-2xl border border-indigo-200 bg-indigo-50 text-indigo-600 dark:border-indigo-900/40 dark:bg-indigo-900/20 dark:text-indigo-300'>
+                  <MapPinHouse className='h-5 w-5' />
                 </div>
                 <div>
-                  <h2 className='text-xl font-semibold text-white'>
-                    Business Address
+                  <h2 className='text-xl font-semibold text-slate-900 dark:text-slate-100'>
+                    {t('sections.businessAddress.title')}
                   </h2>
-                  <p className='text-sm text-slate-300'>
-                    Let us know where your company is registered.
+                  <p className='text-sm text-slate-600 dark:text-slate-400'>
+                    {t('sections.businessAddress.description')}
                   </p>
                 </div>
               </header>
@@ -227,68 +226,72 @@ export default function OnboardingForm() {
               <div className='space-y-6'>
                 <LocationSelector />
 
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
+                <div className='grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8'>
                   <div className='space-y-2'>
                     <Label
                       htmlFor='city'
-                      className='text-white font-semibold text-base'
+                      className='text-base font-semibold text-slate-700 dark:text-slate-300'
                     >
-                      City<span className='text-red-400 ml-1'>*</span>
+                      {t('fields.city')}
+                      <span className='ml-1 text-rose-600'>*</span>
                     </Label>
                     <Input
                       id='city'
                       name='city'
                       placeholder='Stubenberg'
                       required
-                      className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+                      className='h-12 rounded-xl border border-slate-300 bg-white px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20'
                     />
                   </div>
 
                   <div className='space-y-2'>
                     <Label
                       htmlFor='postCode'
-                      className='text-white font-semibold text-base'
+                      className='text-base font-semibold text-slate-700 dark:text-slate-300'
                     >
-                      Post Code<span className='text-red-400 ml-1'>*</span>
+                      {t('fields.postCode')}
+                      <span className='ml-1 text-rose-600'>*</span>
                     </Label>
                     <Input
                       id='postCode'
                       name='postCode'
                       placeholder='8223'
                       required
-                      className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+                      className='h-12 rounded-xl border border-slate-300 bg-white px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20'
                     />
                   </div>
 
                   <div className='space-y-2'>
                     <Label
                       htmlFor='streetName'
-                      className='text-white font-semibold text-base'
+                      className='text-base font-semibold text-slate-700 dark:text-slate-300'
                     >
-                      Street Name<span className='text-red-400 ml-1'>*</span>
+                      {t('fields.streetName')}
+                      <span className='ml-1 text-rose-600'>*</span>
                     </Label>
                     <Input
                       id='streetName'
                       name='streetName'
                       placeholder='Hauptstrasse'
                       required
-                      className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+                      className='h-12 rounded-xl border border-slate-300 bg-white px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20'
                     />
                   </div>
 
                   <div className='space-y-2'>
                     <Label
                       htmlFor='streetNumber'
-                      className='text-white font-semibold text-base'
+                      className='text-base font-semibold text-slate-700 dark:text-slate-300'
                     >
-                      Street Number<span className='text-red-400 ml-1'>*</span>
+                      {t('fields.streetNumber')}
+                      <span className='ml-1 text-rose-600'>*</span>
                     </Label>
                     <Input
                       id='streetNumber'
                       name='streetNumber'
                       placeholder='123'
                       required
-                      className='bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400/20 rounded-xl h-12 text-lg'
+                      className='h-12 rounded-xl border border-slate-300 bg-white px-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20'
                     />
                   </div>
                 </div>
@@ -296,7 +299,7 @@ export default function OnboardingForm() {
             </section>
 
             {state.message && !state.success ? (
-              <div className='rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-200'>
+              <div className='rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700 dark:border-rose-900/40 dark:bg-rose-900/20 dark:text-rose-300'>
                 {state.message}
               </div>
             ) : null}
@@ -305,16 +308,16 @@ export default function OnboardingForm() {
               <Button
                 type='submit'
                 disabled={isPending}
-                className='group flex items-center justify-center overflow-hidden transition-all duration-500 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 rounded-2xl px-8 py-4 font-semibold text-lg w-full'
+                className='group flex w-full items-center justify-center rounded-2xl bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-70'
               >
                 {isPending ? (
                   <>
                     <Loader2Icon className='mr-2 h-5 w-5 animate-spin' />
-                    Submitting...
+                    {t('actions.submitting')}
                   </>
                 ) : (
                   <span className='transition-all duration-300'>
-                    Complete Setup
+                    {t('actions.submit')}
                   </span>
                 )}
               </Button>

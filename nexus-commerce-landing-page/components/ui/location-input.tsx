@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client';
+
+import React, { useMemo, useState } from 'react';
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
@@ -16,6 +18,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
+import { useLocale, useTranslations } from 'next-intl';
 
 // Import JSON data directly
 import countries from '@/lib/data/countries.json';
@@ -84,6 +87,8 @@ const LocationSelector = ({
 }: LocationSelectorProps) => {
   const countriesData = countries as CountryProps[];
   const statesData = states as StateProps[];
+  const t = useTranslations('LocationSelector');
+  const locale = useLocale();
 
   // Find the country object that matches the default value
   const initialCountry =
@@ -134,8 +139,47 @@ const LocationSelector = ({
     onStateChange?.(state);
   };
 
+  const getCountryDisplayName = React.useCallback(
+    (country: CountryProps) => {
+      const translations = country.translations as Record<string, string> | undefined;
+      if (!translations) {
+        return country.name;
+      }
+
+      const normalizedLocale = locale.toLowerCase();
+      const translationEntries = Object.entries(translations);
+
+      const exactMatch = translationEntries.find(
+        ([translationKey]) => translationKey.toLowerCase() === normalizedLocale
+      );
+      if (exactMatch) {
+        return exactMatch[1] || country.name;
+      }
+
+      const baseLocale = normalizedLocale.split('-')[0];
+      const baseMatch = translationEntries.find(
+        ([translationKey]) => translationKey.toLowerCase() === baseLocale
+      );
+      if (baseMatch) {
+        return baseMatch[1] || country.name;
+      }
+
+      return country.name;
+    },
+    [locale]
+  );
+
+  const countryOptions = useMemo(
+    () =>
+      countriesData.map((country) => ({
+        country,
+        displayName: getCountryDisplayName(country),
+      })),
+    [countriesData, getCountryDisplayName]
+  );
+
   return (
-    <div className='grid grid-cols-2 gap-6 '>
+    <div className='grid grid-cols-2 gap-6'>
       <input type='hidden' name='country' value={selectedCountry?.name || ''} />
       <input type='hidden' name='state' value={selectedState?.name || ''} />
 
@@ -148,32 +192,32 @@ const LocationSelector = ({
             aria-expanded={openCountryDropdown}
             disabled={disabled}
             className={cn(
-              'w-full justify-between text-left font-normal bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-lg',
-              !selectedCountry && 'text-muted-foreground'
+              'h-12 w-full justify-between rounded-xl border border-slate-500 bg-background text-left text-lg font-normal text-slate-700 transition hover:bg-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100',
+              !selectedCountry && 'text-slate-400'
             )}
           >
             {selectedCountry ? (
               <div className='flex items-center gap-2'>
                 <span>{selectedCountry.emoji}</span>
-                <span>{selectedCountry.name}</span>
+                <span>{getCountryDisplayName(selectedCountry)}</span>
               </div>
             ) : (
-              <span>Select Country...</span>
+              <span>{t('countryPlaceholder')}</span>
             )}
             <ChevronsUpDown className='h-4 w-4 shrink-0 opacity-50' />
           </Button>
         </PopoverTrigger>
         <PopoverContent align='start' className='w-[300px] p-0'>
           <Command>
-            <CommandInput placeholder='Search country...' />
+            <CommandInput placeholder={t('searchCountry')} />
             <CommandList>
-              <CommandEmpty>No country found.</CommandEmpty>
+              <CommandEmpty>{t('noCountry')}</CommandEmpty>
               <CommandGroup>
                 <ScrollArea className='h-[300px]'>
-                  {countriesData.map((country) => (
+                  {countryOptions.map(({ country, displayName }) => (
                     <CommandItem
                       key={country.id}
-                      value={country.name}
+                      value={`${displayName} ${country.name}`}
                       onSelect={() => {
                         handleCountrySelect(country);
                         setOpenCountryDropdown(false);
@@ -182,7 +226,7 @@ const LocationSelector = ({
                     >
                       <div className='flex items-center gap-2'>
                         <span>{country.emoji}</span>
-                        <span>{country.name}</span>
+                        <span>{displayName}</span>
                       </div>
                       <Check
                         className={cn(
@@ -212,23 +256,23 @@ const LocationSelector = ({
               aria-expanded={openStateDropdown}
               disabled={!selectedCountry}
               className={cn(
-                'w-full justify-between text-left font-normal bg-slate-800/50 border-blue-500/30 text-white placeholder:text-slate-400 focus:border-emerald-400 focus:ring-emerald-400/20 rounded-xl h-12 text-lg',
-                !selectedState && 'text-muted-foreground'
+                'h-12 w-full justify-between rounded-xl border border-slate-500 bg-background text-left text-lg font-normal text-slate-700 transition hover:bg-slate-400 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100',
+                !selectedState && 'text-slate-400'
               )}
             >
               {selectedState ? (
                 <span>{selectedState.name}</span>
               ) : (
-                <span>Select State...</span>
+                <span>{t('statePlaceholder')}</span>
               )}
               <ChevronsUpDown className='h-4 w-4 shrink-0 opacity-50' />
             </Button>
           </PopoverTrigger>
           <PopoverContent align='start' className='w-[300px] p-0'>
             <Command>
-              <CommandInput placeholder='Search state...' />
+              <CommandInput placeholder={t('searchState')} />
               <CommandList>
-                <CommandEmpty>No state found.</CommandEmpty>
+                <CommandEmpty>{t('noState')}</CommandEmpty>
                 <CommandGroup>
                   <ScrollArea className='h-[300px]'>
                     {availableStates.map((state) => (

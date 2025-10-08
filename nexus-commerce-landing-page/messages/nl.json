@@ -294,5 +294,75 @@
         { "name": "EU Cloud CoC", "description": "Geverifieerd" }
       ]
     }
+  },
+  "OnboardingPage": {
+    "backLink": "Terug naar de landingspagina",
+    "badge": "Begeleide onboarding",
+    "headline": "Rond je OrderLink-configuratie in enkele minuten af",
+    "description": "Deel een paar bedrijfsgegevens zodat we je workspace kunnen configureren, modules kunnen afstemmen en je meteen met de juiste commerce-tools kunnen verbinden.",
+    "highlights": {
+      "secure": {
+        "title": "Beveiligd ontworpen",
+        "description": "Je gegevens worden versleuteld en vóór activatie gecontroleerd door onze onboarding-specialisten."
+      },
+      "tailored": {
+        "title": "Persoonlijke ervaring",
+        "description": "We personaliseren modules zoals voorraadbeheer, facturatie en automatiseringen op basis van je bedrijfsprofiel."
+      },
+      "launch": {
+        "title": "Klaar voor lancering",
+        "description": "Vul het formulier een keer in en ga direct aan de slag met de kant-en-klare OrderLink-integraties."
+      }
+    }
+  },
+  "OnboardingForm": {
+    "success": {
+      "title": "Je bent klaar!",
+      "description": "We hebben je bedrijfsinformatie ontvangen en bereiden je account voor.",
+      "instructions": "Controleer je e-mail voor een bevestigingsbericht met de volgende stappen. Daarin vind je alles om je OrderLink-workspace te activeren.",
+      "adminCta": "OrderLink Admin openen",
+      "helpText": "Geen e-mail gevonden? Controleer je spammap of neem contact op met support."
+    },
+    "intro": {
+      "title": "Bedrijfsonboarding",
+      "description": "Stuur je bedrijfsprofiel en zakelijke adres om de OrderLink-configuratie af te ronden."
+    },
+    "sections": {
+      "companyDetails": {
+        "title": "Bedrijfsgegevens",
+        "description": "Basisinformatie waarmee we je workspace configureren."
+      },
+      "businessAddress": {
+        "title": "Zakelijk adres",
+        "description": "Laat ons weten waar je bedrijf geregistreerd is."
+      }
+    },
+    "fields": {
+      "companyName": "Bedrijfsnaam",
+      "companyEmail": "Zakelijk e-mailadres",
+      "iban": "IBAN",
+      "companyNumber": "Registratienummer",
+      "city": "Stad",
+      "postCode": "Postcode",
+      "streetName": "Straatnaam",
+      "streetNumber": "Huisnummer"
+    },
+    "actions": {
+      "submit": "Configuratie voltooien",
+      "submitting": "Verzenden..."
+    }
+  },
+  "PhoneNumberInput": {
+    "label": "Telefoonnummer",
+    "placeholder": "+1 555 555 5555",
+    "countrySelect": "Kies een land"
+  },
+  "LocationSelector": {
+    "countryPlaceholder": "Kies een land...",
+    "statePlaceholder": "Kies een regio...",
+    "searchCountry": "Land zoeken...",
+    "searchState": "Regio zoeken...",
+    "noCountry": "Geen land gevonden.",
+    "noState": "Geen regio gevonden."
   }
 }

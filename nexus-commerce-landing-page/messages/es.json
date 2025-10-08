@@ -294,5 +294,75 @@
         { "name": "EU Cloud CoC", "description": "Verificado" }
       ]
     }
+  },
+  "OnboardingPage": {
+    "backLink": "Volver a la página principal",
+    "badge": "Onboarding guiado",
+    "headline": "Completa la configuración de OrderLink en cuestión de minutos",
+    "description": "Comparte algunos datos de tu empresa para que podamos configurar tu espacio de trabajo, personalizar tus módulos y conectar las herramientas de comercio adecuadas desde el inicio.",
+    "highlights": {
+      "secure": {
+        "title": "Diseñado con seguridad",
+        "description": "Tu información se cifra y nuestros especialistas de onboarding la revisan antes de la activación."
+      },
+      "tailored": {
+        "title": "Experiencia personalizada",
+        "description": "Personalizamos módulos como inventario, facturación y automatizaciones según el perfil de tu empresa."
+      },
+      "launch": {
+        "title": "Listo para lanzar",
+        "description": "Completa el formulario una sola vez y comienza de inmediato con las integraciones listas para usar de OrderLink."
+      }
+    }
+  },
+  "OnboardingForm": {
+    "success": {
+      "title": "¡Todo listo!",
+      "description": "Recibimos la información de tu empresa y estamos preparando tu cuenta.",
+      "instructions": "Revisa tu correo electrónico para un mensaje de confirmación con los próximos pasos. Allí encontrarás todo lo necesario para activar tu espacio de trabajo de OrderLink.",
+      "adminCta": "Abrir OrderLink Admin",
+      "helpText": "¿No encuentras el correo? Revisa la carpeta de spam o contacta al soporte."
+    },
+    "intro": {
+      "title": "Onboarding de la empresa",
+      "description": "Envíanos el perfil de tu empresa y la dirección comercial para completar la configuración de OrderLink."
+    },
+    "sections": {
+      "companyDetails": {
+        "title": "Datos de la empresa",
+        "description": "Información básica que usaremos para configurar tu espacio de trabajo."
+      },
+      "businessAddress": {
+        "title": "Dirección comercial",
+        "description": "Cuéntanos dónde está registrada tu empresa."
+      }
+    },
+    "fields": {
+      "companyName": "Nombre de la empresa",
+      "companyEmail": "Correo electrónico de la empresa",
+      "iban": "IBAN",
+      "companyNumber": "Número de registro de la empresa",
+      "city": "Ciudad",
+      "postCode": "Código postal",
+      "streetName": "Calle",
+      "streetNumber": "Número"
+    },
+    "actions": {
+      "submit": "Finalizar configuración",
+      "submitting": "Enviando..."
+    }
+  },
+  "PhoneNumberInput": {
+    "label": "Número de teléfono",
+    "placeholder": "+1 555 555 5555",
+    "countrySelect": "Selecciona un país"
+  },
+  "LocationSelector": {
+    "countryPlaceholder": "Selecciona un país...",
+    "statePlaceholder": "Selecciona una región...",
+    "searchCountry": "Buscar país...",
+    "searchState": "Buscar región...",
+    "noCountry": "No se encontró ningún país.",
+    "noState": "No se encontró ninguna región."
   }
 }

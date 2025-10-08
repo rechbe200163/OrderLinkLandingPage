@@ -294,5 +294,75 @@
         { "name": "EU Cloud CoC", "description": "Vérifié" }
       ]
     }
+  },
+  "OnboardingPage": {
+    "backLink": "Retour à la page d'accueil",
+    "badge": "Onboarding guidé",
+    "headline": "Terminez la configuration d'OrderLink en quelques minutes",
+    "description": "Communiquez-nous quelques informations sur votre entreprise afin que nous puissions configurer votre espace de travail, personnaliser vos modules et connecter dès le départ les bons outils commerce.",
+    "highlights": {
+      "secure": {
+        "title": "Sécurité intégrée",
+        "description": "Vos informations sont chiffrées et vérifiées par nos spécialistes onboarding avant l'activation."
+      },
+      "tailored": {
+        "title": "Expérience personnalisée",
+        "description": "Nous personnalisons les modules comme l'inventaire, la facturation et les automatisations en fonction du profil de votre entreprise."
+      },
+      "launch": {
+        "title": "Prêt à démarrer",
+        "description": "Remplissez le formulaire une seule fois et accédez immédiatement aux intégrations prêtes à l'emploi d'OrderLink."
+      }
+    }
+  },
+  "OnboardingForm": {
+    "success": {
+      "title": "Tout est prêt !",
+      "description": "Nous avons reçu les informations de votre entreprise et préparons votre compte.",
+      "instructions": "Veuillez consulter votre e-mail pour découvrir un message de confirmation avec les prochaines étapes. Vous y trouverez tout le nécessaire pour activer votre espace de travail OrderLink.",
+      "adminCta": "Ouvrir OrderLink Admin",
+      "helpText": "Vous ne trouvez pas l'e-mail ? Vérifiez votre dossier spam ou contactez le support."
+    },
+    "intro": {
+      "title": "Onboarding de l'entreprise",
+      "description": "Envoyez votre profil d'entreprise et votre adresse professionnelle pour finaliser la configuration d'OrderLink."
+    },
+    "sections": {
+      "companyDetails": {
+        "title": "Informations sur l'entreprise",
+        "description": "Informations de base que nous utiliserons pour configurer votre espace de travail."
+      },
+      "businessAddress": {
+        "title": "Adresse professionnelle",
+        "description": "Indiquez-nous où votre entreprise est enregistrée."
+      }
+    },
+    "fields": {
+      "companyName": "Nom de l'entreprise",
+      "companyEmail": "E-mail de l'entreprise",
+      "iban": "IBAN",
+      "companyNumber": "Numéro d'enregistrement de l'entreprise",
+      "city": "Ville",
+      "postCode": "Code postal",
+      "streetName": "Rue",
+      "streetNumber": "Numéro"
+    },
+    "actions": {
+      "submit": "Terminer la configuration",
+      "submitting": "Envoi en cours..."
+    }
+  },
+  "PhoneNumberInput": {
+    "label": "Numéro de téléphone",
+    "placeholder": "+1 555 555 5555",
+    "countrySelect": "Sélectionnez un pays"
+  },
+  "LocationSelector": {
+    "countryPlaceholder": "Sélectionnez un pays...",
+    "statePlaceholder": "Sélectionnez une région...",
+    "searchCountry": "Rechercher un pays...",
+    "searchState": "Rechercher une région...",
+    "noCountry": "Aucun pays trouvé.",
+    "noState": "Aucune région trouvée."
   }
 }

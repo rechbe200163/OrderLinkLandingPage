@@ -293,5 +293,75 @@
         { "name": "EU Cloud CoC", "description": "Verifiziert" }
       ]
     }
+  },
+  "OnboardingPage": {
+    "backLink": "Zurück zur Startseite",
+    "badge": "Geführtes Onboarding",
+    "headline": "Schließen Sie Ihre OrderLink-Einrichtung in wenigen Minuten ab",
+    "description": "Teilen Sie uns ein paar Unternehmensdetails mit, damit wir Ihren Arbeitsbereich konfigurieren, die Module anpassen und Sie gleich zu Beginn mit den richtigen Commerce-Tools verbinden können.",
+    "highlights": {
+      "secure": {
+        "title": "Sicherheit von Anfang an",
+        "description": "Ihre Informationen werden verschlüsselt und vor der Aktivierung von unseren Onboarding-Spezialisten geprüft."
+      },
+      "tailored": {
+        "title": "Individuelle Erfahrung",
+        "description": "Wir personalisieren Module wie Lagerverwaltung, Abrechnung und Automatisierungen basierend auf Ihrem Unternehmensprofil."
+      },
+      "launch": {
+        "title": "Startklar in Rekordzeit",
+        "description": "Einmal ausfüllen und direkt mit einsatzbereiten OrderLink-Integrationen loslegen."
+      }
+    }
+  },
+  "OnboardingForm": {
+    "success": {
+      "title": "Alles erledigt!",
+      "description": "Wir haben Ihre Unternehmensdaten erhalten und bereiten Ihr Konto vor.",
+      "instructions": "Bitte prüfen Sie Ihr E-Mail-Postfach auf eine Bestätigung mit den nächsten Schritten. Darin finden Sie alles, was Sie für die Aktivierung Ihres OrderLink-Arbeitsbereichs benötigen.",
+      "adminCta": "OrderLink Admin öffnen",
+      "helpText": "Keine E-Mail gefunden? Prüfen Sie den Spam-Ordner oder kontaktieren Sie den Support."
+    },
+    "intro": {
+      "title": "Unternehmens-Onboarding",
+      "description": "Senden Sie uns Ihr Unternehmensprofil und Ihre Geschäftsadresse, um OrderLink vollständig einzurichten."
+    },
+    "sections": {
+      "companyDetails": {
+        "title": "Unternehmensdaten",
+        "description": "Grundlegende Informationen, mit denen wir Ihren Arbeitsbereich konfigurieren."
+      },
+      "businessAddress": {
+        "title": "Geschäftsadresse",
+        "description": "Sagen Sie uns, wo Ihr Unternehmen registriert ist."
+      }
+    },
+    "fields": {
+      "companyName": "Firmenname",
+      "companyEmail": "Firmen-E-Mail",
+      "iban": "IBAN",
+      "companyNumber": "Firmenbuchnummer",
+      "city": "Stadt",
+      "postCode": "Postleitzahl",
+      "streetName": "Straße",
+      "streetNumber": "Hausnummer"
+    },
+    "actions": {
+      "submit": "Setup abschließen",
+      "submitting": "Wird gesendet..."
+    }
+  },
+  "PhoneNumberInput": {
+    "label": "Telefonnummer",
+    "placeholder": "+1 555 555 5555",
+    "countrySelect": "Land auswählen"
+  },
+  "LocationSelector": {
+    "countryPlaceholder": "Land auswählen...",
+    "statePlaceholder": "Bundesland auswählen...",
+    "searchCountry": "Land suchen...",
+    "searchState": "Bundesland suchen...",
+    "noCountry": "Kein Land gefunden.",
+    "noState": "Kein Bundesland gefunden."
   }
 }

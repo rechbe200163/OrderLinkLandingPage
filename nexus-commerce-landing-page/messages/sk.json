@@ -294,5 +294,75 @@
         { "name": "EU Cloud CoC", "description": "Overené" }
       ]
     }
+  },
+  "OnboardingPage": {
+    "backLink": "Späť na vstupnú stránku",
+    "badge": "Sprievodné nasadenie",
+    "headline": "Dokončite nastavenie OrderLinku za pár minút",
+    "description": "Zdieľajte niekoľko údajov o firme, aby sme mohli nastaviť váš pracovný priestor, doladiť moduly a hneď na začiatku prepojiť správne obchodné nástroje.",
+    "highlights": {
+      "secure": {
+        "title": "Bezpečné už od návrhu",
+        "description": "Vaše informácie sú šifrované a pred aktiváciou ich kontrolujú naši onboarding špecialisti."
+      },
+      "tailored": {
+        "title": "Prispôsobený zážitok",
+        "description": "Moduly ako sklad, fakturácia a automatizácie prispôsobíme profilu vašej spoločnosti."
+      },
+      "launch": {
+        "title": "Pripravené na spustenie",
+        "description": "Formulár vyplníte len raz a OrderLink môžete hneď používať s pripravenými integráciami."
+      }
+    }
+  },
+  "OnboardingForm": {
+    "success": {
+      "title": "Všetko je pripravené!",
+      "description": "Vaše firemné údaje sme prijali a pripravujeme účet.",
+      "instructions": "Skontrolujte si e-mail, nájdete v ňom potvrdenie s ďalšími krokmi. Obsahuje všetko potrebné na aktiváciu vášho pracovného priestoru OrderLink.",
+      "adminCta": "Otvoriť OrderLink Admin",
+      "helpText": "Nenašli ste e-mail? Pozrite spam alebo kontaktujte podporu."
+    },
+    "intro": {
+      "title": "Firemné onboarding",
+      "description": "Pošlite svoj firemný profil a sídlo, aby sme dokončili nastavenie OrderLinku."
+    },
+    "sections": {
+      "companyDetails": {
+        "title": "Firemné údaje",
+        "description": "Základné informácie, podľa ktorých nastavíme váš pracovný priestor."
+      },
+      "businessAddress": {
+        "title": "Firemná adresa",
+        "description": "Dajte nám vedieť, kde je vaša spoločnosť registrovaná."
+      }
+    },
+    "fields": {
+      "companyName": "Názov spoločnosti",
+      "companyEmail": "Firemný e-mail",
+      "iban": "IBAN",
+      "companyNumber": "IČO spoločnosti",
+      "city": "Mesto",
+      "postCode": "PSČ",
+      "streetName": "Ulica",
+      "streetNumber": "Číslo domu"
+    },
+    "actions": {
+      "submit": "Dokončiť nastavenie",
+      "submitting": "Odosielam..."
+    }
+  },
+  "PhoneNumberInput": {
+    "label": "Telefónne číslo",
+    "placeholder": "+1 555 555 5555",
+    "countrySelect": "Vyberte krajinu"
+  },
+  "LocationSelector": {
+    "countryPlaceholder": "Vyberte krajinu...",
+    "statePlaceholder": "Vyberte región...",
+    "searchCountry": "Hľadať krajinu...",
+    "searchState": "Hľadať región...",
+    "noCountry": "Nenašla sa žiadna krajina.",
+    "noState": "Nenašiel sa žiadny región."
   }
 }
