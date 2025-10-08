@@ -19,18 +19,18 @@
       "words": [
         "Abläufe",
         "Logistik",
-        "Unternehmen",
         "Lieferungen",
-        "Wachstum",
+        "Umsätze",
+        "Effizienz",
         "Erfolge"
       ]
     },
-    "description": "Umfassende Plattform für Logistik- und Unternehmenssteuerung. OrderLink bündelt alle Abläufe von Administration bis Lieferverfolgung in einer leistungsstarken Lösung.",
+    "description": "Umfassende Plattform für Logistik- und Unternehmenssteuerung. OrderLink bündelt alle Abläufe von der Administration bis zur Lieferverfolgung in einer leistungsstarken Lösung.",
     "primaryCta": "Verwaltung starten",
     "secondaryCta": "Module ansehen",
     "stats": {
       "orders": "10.000+ Bestellungen täglich",
-      "rating": "Bewertung 5,0"
+      "rating": "Bewertung: 4,9"
     },
     "imageAlt": "OrderLink Dashboard-Vorschau"
   },
@@ -121,7 +121,7 @@
   "PricingSection": {
     "badge": "Flexible Preisgestaltung",
     "title": "Modular & Transparent",
-    "description": "Zahlen Sie nur, was Sie brauchen - kombinieren Sie Module und Nutzerlizenzen passgenau.",
+    "description": "Zahlen Sie nur, was Sie brauchen – kombinieren Sie Module und Nutzerlizenzen passgenau.",
     "modulesCard": {
       "title": "Module",
       "subtitle": "Monatspreise pro Mandant",
@@ -188,26 +188,17 @@
         {
           "name": "Core",
           "price": "0 €",
-          "features": [
-            "AdminTool (bis 3 Nutzer)"
-          ]
+          "features": ["AdminTool (bis 3 Nutzer)"]
         },
         {
           "name": "Insight Core",
           "price": "10 €",
-          "features": [
-            "AdminTool",
-            "Insight",
-            "3 Nutzer"
-          ]
+          "features": ["AdminTool", "Insight", "3 Nutzer"]
         },
         {
           "name": "Full Pro",
           "price": "30 €",
-          "features": [
-            "Alle Module",
-            "bis 7 Nutzer"
-          ]
+          "features": ["Alle Module", "bis 7 Nutzer"]
         }
       ]
     }
@@ -247,6 +238,60 @@
         }
       }
     },
-    "bottomNote": "© 2024 OrderLink. Alle Rechte vorbehalten."
+    "bottomNote": "© 2025 OrderLink. Alle Rechte vorbehalten."
+  },
+  "TrustSection": {
+    "badge": "Sicherheit & Compliance",
+    "title": "Ihre Daten – geschützt in der EU",
+    "description": "Wir nehmen Datensicherheit ernst. Unsere Infrastruktur wird ausschließlich auf Servern in der EU betrieben – Ihre Daten verlassen europäische Grenzen nicht und bleiben vollständig DSGVO-konform.",
+    "euCard": {
+      "title": "100 % EU-Hosting",
+      "subtitle": "Rechenzentren Frankfurt & Amsterdam",
+      "points": [
+        {
+          "title": "Kein US Cloud Act",
+          "description": "Ihre Daten sind vor Zugriffsanfragen ausländischer Behörden geschützt"
+        },
+        {
+          "title": "Datenhoheit in der EU",
+          "description": "Datenresidenz jederzeit innerhalb der EU-Grenzen"
+        },
+        {
+          "title": "Redundante Infrastruktur",
+          "description": "Mehrregionale Backups in EU-Rechenzentren für maximale Zuverlässigkeit"
+        }
+      ]
+    },
+    "trustFeatures": [
+      {
+        "title": "EU‑exklusive Infrastruktur",
+        "description": "Alle Daten werden ausschließlich auf Servern innerhalb der Europäischen Union gespeichert – vollständig DSGVO-konform."
+      },
+      {
+        "title": "Ende‑zu‑Ende‑Verschlüsselung",
+        "description": "Verschlüsselung im Ruhezustand und während der Übertragung nach Branchenstandard (AES‑256)."
+      },
+      {
+        "title": "ISO 27001 zertifiziert",
+        "description": "Unser Sicherheitsmanagement erfüllt höchste internationale Standards der Informationssicherheit."
+      },
+      {
+        "title": "DSGVO‑konform",
+        "description": "Volle Einhaltung europäischer Datenschutzvorgaben – Sie behalten die Kontrolle über Ihre Daten."
+      },
+      {
+        "title": "Regelmäßige Sicherheitsaudits",
+        "description": "Unabhängige Audits durch Drittanbieter – vierteljährlich für höchste Schutzstandards."
+      }
+    ],
+    "certifications": {
+      "title": "Zertifiziert & konform",
+      "items": [
+        { "name": "DSGVO", "description": "Konform" },
+        { "name": "ISO 27001", "description": "Zertifiziert" },
+        { "name": "SOC 2", "description": "Typ II" },
+        { "name": "EU Cloud CoC", "description": "Verifiziert" }
+      ]
+    }
   }
 }

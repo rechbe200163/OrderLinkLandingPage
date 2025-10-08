@@ -1,21 +1,16 @@
-﻿import React from 'react';
+'use client';
+
 import {
   Package,
   CheckCircle,
   Settings,
   ShoppingCart,
-  LineChart,
   Navigation,
+  LineChart,
 } from 'lucide-react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Badge } from '../ui/badge';
-import { getTranslations } from 'next-intl/server';
+import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 type ModuleTranslation = {
   name: string;
@@ -23,133 +18,123 @@ type ModuleTranslation = {
   features: string[];
 };
 
-const moduleConfigs = [
-  {
-    icon: Settings,
-    glowGradient: 'from-blue-600 to-emerald-600',
-    cardHoverShadow: 'hover:shadow-blue-500/25',
-    iconWrapperGradient: 'from-blue-600 to-blue-700',
-    iconWrapperHover: 'group-hover:rotate-6',
-    iconShadow: 'shadow-blue-500/25',
-    accentClassName:
-      'absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-3xl',
-    featureIconColor: 'text-blue-400',
-    descriptionColor: 'text-blue-200',
-  },
-  {
-    icon: ShoppingCart,
-    glowGradient: 'from-emerald-600 to-blue-600',
-    cardHoverShadow: 'hover:shadow-emerald-500/25',
-    iconWrapperGradient: 'from-emerald-600 to-emerald-700',
-    iconWrapperHover: 'group-hover:-rotate-6',
-    iconShadow: 'shadow-emerald-500/25',
-    accentClassName:
-      'absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-500/20 to-transparent rounded-tr-3xl',
-    featureIconColor: 'text-emerald-400',
-    descriptionColor: 'text-emerald-200',
-  },
-  {
-    icon: Navigation,
-    glowGradient: 'from-blue-600 to-slate-600',
-    cardHoverShadow: 'hover:shadow-blue-500/25',
-    iconWrapperGradient: 'from-blue-600 to-slate-700',
-    iconWrapperHover: 'group-hover:rotate-12',
-    iconShadow: 'shadow-blue-500/25',
-    accentClassName:
-      'absolute top-0 left-0 w-18 h-18 bg-gradient-to-br from-blue-500/20 to-transparent rounded-br-3xl',
-    featureIconColor: 'text-blue-400',
-    descriptionColor: 'text-blue-200',
-  },
-  {
-    icon: LineChart,
-    glowGradient: 'from-emerald-600 to-slate-600',
-    cardHoverShadow: 'hover:shadow-emerald-500/25',
-    iconWrapperGradient: 'from-emerald-600 to-slate-700',
-    iconWrapperHover: 'group-hover:-rotate-12',
-    iconShadow: 'shadow-emerald-500/25',
-    accentClassName:
-      'absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-emerald-500/20 to-transparent rounded-tl-3xl',
-    featureIconColor: 'text-emerald-400',
-    descriptionColor: 'text-emerald-200',
-  },
-] as const;
+const moduleIcons = [Settings, ShoppingCart, Navigation, LineChart] as const;
 
-const ModulesSection = async () => {
-  const t = await getTranslations('ModulesSection');
+const moduleImages = [
+  '/dashboard-preview.png',
+  '/dashboard-preview-1.png',
+  '/dashboard-preview.png',
+  '/dashboard-preview-1.png',
+];
+
+const ModulesSectionRedesigned = () => {
+  const t = useTranslations('ModulesSection');
   const modules = t.raw('modules') as ModuleTranslation[];
 
   return (
     <section
       id='modules'
-      className='relative w-full py-24 md:py-32 bg-gradient-to-b from-slate-950 to-slate-900'
+      className='w-full bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20 md:py-24 lg:py-32'
     >
-      <div className='absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-br-[4rem]'></div>
-      <div className='absolute bottom-0 right-0 w-28 h-28 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-[3.5rem]'></div>
-
-      <div className='container relative'>
-        <div className='flex flex-col items-center justify-center space-y-6 text-center mb-20 max-w-4xl mx-auto'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        {/* Header Section */}
+        <div className='mx-auto mb-12 max-w-4xl text-center sm:mb-16 lg:mb-20'>
           <Badge
             variant='outline'
-            className='border-blue-500/30 text-blue-300 bg-blue-900/20 rounded-full px-6 py-3'
+            className='mb-6 inline-flex items-center rounded-full border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition-all duration-300 hover:shadow-md'
           >
-            <Package className='w-4 h-4 mr-2' />
+            <Package className='mr-2 h-4 w-4 text-blue-600' />
             {t('badge')}
           </Badge>
-          <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+          <h2 className='mb-6 text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl'>
             {t('title')}
           </h2>
-          <p className='max-w-[900px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
+          <p className='mx-auto max-w-2xl text-pretty text-base leading-relaxed text-slate-600 sm:text-lg lg:text-xl'>
             {t('description')}
           </p>
         </div>
-        <div className='mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
+
+        {/* Modules Grid */}
+        <div className='mx-auto max-w-7xl flex flex-col gap-8 sm:gap-10 lg:gap-12'>
           {modules.map((module, index) => {
-            const config = moduleConfigs[index];
-            const Icon = config.icon;
+            const Icon = moduleIcons[index] ?? Settings;
+            const imageSrc = moduleImages[index] ?? '/dashboard-preview.png';
+            const isEven = index % 2 === 0;
+
             return (
-              <div key={module.name} className='relative group'>
+              <div
+                key={module.name}
+                className='group relative overflow-hidden rounded-3xl border border-slate-200/60 bg-white/80 shadow-lg backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10'
+              >
+                {/* Background gradient overlay */}
+                <div className='absolute inset-0 bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-purple-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+
+                {/* Grid layout */}
                 <div
-                  className={`absolute -inset-1 bg-gradient-to-r ${config.glowGradient} rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200`}
-                ></div>
-                <Card
-                  className={`relative group transition-all duration-700 hover:shadow-2xl ${config.cardHoverShadow} hover:-translate-y-4 border-0 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl h-full overflow-hidden backdrop-blur-sm`}
+                  className={`relative z-10 grid lg:grid-cols-2 ${
+                    isEven
+                      ? ''
+                      : 'lg:[&>div:first-child]:order-2 lg:[&>div:last-child]:order-1'
+                  }`}
                 >
-                  <div className={config.accentClassName}></div>
-                  <CardHeader className='pb-6 relative'>
-                    <div
-                      className={`w-20 h-20 bg-gradient-to-br ${config.iconWrapperGradient} rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 ${config.iconWrapperHover} transition-transform duration-500 shadow-2xl ${config.iconShadow}`}
-                    >
-                      <Icon className='h-10 w-10 text-white' />
+                  {/* Content Section */}
+                  <div className='flex flex-col justify-center p-8 sm:p-10 lg:p-16'>
+                    <div className='mb-6'>
+                      {/* Blue gradient icon container */}
+                      <div className='mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg shadow-blue-500/25 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-blue-500/30'>
+                        <Icon className='h-7 w-7 text-white' />
+                      </div>
+                      {/* Improved typography */}
+                      <h3 className='text-balance text-2xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-blue-700 sm:text-3xl'>
+                        {module.name}
+                      </h3>
+                      <p className='mt-2 text-pretty text-base leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700 sm:text-lg'>
+                        {module.subtitle}
+                      </p>
                     </div>
-                    <CardTitle className='text-2xl text-white font-bold'>
-                      {module.name}
-                    </CardTitle>
-                    <CardDescription
-                      className={`${config.descriptionColor} text-lg`}
-                    >
-                      {module.subtitle}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className='space-y-4 text-base'>
+
+                    <ul className='space-y-4 text-sm sm:text-base'>
                       {module.features.map((feature) => (
-                        <li key={feature} className='flex items-center'>
-                          <CheckCircle
-                            className={`mr-4 h-5 w-5 ${config.featureIconColor} flex-shrink-0`}
-                          />
-                          <span className='text-slate-300'>{feature}</span>
+                        <li key={feature} className='flex items-start gap-3'>
+                          <CheckCircle className='mt-1 h-4 w-4 flex-shrink-0 text-blue-500' />
+                          <span className='leading-relaxed text-slate-600'>
+                            {feature}
+                          </span>
                         </li>
                       ))}
                     </ul>
-                  </CardContent>
-                </Card>
+                  </div>
+
+                  {/* Image Section */}
+                  <div className='flex items-center justify-center p-8 sm:p-10 lg:p-16'>
+                    <div className='relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 group-hover:shadow-2xl'>
+                      <Image
+                        src={imageSrc || '/placeholder.svg'}
+                        alt={`${module.name} module preview`}
+                        width={600}
+                        height={400}
+                        className='h-auto w-full max-w-md transition-transform duration-500 group-hover:scale-105'
+                      />
+                      {/* Blue gradient image overlay */}
+                      <div className='absolute inset-0 bg-gradient-to-t from-blue-500/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hover effect border with gradients */}
+                <div className='pointer-events-none absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
               </div>
             );
           })}
+        </div>
+
+        {/* Blue gradient bottom decorative element */}
+        <div className='mt-16 flex justify-center'>
+          <div className='h-1 w-24 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600' />
         </div>
       </div>
     </section>
   );
 };
 
-export default ModulesSection;
+export default ModulesSectionRedesigned;

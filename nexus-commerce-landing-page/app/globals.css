@@ -159,3 +159,16 @@
     transparent 0
   );
 }
+:root {
+  color-scheme: light dark;
+} /* hilft iOS beim Wechsel */
+html,
+body {
+  background: #eef2ff;
+}
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: #0b1b5e;
+  }
+}

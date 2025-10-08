@@ -11,3 +11,7 @@ export function envSet(): boolean {
     !!process.env.NEXT_PUBLIC_ADMIN_URL
   );
 }
+
+export function enableTrustSection(): boolean {
+  return process.env.ENABLE_TRUST_SECTION === 'true' ? true : false;
+}

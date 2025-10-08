@@ -1,10 +1,8 @@
-﻿import React from 'react';
-import { Settings, Rocket, Star } from 'lucide-react';
+﻿import { Settings, Rocket, Star } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
 import { getTranslations } from 'next-intl/server';
 
@@ -13,61 +11,62 @@ const MainSection = async () => {
   const words = t.raw('heading.words') as string[];
 
   return (
-    <section className='relative w-full py-24 md:py-32 lg:py-48 overflow-hidden'>
-      <BackgroundBeams />
-      <div className='absolute top-20 left-0 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-transparent rounded-br-[5rem]'></div>
-      <div className='absolute bottom-20 right-0 w-36 h-36 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-[4.5rem]'></div>
+    <section className='relative w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-16 sm:py-10 md:py-12 lg:py-16 xl:py-20'>
+      {/* Background decorative elements */}
+      <div className='absolute inset-0 overflow-hidden'>
+        <div className='absolute -top-40 -right-40 h-80 w-80 rounded-full bg-gradient-to-br from-blue-400/20 to-indigo-500/20 blur-3xl' />
+        <div className='absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-gradient-to-tr from-purple-400/20 to-pink-500/20 blur-3xl' />
+      </div>
 
-      <div className='container relative'>
-        <div className='grid gap-20 lg:grid-cols-2 lg:gap-32 items-center max-w-7xl mx-auto'>
-          <div className='flex flex-col justify-center space-y-10 text-center lg:text-left'>
-            <div className='space-y-8'>
+      <div className='container relative z-10 mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-16 xl:gap-20'>
+          {/* Content Section */}
+          <div className='flex flex-col justify-center space-y-6 text-center lg:space-y-8 lg:text-left'>
+            <div className='space-y-6 lg:space-y-8'>
               <Badge
                 variant='secondary'
-                className='w-fit mx-auto lg:mx-0 bg-gradient-to-r from-blue-900/50 to-emerald-900/50 text-blue-200 border-blue-500/30 rounded-full px-6 py-3 text-sm font-medium'
+                className='mx-auto w-fit rounded-full border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition-all duration-300 hover:shadow-md lg:mx-0'
               >
-                <Settings className='w-4 h-4 mr-2' />
+                <Settings className='mr-2 h-4 w-4 text-blue-600' />
                 {t('badge')}
               </Badge>
-              <h1 className='text-5xl font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl leading-none'>
-                <span className='bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-                  {t('heading.prefix')}{' '}
-                </span>
+              <h1 className='text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
+                <span>{t('heading.prefix')} </span>
                 <br />
-                <span className='inline-block'>
-                  <FlipWords
-                    words={words}
-                    className='inline-block bg-gradient-to-r from-blue-400 via-blue-300 to-emerald-300 bg-clip-text text-transparent'
-                  />
-                </span>
+                <FlipWords words={words} className='text-indigo-500' />
               </h1>
-              <p className='max-w-[600px] text-slate-300 text-xl md:text-2xl leading-relaxed mx-auto lg:mx-0 font-light'>
+              <p className='mx-auto max-w-[600px] text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl lg:mx-0'>
                 {t('description')}
               </p>
             </div>
-            <div className='flex flex-col gap-6 min-[400px]:flex-row justify-center lg:justify-start'>
+
+            {/* CTA Buttons */}
+            <div className='flex flex-col gap-4 sm:flex-row sm:gap-6 justify-center lg:justify-start'>
               <Button
                 asChild
                 size='lg'
-                className='px-10 py-6 text-xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 rounded-2xl text-white font-bold'
+                className='group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-6 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105'
               >
                 <Link href='#contact'>
-                  {t('primaryCta')} <Rocket className='ml-3 h-6 w-6' />
+                  {t('primaryCta')}{' '}
+                  <Rocket className='ml-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1' />
                 </Link>
               </Button>
               <Button
                 asChild
                 variant='outline'
                 size='lg'
-                className='px-10 py-6 text-xl border-2 border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300 bg-slate-950/50 backdrop-blur-sm text-blue-200 hover:text-white rounded-2xl font-semibold'
+                className='rounded-full border-2 border-slate-300 bg-white/80 px-8 py-6 text-base font-semibold text-slate-700 backdrop-blur-sm transition-all duration-300 hover:bg-slate-100 hover:border-slate-400 hover:scale-105'
               >
                 <Link href='#modules'>{t('secondaryCta')}</Link>
               </Button>
             </div>
-            <div className='flex items-center gap-12 pt-6 justify-center lg:justify-start'>
+
+            {/* Stats */}
+            <div className='flex flex-col items-center gap-6 pt-4 sm:flex-row sm:justify-center lg:justify-start lg:gap-12'>
               <div className='flex items-center gap-3'>
-                <div className='w-3 h-3 bg-emerald-400 rounded-full animate-pulse'></div>
-                <span className='text-slate-400 font-medium'>
+                <div className='h-2 w-2 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500'></div>
+                <span className='text-sm font-medium text-slate-600'>
                   {t('stats.orders')}
                 </span>
               </div>
@@ -76,28 +75,41 @@ const MainSection = async () => {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className='h-5 w-5 text-yellow-400 fill-current'
+                      className='h-5 w-5 text-amber-400 transition-transform duration-300 hover:scale-110'
+                      fill='currentColor'
                     />
                   ))}
                 </div>
-                <span className='text-slate-400 font-medium'>
+                <span className='text-sm font-medium text-slate-600'>
                   {t('stats.rating')}
                 </span>
               </div>
             </div>
           </div>
+
+          {/* Image Section */}
           <div className='flex items-center justify-center lg:justify-end'>
-            <div className='relative scale-90 sm:scale-100 md:scale-110 lg:scale-125 xl:scale-150'>
-              <div className='absolute inset-0 bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-3xl blur-3xl transform rotate-6 animate-pulse'></div>
-              <div className='absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-blue-400 to-emerald-500 rounded-2xl opacity-80 animate-pulse'></div>
-              <div className='absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-br from-emerald-400 to-blue-500 rounded-2xl opacity-70 animate-pulse'></div>
-              <Image
-                src='/dashboard-preview-1.png'
-                alt={t('imageAlt')}
-                width={800}
-                height={600}
-                className='relative rounded-md shadow-2xl border border-slate-700/50 backdrop-blur-sm'
-              />
+            <div className='relative group'>
+              {/* Decorative background */}
+              <div className='absolute -inset-4 rounded-3xl bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+
+              {/* Image container */}
+              <div className='relative overflow-hidden rounded-2xl border border-slate-200/60 bg-white/80 shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:shadow-3xl'>
+                <Image
+                  src='/dashboard-preview-1.png'
+                  alt={t('imageAlt')}
+                  width={760}
+                  height={540}
+                  className='h-auto w-full transition-transform duration-500 group-hover:scale-105'
+                  priority
+                />
+                {/* Image overlay gradient */}
+                <div className='absolute inset-0 bg-gradient-to-t from-blue-500/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+              </div>
+
+              {/* Floating elements */}
+              <div className='absolute -top-6 -right-6 h-12 w-12 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110' />
+              <div className='absolute -bottom-6 -left-6 h-8 w-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:scale-110' />
             </div>
           </div>
         </div>

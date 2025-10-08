@@ -1,102 +1,85 @@
-﻿import { Shield, Target, TrendingUp, Users, Workflow, Zap } from 'lucide-react';
-import React from 'react';
-import { Badge } from '../ui/badge';
-import { getTranslations } from 'next-intl/server';
+import { Shield, Target, TrendingUp, Users, Workflow, Zap } from "lucide-react"
+import { Badge } from "../ui/badge"
+import { getTranslations } from "next-intl/server"
 
 type FeatureTranslation = {
-  title: string;
-  description: string;
-};
+  title: string
+  description: string
+}
 
-const featureConfigs = [
-  {
-    icon: Target,
-    gradient: 'from-blue-600 to-blue-700',
-    bgGradient: 'from-blue-900/20 to-blue-800/20',
-  },
-  {
-    icon: TrendingUp,
-    gradient: 'from-emerald-600 to-emerald-700',
-    bgGradient: 'from-emerald-900/20 to-emerald-800/20',
-  },
-  {
-    icon: Zap,
-    gradient: 'from-blue-600 to-emerald-600',
-    bgGradient: 'from-blue-900/20 to-emerald-900/20',
-  },
-  {
-    icon: Shield,
-    gradient: 'from-slate-600 to-slate-700',
-    bgGradient: 'from-slate-800/50 to-slate-700/50',
-  },
-  {
-    icon: Users,
-    gradient: 'from-emerald-600 to-blue-600',
-    bgGradient: 'from-emerald-900/20 to-blue-900/20',
-  },
-  {
-    icon: Workflow,
-    gradient: 'from-blue-600 to-slate-600',
-    bgGradient: 'from-blue-900/20 to-slate-900/20',
-  },
-] as const;
+const featureIcons = [Target, TrendingUp, Zap, Shield, Users, Workflow] as const
 
 const FeatureSection = async () => {
-  const t = await getTranslations('FeatureSection');
-  const features = t.raw('features') as FeatureTranslation[];
+  const t = await getTranslations("FeatureSection")
+  const features = t.raw("features") as FeatureTranslation[]
 
   return (
-    <section
-      id='features'
-      className='relative w-full py-24 md:py-32 bg-slate-950'
-    >
-      <div className='absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-bl-[3rem]'></div>
-      <div className='absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-tr-[2.5rem]'></div>
-
-      <div className='container relative'>
-        <div className='flex flex-col items-center justify-center space-y-6 text-center mb-20 max-w-4xl mx-auto'>
+    <section id="features" className="w-full bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20 md:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="mx-auto mb-12 max-w-4xl text-center sm:mb-16 lg:mb-20">
           <Badge
-            variant='outline'
-            className='border-emerald-500/30 text-emerald-300 bg-emerald-900/20 rounded-full px-6 py-3'
+            variant="outline"
+            className="mb-6 inline-flex items-center rounded-full border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 text-sm font-semibold text-blue-700 shadow-sm transition-all duration-300 hover:shadow-md"
           >
-            <Zap className='w-4 h-4 mr-2' />
-            {t('badge')}
+            <Zap className="mr-2 h-4 w-4 text-blue-600" />
+            {t("badge")}
           </Badge>
-          <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-emerald-200 to-blue-200 bg-clip-text text-transparent'>
-            {t('title')}
+          <h2 className="mb-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            {t("title")}
           </h2>
-          <p className='max-w-[900px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
-            {t('description')}
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg lg:text-xl">
+            {t("description")}
           </p>
         </div>
-        <div className='mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3'>
-          {features.map((feature, index) => {
-            const config = featureConfigs[index];
-            const Icon = config.icon;
-            return (
-              <div
-                key={feature.title}
-                className={`group flex flex-col items-center space-y-6 rounded-3xl border border-slate-700/50 p-10 shadow-2xl bg-gradient-to-br ${config.bgGradient} hover:shadow-blue-500/10 transition-all duration-700 hover:-translate-y-4 h-full relative overflow-hidden backdrop-blur-sm`}
-              >
-                <div className='absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-white/5 to-transparent rounded-bl-3xl'></div>
+
+        {/* Features Grid */}
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, index) => {
+              const Icon = featureIcons[index] ?? Target
+              return (
                 <div
-                  className={`rounded-3xl bg-gradient-to-br ${config.gradient} p-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-2xl`}
+                  key={feature.title}
+                  className="group relative overflow-hidden rounded-3xl border border-slate-200/60 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 sm:p-10"
                 >
-                  <Icon className='h-10 w-10 text-white' />
+                  {/* Background gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-indigo-50/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                  {/* Icon container with enhanced styling */}
+                  <div className="relative mb-6">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg shadow-blue-500/25 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-blue-500/30">
+                      <Icon className="h-7 w-7 text-white" />
+                    </div>
+                    {/* Decorative element */}
+                    <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-110" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative space-y-4">
+                    <h3 className="text-xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-blue-700 sm:text-2xl">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700 sm:text-base">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Hover effect border */}
+                  <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </div>
-                <h3 className='text-2xl font-bold text-center text-white'>
-                  {feature.title}
-                </h3>
-                <p className='text-center text-slate-300 leading-relaxed text-lg'>
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Bottom decorative element */}
+        <div className="mt-16 flex justify-center">
+          <div className="h-1 w-24 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600" />
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FeatureSection;
+export default FeatureSection

@@ -6,18 +6,22 @@ import FeatureSection from '@/components/sections/FeatureSection';
 import ModulesSection from '@/components/sections/ModulesSection';
 import FooterComponent from '@/components/FooterComponent';
 import MainSection from '@/components/sections/MainSection';
+import TrustSection from '@/components/sections/TrustSection';
+import { enableTrustSection } from '@/lib/utils';
 
 export default function LandingPage() {
+  console.log(enableTrustSection());
   return (
-    <div className='min-h-screen w-full bg-gradient-to-br from-slate-950 via-blue-950/50 to-emerald-950/30 text-white overflow-x-hidden'>
+    <div className='min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 text-slate-900 antialiased'>
       <HeaderComponent />
 
       <main className='w-full'>
         <MainSection />
+        {enableTrustSection() && <TrustSection />}
         <ModulesSection />
         <FeatureSection />
-        <ContactSection />
         <PricingSection />
+        <ContactSection />
       </main>
 
       <FooterComponent />

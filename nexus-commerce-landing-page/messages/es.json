@@ -1,0 +1,298 @@
+{
+  "HeaderComponent": {
+    "brand": {
+      "name": "OrderLink",
+      "tagline": "PLATAFORMA LOGÍSTICA"
+    },
+    "navigation": {
+      "modules": "Módulos",
+      "features": "Funcionalidades",
+      "pricing": "Precios"
+    },
+    "primaryCta": "Empezar ahora",
+    "mobileToggleAria": "Alternar navegación"
+  },
+  "MainSection": {
+    "badge": "Gestión empresarial integral",
+    "heading": {
+      "prefix": "Optimice sus",
+      "words": [
+        "procesos",
+        "logística",
+        "empresas",
+        "entregas",
+        "ventas",
+        "eficiencia",
+        "éxitos"
+      ]
+    },
+    "description": "Plataforma integral para la gestión logística y empresarial. OrderLink unifica todos los procesos, desde la administración hasta el seguimiento de entregas, en una solución de alto rendimiento.",
+    "primaryCta": "Iniciar administración",
+    "secondaryCta": "Ver módulos",
+    "stats": {
+      "orders": "10.000+ pedidos diarios",
+      "rating": "Valoración: 4,9"
+    },
+    "imageAlt": "Vista previa del panel de OrderLink"
+  },
+  "ModulesSection": {
+    "badge": "Módulos clave",
+    "title": "Todo lo que necesita para gestionar su empresa",
+    "description": "Cuatro potentes módulos trabajan de forma fluida para cubrir todas sus operaciones logísticas y de negocio.",
+    "modules": [
+      {
+        "name": "Admin Tool",
+        "subtitle": "Gestión empresarial integral",
+        "features": [
+          "Gestión de usuarios",
+          "Configuración del sistema",
+          "Control de acceso",
+          "Registro de auditoría"
+        ]
+      },
+      {
+        "name": "Web Shop",
+        "subtitle": "Funcionalidades de e-commerce integradas",
+        "features": [
+          "Catálogo de productos",
+          "Procesamiento de pedidos",
+          "Integración de pagos",
+          "Cuentas de clientes"
+        ]
+      },
+      {
+        "name": "Delivery Navigation",
+        "subtitle": "Planificación inteligente de rutas",
+        "features": [
+          "Optimización de rutas",
+          "Seguimiento en tiempo real",
+          "Gestión de conductores",
+          "Planificación de entregas"
+        ]
+      },
+      {
+        "name": "Data Analysis",
+        "subtitle": "Inteligencia de negocio",
+        "features": [
+          "Indicadores de rendimiento",
+          "Informes personalizados",
+          "Análisis de tendencias",
+          "Visualización de datos"
+        ]
+      }
+    ]
+  },
+  "FeatureSection": {
+    "badge": "Ventajas clave",
+    "title": "Por qué las empresas eligen OrderLink",
+    "description": "Optimice procesos, reduzca costos y escale su negocio con nuestra plataforma logística integral.",
+    "features": [
+      {
+        "title": "Eficiencia operativa",
+        "description": "Módulos integrados que eliminan redundancias y aumentan la productividad en todas las áreas."
+      },
+      {
+        "title": "Crecimiento escalable",
+        "description": "Crezca con confianza con una plataforma que escala desde startups hasta empresas de nivel corporativo."
+      },
+      {
+        "title": "Información en tiempo real",
+        "description": "Decisiones informadas gracias a análisis completos y transparencia inmediata."
+      },
+      {
+        "title": "Seguro y fiable",
+        "description": "Seguridad empresarial, copias de seguridad regulares y 99,9 % de disponibilidad para proteger sus datos."
+      },
+      {
+        "title": "Colaboración en equipo",
+        "description": "Colaboración fluida con acceso basado en roles y herramientas de comunicación integradas."
+      },
+      {
+        "title": "Automatización de procesos",
+        "description": "Automatice tareas repetitivas, reduzca errores y gane tiempo para la estrategia."
+      }
+    ]
+  },
+  "ContactSection": {
+    "title": "¿Listo para optimizar su negocio?",
+    "description": "Únase a miles de empresas que usan OrderLink para operaciones más eficientes.",
+    "primaryCta": "Comenzar prueba gratuita",
+    "secondaryCta": "Saber más"
+  },
+  "PricingSection": {
+    "badge": "Precios flexibles",
+    "title": "Modular y transparente",
+    "description": "Pague solo lo que necesita: combine módulos y licencias de usuarios a medida.",
+    "modulesCard": {
+      "title": "Módulos",
+      "subtitle": "Precio mensual por tenant",
+      "items": [
+        {
+          "name": "Core",
+          "note": "(base de AdminTool)",
+          "price": "Incluido"
+        },
+        {
+          "name": "Insight",
+          "note": "(estadísticas)",
+          "price": "+10 €"
+        },
+        {
+          "name": "Flow",
+          "note": "(planificación de entregas y app)",
+          "price": "+15 €"
+        },
+        {
+          "name": "Access",
+          "note": "(roles y permisos personalizados)",
+          "price": "+5 €"
+        }
+      ]
+    },
+    "usersCard": {
+      "title": "Usuarios",
+      "subtitle": "Importe mensual por usuario activo",
+      "items": [
+        {
+          "name": "Core",
+          "note": "(hasta 3 usuarios)",
+          "price": "Incluido"
+        },
+        {
+          "name": "Team",
+          "note": "(hasta 5 usuarios)",
+          "price": "+5 €"
+        },
+        {
+          "name": "Pro",
+          "note": "(hasta 7 usuarios)",
+          "price": "+10 €"
+        },
+        {
+          "name": "Enterprise",
+          "note": "(a partir de 10 usuarios)",
+          "price": "Personalizado"
+        }
+      ]
+    },
+    "setup": {
+      "title": "Configuración única",
+      "description": "Para hosting, dominio, configuración básica e infraestructura",
+      "price": "+49 € único"
+    },
+    "packages": {
+      "title": "Paquetes de ejemplo",
+      "billingPeriod": "/mes",
+      "popularBadge": "Popular",
+      "cta": "Elegir paquete",
+      "items": [
+        {
+          "name": "Core",
+          "price": "0 €",
+          "features": ["AdminTool (hasta 3 usuarios)"]
+        },
+        {
+          "name": "Insight Core",
+          "price": "10 €",
+          "features": ["AdminTool", "Insight", "3 usuarios"]
+        },
+        {
+          "name": "Full Pro",
+          "price": "30 €",
+          "features": ["Todos los módulos", "hasta 7 usuarios"]
+        }
+      ]
+    }
+  },
+  "FooterComponent": {
+    "brand": {
+      "tagline": "PLATAFORMA LOGÍSTICA",
+      "description": "Plataforma integral para procesos logísticos y empresariales modernos.",
+      "name": "OrderLink"
+    },
+    "columns": {
+      "modules": {
+        "title": "Módulos",
+        "links": {
+          "adminTool": "Admin Tool",
+          "webShop": "Tienda web",
+          "deliveryNavigation": "Navegación de entregas",
+          "dataAnalysis": "Análisis de datos"
+        }
+      },
+      "company": {
+        "title": "Empresa",
+        "links": {
+          "about": "Sobre nosotros",
+          "careers": "Carreras",
+          "contact": "Contacto",
+          "blog": "Blog"
+        }
+      },
+      "support": {
+        "title": "Soporte",
+        "links": {
+          "docs": "Documentación",
+          "helpCenter": "Centro de ayuda",
+          "privacy": "Privacidad",
+          "terms": "Términos de uso"
+        }
+      }
+    },
+    "bottomNote": "© 2025 OrderLink. Todos los derechos reservados."
+  },
+  "TrustSection": {
+    "badge": "Seguridad y cumplimiento",
+    "title": "Sus datos, protegidos en la UE",
+    "description": "Nos tomamos muy en serio la seguridad de los datos. Nuestra infraestructura se aloja exclusivamente en servidores de la UE: sus datos no salen de Europa y cumplen plenamente con el RGPD.",
+    "euCard": {
+      "title": "100 % alojamiento en la UE",
+      "subtitle": "Centros de datos en Fráncfort y Ámsterdam",
+      "points": [
+        {
+          "title": "Sin Cloud Act de EE. UU.",
+          "description": "Sus datos están protegidos frente a solicitudes de acceso de autoridades extranjeras"
+        },
+        {
+          "title": "Soberanía de datos en la UE",
+          "description": "Residencia de datos siempre dentro de las fronteras de la UE"
+        },
+        {
+          "title": "Infraestructura redundante",
+          "description": "Copias de seguridad multirregión en centros de datos europeos para máxima fiabilidad"
+        }
+      ]
+    },
+    "trustFeatures": [
+      {
+        "title": "Infraestructura exclusivamente europea",
+        "description": "Todos los datos se almacenan únicamente en servidores dentro de la Unión Europea — cumplimiento total del RGPD."
+      },
+      {
+        "title": "Cifrado de extremo a extremo",
+        "description": "Cifrado en reposo y en tránsito según los estándares del sector (AES-256)."
+      },
+      {
+        "title": "Certificación ISO 27001",
+        "description": "Nuestra gestión de seguridad cumple con los estándares internacionales más exigentes."
+      },
+      {
+        "title": "Cumplimiento RGPD",
+        "description": "Cumplimiento total de la normativa europea de protección de datos — usted mantiene el control."
+      },
+      {
+        "title": "Auditorías de seguridad periódicas",
+        "description": "Auditorías independientes trimestrales para garantizar los niveles más altos de protección."
+      }
+    ],
+    "certifications": {
+      "title": "Certificaciones y conformidad",
+      "items": [
+        { "name": "RGPD", "description": "Conforme" },
+        { "name": "ISO 27001", "description": "Certificado" },
+        { "name": "SOC 2", "description": "Tipo II" },
+        { "name": "EU Cloud CoC", "description": "Verificado" }
+      ]
+    }
+  }
+}

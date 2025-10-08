@@ -1,5 +1,4 @@
-﻿import React from 'react';
-import { Button } from '../ui/button';
+﻿import { Button } from '../ui/button';
 import Link from 'next/link';
 import { Rocket } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
@@ -10,34 +9,41 @@ const ContactSection = async () => {
   return (
     <section
       id='contact'
-      className='relative w-full py-24 md:py-32 bg-gradient-to-br from-slate-950 via-blue-950/30 to-emerald-950/20'
+      className='relative w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-16 sm:py-20 md:py-24 lg:py-32'
     >
-      <div className='absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-transparent rounded-br-[5rem]'></div>
-      <div className='absolute bottom-0 right-0 w-36 h-36 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-[4.5rem]'></div>
+      {/* Background decorative elements */}
+      <div className='absolute inset-0 overflow-hidden'>
+        <div className='absolute -top-20 -right-20 h-40 w-40 rounded-full bg-gradient-to-br from-blue-400/20 to-indigo-500/20 blur-2xl' />
+        <div className='absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-gradient-to-tr from-purple-400/20 to-pink-500/20 blur-2xl' />
+      </div>
 
-      <div className='container relative'>
-        <div className='flex flex-col items-center justify-center space-y-10 text-center max-w-4xl mx-auto'>
-          <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-            {t('title')}
-          </h2>
-          <p className='max-w-[700px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
-            {t('description')}
-          </p>
-          <div className='flex flex-col gap-6 min-[400px]:flex-row'>
+      <div className='container relative z-10 mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='mx-auto flex max-w-4xl flex-col items-center gap-8 text-center sm:gap-10 lg:gap-12'>
+          <div className='space-y-6'>
+            <h2 className='text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl'>
+              {t('title')}
+            </h2>
+            <p className='mx-auto max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg lg:text-xl'>
+              {t('description')}
+            </p>
+          </div>
+
+          <div className='flex flex-col gap-4 sm:flex-row sm:gap-6'>
             <Button
               asChild
               size='lg'
-              className='px-12 py-6 text-xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 rounded-2xl text-white font-bold'
+              className='group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-10 py-6 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105'
             >
               <Link href='#pricing'>
-                {t('primaryCta')} <Rocket className='ml-3 h-6 w-6' />
+                {t('primaryCta')}{' '}
+                <Rocket className='ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1' />
               </Link>
             </Button>
             <Button
               asChild
               variant='outline'
               size='lg'
-              className='px-12 py-6 text-xl border-2 border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300 bg-slate-950/50 backdrop-blur-sm text-blue-200 hover:text-white rounded-2xl font-semibold'
+              className='rounded-full border-2 border-slate-300 bg-white/80 px-10 py-6 text-base font-semibold text-slate-700 backdrop-blur-sm transition-all duration-300 hover:bg-slate-100 hover:border-slate-400 hover:text-foreground hover:scale-105'
             >
               <Link href='#modules'>{t('secondaryCta')}</Link>
             </Button>

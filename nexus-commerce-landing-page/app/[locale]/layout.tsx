@@ -1,10 +1,22 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import '../globals.css';
 import { ThemeProvider } from '@/components/ui/dark-mode/theme-provider';
 import { Toaster } from 'sonner';
 import { envSet } from '@/lib/utils';
+import { Metadata } from 'next';
+import '../globals.css';
+
+// app/[locale]/layout.tsx (dein Layout)
+export const metadata: Metadata = {
+  title: 'OrderLink - Landing Page',
+  description: 'Logistikplattform',
+  // wirkt nur als PWA "zum Home-Bildschirm", schadet aber nicht:
+  appleWebApp: { capable: true, statusBarStyle: 'black-translucent' },
+
+  // WICHTIG: themeColor für iOS Safari
+};
+
 export default async function LocaleLayout({
   children,
   params,
@@ -22,7 +34,7 @@ export default async function LocaleLayout({
   if (!envSet()) throw new Error('Missing environment variables');
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body>
+      <body className='min-h-dvh bg-[#EEF2FF] text-slate-900 antialiased dark:bg-[#0B1B5E] dark:text-slate-100'>
         <NextIntlClientProvider>
           <ThemeProvider
             attribute='class'

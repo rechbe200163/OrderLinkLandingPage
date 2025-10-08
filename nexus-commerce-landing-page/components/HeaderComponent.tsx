@@ -27,41 +27,35 @@ const HeaderComponent = () => {
   } as const;
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b border-blue-500/20 bg-slate-950/80 backdrop-blur-2xl'>
-      <div className='absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-blue-500/30 to-emerald-500/30 rounded-br-[2.5rem] blur-xl'></div>
-      <div className='absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-emerald-400/20 to-blue-400/20 rounded-bl-3xl blur-lg'></div>
-      <div className='container relative'>
-        <div className='flex h-20 items-center justify-between'>
-          <div className='flex items-center gap-4'>
-            <div className='relative'>
-              <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
-              <div className='relative flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
-                <Package className='h-7 w-7 text-white' />
-              </div>
-            </div>
-            <div className='flex flex-col'>
-              <span className='text-2xl font-black bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+    <header className='sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/80 backdrop-blur-md shadow-sm'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex h-16 items-center justify-between sm:h-18'>
+          <Link href='/' className='flex items-center gap-3 transition-transform duration-300 hover:scale-105'>
+            <span className='flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30'>
+              <Package className='h-5 w-5' />
+            </span>
+            <span className='flex flex-col leading-tight'>
+              <span className='text-lg font-bold text-slate-900 sm:text-xl'>
                 {t('brand.name')}
               </span>
-              <span className='text-xs text-blue-300 font-medium tracking-wider'>
+              <span className='text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
                 {t('brand.tagline')}
               </span>
-            </div>
-          </div>
-          <nav className='hidden md:flex items-center space-x-8'>
+            </span>
+          </Link>
+          <nav className='hidden items-center gap-6 lg:gap-8 xl:flex'>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
+                className='text-sm font-semibold text-slate-600 transition-all duration-300 hover:text-blue-600 hover:scale-105'
               >
                 {link.label}
-                <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
               </Link>
             ))}
             <Button
               asChild
-              className='bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-6 py-3 font-semibold'
+              className='rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105'
             >
               <Link href={primaryNavigationLink.href}>
                 {primaryNavigationLink.label}
@@ -71,21 +65,25 @@ const HeaderComponent = () => {
           <Popover open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <PopoverTrigger asChild>
               <Button
-                className='group size-8 md:hidden'
+                className='lg:hidden'
                 variant='ghost'
                 size='icon'
                 aria-label={t('mobileToggleAria')}
               >
-                <Menu className='h-5 w-5' />
+                <Menu className='h-5 w-5 text-slate-700' />
               </Button>
             </PopoverTrigger>
-            <PopoverContent align='end' className='w-52 p-3 md:hidden'>
-              <div className='grid gap-1'>
+            <PopoverContent
+              align='end'
+              className='w-64 p-4 lg:hidden'
+              sideOffset={12}
+            >
+              <div className='grid gap-2'>
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className='flex items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800/60 focus:bg-slate-800/60 focus:outline-none'
+                    className='flex items-center rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-blue-50 hover:text-blue-600'
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -93,7 +91,7 @@ const HeaderComponent = () => {
                 ))}
                 <Button
                   asChild
-                  className='mt-2 w-full bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-4 py-2 font-semibold'
+                  className='mt-3 w-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/25'
                 >
                   <Link
                     href={primaryNavigationLink.href}
