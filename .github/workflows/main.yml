@@ -26,7 +26,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./admin-tool
-          file: ./admin-tool/Dockerfile
+          context: ./nexus-commerce-landing-page
+          file: ./nexus-commerce-landing-page/Dockerfile
           push: true
-          tags: rechbe200163/orderlink-admintool:latest
+          tags: rechbe200163/orderlink-landing-page:latest
