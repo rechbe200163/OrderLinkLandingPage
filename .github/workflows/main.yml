@@ -29,4 +29,5 @@ jobs:
           context: ./nexus-commerce-landing-page
           file: ./nexus-commerce-landing-page/Dockerfile
           push: true
+          platforms: linux/arm64
           tags: rechbe200163/orderlink-landing-page:latest
