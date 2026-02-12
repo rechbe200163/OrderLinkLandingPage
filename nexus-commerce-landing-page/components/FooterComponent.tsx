@@ -4,38 +4,29 @@ import React from 'react';
 
 const FooterComponent = () => {
   return (
-    <footer className='w-full border-t border-blue-500/20 bg-slate-950/80 backdrop-blur-2xl'>
+    <footer className='w-full border-t border-border bg-muted/50'>
       <div className='container py-16'>
         <div className='grid gap-12 md:grid-cols-2 lg:grid-cols-4'>
-          <div className='space-y-6'>
-            <div className='flex items-center gap-4'>
-              <div className='relative'>
-                <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
-                <div className='relative flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
-                  <Package className='h-7 w-7 text-white' />
-                </div>
+          <div className='space-y-4'>
+            <div className='flex items-center gap-3'>
+              <div className='flex items-center justify-center w-10 h-10 bg-primary rounded-xl'>
+                <Package className='h-5 w-5 text-primary-foreground' />
               </div>
-              <div className='flex flex-col'>
-                <span className='text-2xl font-black bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
-                  OrderLink
-                </span>
-                <span className='text-xs text-blue-300 font-medium tracking-wider'>
-                  LOGISTICS PLATFORM
-                </span>
-              </div>
+              <span className='text-lg font-bold text-foreground tracking-tight'>
+                OrderLink
+              </span>
             </div>
-            <p className='text-slate-400 leading-relaxed'>
-              Comprehensive business management platform for modern logistics
-              operations.
+            <p className='text-muted-foreground leading-relaxed text-sm'>
+              Built to simplify daily business operations.
             </p>
           </div>
-          <div className='space-y-6'>
-            <h3 className='text-lg font-semibold text-white'>Modules</h3>
-            <ul className='space-y-3'>
+          <div className='space-y-4'>
+            <h3 className='text-sm font-semibold text-foreground'>Modules</h3>
+            <ul className='space-y-2.5'>
               <li>
                 <Link
                   href='#modules'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Admin Tool
                 </Link>
@@ -43,7 +34,7 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#modules'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Web Shop
                 </Link>
@@ -51,7 +42,7 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#modules'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Delivery Navigation
                 </Link>
@@ -59,20 +50,20 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#modules'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Data Analysis
                 </Link>
               </li>
             </ul>
           </div>
-          <div className='space-y-6'>
-            <h3 className='text-lg font-semibold text-white'>Company</h3>
-            <ul className='space-y-3'>
+          <div className='space-y-4'>
+            <h3 className='text-sm font-semibold text-foreground'>Company</h3>
+            <ul className='space-y-2.5'>
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   About Us
                 </Link>
@@ -80,7 +71,7 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Careers
                 </Link>
@@ -88,7 +79,7 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Contact
                 </Link>
@@ -96,20 +87,20 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Blog
                 </Link>
               </li>
             </ul>
           </div>
-          <div className='space-y-6'>
-            <h3 className='text-lg font-semibold text-white'>Support</h3>
-            <ul className='space-y-3'>
+          <div className='space-y-4'>
+            <h3 className='text-sm font-semibold text-foreground'>Support</h3>
+            <ul className='space-y-2.5'>
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Documentation
                 </Link>
@@ -117,7 +108,7 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Help Center
                 </Link>
@@ -125,7 +116,7 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Privacy Policy
                 </Link>
@@ -133,7 +124,7 @@ const FooterComponent = () => {
               <li>
                 <Link
                   href='#'
-                  className='text-slate-400 hover:text-blue-300 transition-colors'
+                  className='text-sm text-muted-foreground hover:text-foreground transition-colors'
                 >
                   Terms of Service
                 </Link>
@@ -141,9 +132,9 @@ const FooterComponent = () => {
             </ul>
           </div>
         </div>
-        <div className='mt-16 pt-8 border-t border-blue-500/20 text-center'>
-          <p className='text-slate-400'>
-            © 2024 OrderLink. All rights reserved.
+        <div className='mt-12 pt-8 border-t border-border text-center'>
+          <p className='text-sm text-muted-foreground'>
+            &copy; 2024 OrderLink. All rights reserved.
           </p>
         </div>
       </div>

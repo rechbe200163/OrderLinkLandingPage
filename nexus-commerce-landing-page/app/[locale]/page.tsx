@@ -8,7 +8,7 @@ import FooterComponent from '@/components/FooterComponent';
 
 export default function LandingPage() {
   return (
-    <div className='min-h-screen w-full bg-gradient-to-br from-slate-950 via-blue-950/50 to-emerald-950/30 text-white overflow-x-hidden'>
+    <div className='min-h-screen w-full bg-background text-foreground overflow-x-hidden'>
       <HeaderComponent />
 
       <main className='w-full'>

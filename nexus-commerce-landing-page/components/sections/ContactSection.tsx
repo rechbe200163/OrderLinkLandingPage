@@ -7,35 +7,32 @@ const ContactSection = () => {
   return (
     <section
       id='contact'
-      className='relative w-full py-24 md:py-32 bg-gradient-to-br from-slate-950 via-blue-950/30 to-emerald-950/20'
+      className='relative w-full py-24 md:py-32 bg-muted/30'
     >
-      <div className='absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-transparent rounded-br-[5rem]'></div>
-      <div className='absolute bottom-0 right-0 w-36 h-36 bg-gradient-to-tl from-emerald-500/10 to-transparent rounded-tl-[4.5rem]'></div>
-
       <div className='container relative'>
-        <div className='flex flex-col items-center justify-center space-y-10 text-center max-w-4xl mx-auto'>
-          <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+        <div className='flex flex-col items-center justify-center gap-8 text-center max-w-3xl mx-auto'>
+          <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-foreground text-balance'>
             Ready to streamline your business?
           </h2>
-          <p className='max-w-[700px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
+          <p className='max-w-[600px] text-muted-foreground text-lg leading-relaxed'>
             Join thousands of businesses already using OrderLink to manage their
             operations more efficiently.
           </p>
-          <div className='flex flex-col gap-6 min-[400px]:flex-row'>
+          <div className='flex flex-col gap-4 min-[400px]:flex-row'>
             <Button
               asChild
               size='lg'
-              className='px-12 py-6 text-xl bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 rounded-2xl text-white font-bold'
+              className='px-8 py-6 text-base bg-primary hover:bg-primary/90 text-primary-foreground transition-colors duration-200 rounded-xl font-medium'
             >
               <Link href='#pricing'>
-                Start Your Free Trial <Rocket className='ml-3 h-6 w-6' />
+                Start Your Free Trial <Rocket className='ml-2 h-5 w-5' />
               </Link>
             </Button>
             <Button
               asChild
               variant='outline'
               size='lg'
-              className='px-12 py-6 text-xl border-2 border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300 bg-slate-950/50 backdrop-blur-sm text-blue-200 hover:text-white rounded-2xl font-semibold'
+              className='px-8 py-6 text-base border border-border hover:bg-accent text-foreground transition-colors duration-200 rounded-xl font-medium'
             >
               <Link href='#modules'>Learn More</Link>
             </Button>
