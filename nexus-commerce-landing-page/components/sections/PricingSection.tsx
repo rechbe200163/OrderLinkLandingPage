@@ -24,205 +24,201 @@ const PricingSection = () => {
   return (
     <section
       id='pricing'
-      className='relative w-full py-24 md:py-32 bg-gradient-to-b from-slate-900 to-slate-950'
+      className='relative w-full py-24 md:py-32'
     >
       <div className='container relative'>
         {/* Header Section */}
-        <div className='flex flex-col items-center justify-center space-y-6 text-center mb-20 max-w-4xl mx-auto'>
+        <div className='flex flex-col items-center justify-center gap-4 text-center mb-16 max-w-3xl mx-auto'>
           <Badge
             variant='outline'
-            className='border-blue-500/30 text-blue-300 bg-blue-900/20 rounded-full px-6 py-3'
+            className='border-primary/20 text-primary bg-primary/5 rounded-full px-4 py-2'
           >
             <Package className='w-4 h-4 mr-2' />
             Flexible Pricing
           </Badge>
-          <h2 className='text-4xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+          <h2 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-foreground text-balance'>
             Modular & Transparent
           </h2>
-          <p className='max-w-[900px] text-slate-300 text-xl md:text-2xl leading-relaxed font-light'>
-            Bezahle nur, was du brauchst – kombiniere Module & Nutzeranzahl
+          <p className='max-w-[700px] text-muted-foreground text-lg leading-relaxed'>
+            Bezahle nur, was du brauchst -- kombiniere Module & Nutzeranzahl
             individuell.
           </p>
         </div>
 
-        {/* Pricing Cards - Enhanced Layout */}
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto mb-24'>
+        {/* Pricing Cards */}
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto mb-20'>
           {/* Module Pricing Card */}
-          <Card className='rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300'>
-            <CardHeader className='pb-6'>
-              <div className='flex items-center gap-3 mb-2'>
-                <div className='p-2 rounded-lg bg-blue-500/20'>
-                  <Settings className='w-5 h-5 text-blue-400' />
+          <Card className='rounded-2xl bg-card border border-border p-6 hover:shadow-lg transition-all duration-300'>
+            <CardHeader className='pb-4'>
+              <div className='flex items-center gap-3 mb-1'>
+                <div className='p-2 rounded-lg bg-primary/10'>
+                  <Settings className='w-5 h-5 text-primary' />
                 </div>
-                <CardTitle className='text-2xl font-bold text-white'>
+                <CardTitle className='text-xl font-semibold text-card-foreground'>
                   Module
                 </CardTitle>
               </div>
-              <CardDescription className='text-blue-200 text-lg'>
+              <CardDescription className='text-muted-foreground'>
                 Monatliche Preise pro Tenant
               </CardDescription>
             </CardHeader>
-            <CardContent className='space-y-6'>
-              <div className='space-y-4'>
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/50 border border-emerald-500/20'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-emerald-500/20'>
-                      <Package className='w-4 h-4 text-emerald-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Core</span>
-                    <span className='text-slate-400 text-sm'>
-                      (AdminTool Basis)
-                    </span>
+            <CardContent className='space-y-3'>
+              <div className='flex items-center justify-between p-3.5 rounded-xl bg-primary/5 border border-primary/10'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-primary/10'>
+                    <Package className='w-4 h-4 text-primary' />
                   </div>
-                  <span className='text-emerald-400 font-bold'>Inklusive</span>
+                  <span className='font-medium text-card-foreground'>Core</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (AdminTool Basis)
+                  </span>
                 </div>
+                <span className='text-primary font-semibold text-sm'>Inklusive</span>
+              </div>
 
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-blue-500/20'>
-                      <BarChart3 className='w-4 h-4 text-blue-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Insight</span>
-                    <span className='text-slate-400 text-sm'>
-                      (Statistiken)
-                    </span>
+              <div className='flex items-center justify-between p-3.5 rounded-xl hover:bg-muted/50 transition-colors'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-muted'>
+                    <BarChart3 className='w-4 h-4 text-muted-foreground' />
                   </div>
-                  <span className='text-white font-bold'>+10 €</span>
+                  <span className='font-medium text-card-foreground'>Insight</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (Statistiken)
+                  </span>
                 </div>
+                <span className='text-card-foreground font-semibold text-sm'>+10 EUR</span>
+              </div>
 
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-blue-500/20'>
-                      <Workflow className='w-4 h-4 text-blue-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Flow</span>
-                    <span className='text-slate-400 text-sm'>
-                      (Lieferplanung & App)
-                    </span>
+              <div className='flex items-center justify-between p-3.5 rounded-xl hover:bg-muted/50 transition-colors'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-muted'>
+                    <Workflow className='w-4 h-4 text-muted-foreground' />
                   </div>
-                  <span className='text-white font-bold'>+15 €</span>
+                  <span className='font-medium text-card-foreground'>Flow</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (Lieferplanung & App)
+                  </span>
                 </div>
+                <span className='text-card-foreground font-semibold text-sm'>+15 EUR</span>
+              </div>
 
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-blue-500/20'>
-                      <Shield className='w-4 h-4 text-blue-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Access</span>
-                    <span className='text-slate-400 text-sm'>
-                      (Rollen & Rechte)
-                    </span>
+              <div className='flex items-center justify-between p-3.5 rounded-xl hover:bg-muted/50 transition-colors'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-muted'>
+                    <Shield className='w-4 h-4 text-muted-foreground' />
                   </div>
-                  <span className='text-white font-bold'>+5 €</span>
+                  <span className='font-medium text-card-foreground'>Access</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (Rollen & Rechte)
+                  </span>
                 </div>
+                <span className='text-card-foreground font-semibold text-sm'>+5 EUR</span>
               </div>
             </CardContent>
           </Card>
 
           {/* User Packages Card */}
-          <Card className='rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300'>
-            <CardHeader className='pb-6'>
-              <div className='flex items-center gap-3 mb-2'>
-                <div className='p-2 rounded-lg bg-blue-500/20'>
-                  <Users className='w-5 h-5 text-blue-400' />
+          <Card className='rounded-2xl bg-card border border-border p-6 hover:shadow-lg transition-all duration-300'>
+            <CardHeader className='pb-4'>
+              <div className='flex items-center gap-3 mb-1'>
+                <div className='p-2 rounded-lg bg-primary/10'>
+                  <Users className='w-5 h-5 text-primary' />
                 </div>
-                <CardTitle className='text-2xl font-bold text-white'>
+                <CardTitle className='text-xl font-semibold text-card-foreground'>
                   Nutzerpakete
                 </CardTitle>
               </div>
-              <CardDescription className='text-blue-200 text-lg'>
+              <CardDescription className='text-muted-foreground'>
                 Monatlich, pro Instanz
               </CardDescription>
             </CardHeader>
-            <CardContent className='space-y-6'>
-              <div className='space-y-4'>
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/50 border border-emerald-500/20'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-emerald-500/20'>
-                      <Users className='w-4 h-4 text-emerald-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Core</span>
-                    <span className='text-slate-400 text-sm'>
-                      (bis 3 Nutzer)
-                    </span>
+            <CardContent className='space-y-3'>
+              <div className='flex items-center justify-between p-3.5 rounded-xl bg-primary/5 border border-primary/10'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-primary/10'>
+                    <Users className='w-4 h-4 text-primary' />
                   </div>
-                  <span className='text-emerald-400 font-bold'>Inklusive</span>
-                </div>
-
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-blue-500/20'>
-                      <Users className='w-4 h-4 text-blue-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Team</span>
-                    <span className='text-slate-400 text-sm'>
-                      (bis 5 Nutzer)
-                    </span>
-                  </div>
-                  <span className='text-white font-bold'>+5 €</span>
-                </div>
-
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-blue-500/20'>
-                      <Users className='w-4 h-4 text-blue-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Pro</span>
-                    <span className='text-slate-400 text-sm'>
-                      (bis 7 Nutzer)
-                    </span>
-                  </div>
-                  <span className='text-white font-bold'>+10 €</span>
-                </div>
-
-                <div className='flex items-center justify-between p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-colors'>
-                  <div className='flex items-center gap-3'>
-                    <div className='p-1.5 rounded-md bg-blue-500/20'>
-                      <Users className='w-4 h-4 text-blue-400' />
-                    </div>
-                    <span className='font-semibold text-white'>Enterprise</span>
-                    <span className='text-slate-400 text-sm'>
-                      (ab 10 Nutzer)
-                    </span>
-                  </div>
-                  <span className='text-blue-300 font-bold italic'>
-                    individuell
+                  <span className='font-medium text-card-foreground'>Core</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (bis 3 Nutzer)
                   </span>
                 </div>
+                <span className='text-primary font-semibold text-sm'>Inklusive</span>
               </div>
-            </CardContent>
-          </Card>
-        </div>
 
-        {/* Setup Fee - Enhanced Design */}
-        <div className='mb-24'>
-          <Card className='max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-slate-800/80 to-slate-900/80 border border-emerald-500/30 p-8 text-center backdrop-blur-sm'>
-            <CardContent className='space-y-4'>
-              <h3 className='text-3xl font-bold text-white mb-2'>
-                Einmalige Einrichtung
-              </h3>
-              <p className='text-slate-300 text-lg mb-4'>
-                Für Hosting, Domain, Grundkonfiguration & Infrastruktur
-              </p>
-              <div className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/20 border border-emerald-500/30'>
-                <span className='text-emerald-400 font-bold text-2xl'>
-                  +49 € einmalig
+              <div className='flex items-center justify-between p-3.5 rounded-xl hover:bg-muted/50 transition-colors'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-muted'>
+                    <Users className='w-4 h-4 text-muted-foreground' />
+                  </div>
+                  <span className='font-medium text-card-foreground'>Team</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (bis 5 Nutzer)
+                  </span>
+                </div>
+                <span className='text-card-foreground font-semibold text-sm'>+5 EUR</span>
+              </div>
+
+              <div className='flex items-center justify-between p-3.5 rounded-xl hover:bg-muted/50 transition-colors'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-muted'>
+                    <Users className='w-4 h-4 text-muted-foreground' />
+                  </div>
+                  <span className='font-medium text-card-foreground'>Pro</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (bis 7 Nutzer)
+                  </span>
+                </div>
+                <span className='text-card-foreground font-semibold text-sm'>+10 EUR</span>
+              </div>
+
+              <div className='flex items-center justify-between p-3.5 rounded-xl hover:bg-muted/50 transition-colors'>
+                <div className='flex items-center gap-3'>
+                  <div className='p-1.5 rounded-md bg-muted'>
+                    <Users className='w-4 h-4 text-muted-foreground' />
+                  </div>
+                  <span className='font-medium text-card-foreground'>Enterprise</span>
+                  <span className='text-muted-foreground text-sm'>
+                    (ab 10 Nutzer)
+                  </span>
+                </div>
+                <span className='text-primary font-semibold text-sm italic'>
+                  individuell
                 </span>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Example Packages - Enhanced Grid */}
+        {/* Setup Fee */}
+        <div className='mb-20'>
+          <Card className='max-w-3xl mx-auto rounded-2xl bg-card border border-border p-8 text-center'>
+            <CardContent className='space-y-3'>
+              <h3 className='text-2xl font-semibold text-card-foreground'>
+                Einmalige Einrichtung
+              </h3>
+              <p className='text-muted-foreground'>
+                Hosting, Domain, Grundkonfiguration & Infrastruktur
+              </p>
+              <div className='inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/10'>
+                <span className='text-primary font-semibold text-lg'>
+                  +49 EUR einmalig
+                </span>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Example Packages */}
         <div>
-          <h3 className='text-3xl font-bold text-white text-center mb-12'>
+          <h3 className='text-2xl font-semibold text-foreground text-center mb-10'>
             Beispielpakete
           </h3>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto'>
             {[
               {
                 name: 'Core',
-                price: '0 €',
+                price: '0 EUR',
                 modules: ['AdminTool (bis 3 Nutzer)'],
                 moduleNames: [],
                 userTiers: UserTier.CORE,
@@ -230,7 +226,7 @@ const PricingSection = () => {
               },
               {
                 name: 'Insight Core',
-                price: '10 €',
+                price: '10 EUR',
                 modules: ['AdminTool', 'Insight', '3 Nutzer'],
                 moduleNames: [MODULE_NAMES[0]],
                 userTiers: UserTier.CORE,
@@ -238,7 +234,7 @@ const PricingSection = () => {
               },
               {
                 name: 'Full Pro',
-                price: '30 €',
+                price: '30 EUR',
                 modules: ['Alle Module', 'bis 7 Nutzer'],
                 moduleNames: [
                   MODULE_NAMES[0],
@@ -251,48 +247,48 @@ const PricingSection = () => {
             ].map((pkg, i) => (
               <Card
                 key={i}
-                className={`relative rounded-3xl p-6 transition-all duration-300 hover:scale-105 ${
+                className={`relative rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
                   pkg.popular
-                    ? 'bg-gradient-to-br from-blue-900/40 to-slate-800/80 border-2 border-blue-500/50 shadow-lg shadow-blue-500/20'
-                    : 'bg-slate-800/80 border border-blue-500/20'
-                } backdrop-blur-md`}
+                    ? 'bg-card border-2 border-primary shadow-md'
+                    : 'bg-card border border-border'
+                }`}
               >
                 {pkg.popular && (
                   <div className='absolute -top-3 left-1/2 transform -translate-x-1/2'>
-                    <Badge className='bg-blue-500 text-white px-4 py-1 rounded-full'>
+                    <Badge className='bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium'>
                       Beliebt
                     </Badge>
                   </div>
                 )}
                 <CardHeader className='text-center pb-4'>
-                  <CardTitle className='text-white text-2xl mb-2'>
+                  <CardTitle className='text-card-foreground text-xl mb-2'>
                     {pkg.name}
                   </CardTitle>
-                  <div className='text-3xl font-bold text-emerald-400 mb-1'>
+                  <div className='text-2xl font-bold text-primary mb-1'>
                     {pkg.price}
                   </div>
-                  <CardDescription className='text-slate-400'>
+                  <CardDescription className='text-muted-foreground'>
                     /Monat
                   </CardDescription>
                 </CardHeader>
                 <CardContent className='pt-4'>
                   <ul className='space-y-3 mb-6'>
                     {pkg.modules.map((m, j) => (
-                      <li key={j} className='flex items-center text-slate-300'>
-                        <CheckCircle className='h-5 w-5 mr-3 text-emerald-400 flex-shrink-0' />
+                      <li key={j} className='flex items-center text-sm text-muted-foreground'>
+                        <CheckCircle className='h-4 w-4 mr-3 text-primary flex-shrink-0' />
                         <span>{m}</span>
                       </li>
                     ))}
                   </ul>
                   <Button
                     asChild
-                    className={`w-full ${
+                    className={`w-full rounded-lg text-sm font-medium ${
                       pkg.popular
-                        ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                        : 'bg-slate-700 hover:bg-slate-600 text-white border border-blue-500/30'
-                    } transition-all duration-300`}
+                        ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
+                        : 'bg-secondary hover:bg-secondary/80 text-secondary-foreground border border-border'
+                    } transition-colors duration-200`}
                   >
-                    <Link href='/onboarding/address'>Paket wählen</Link>
+                    <Link href='/onboarding/address'>Paket w&auml;hlen</Link>
                   </Button>
                 </CardContent>
               </Card>

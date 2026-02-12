@@ -19,52 +19,41 @@ const HeaderComponent = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b border-blue-500/20 bg-slate-950/80 backdrop-blur-2xl'>
-      <div className='absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-blue-500/30 to-emerald-500/30 rounded-br-[2.5rem] blur-xl'></div>
-      <div className='absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-emerald-400/20 to-blue-400/20 rounded-bl-3xl blur-lg'></div>
+    <header className='sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-xl'>
       <div className='container relative'>
-        <div className='flex h-20 items-center justify-between'>
-          <div className='flex items-center gap-4'>
-            <div className='relative'>
-              <div className='absolute inset-0 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur-sm'></div>
-              <div className='relative flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 rounded-2xl'>
-                <Package className='h-7 w-7 text-white' />
-              </div>
+        <div className='flex h-16 items-center justify-between'>
+          <div className='flex items-center gap-3'>
+            <div className='flex items-center justify-center w-10 h-10 bg-primary rounded-xl'>
+              <Package className='h-5 w-5 text-primary-foreground' />
             </div>
             <div className='flex flex-col'>
-              <span className='text-2xl font-black bg-gradient-to-r from-white via-blue-200 to-emerald-200 bg-clip-text text-transparent'>
+              <span className='text-lg font-bold text-foreground tracking-tight'>
                 OrderLink
-              </span>
-              <span className='text-xs text-blue-300 font-medium tracking-wider'>
-                LOGISTICS PLATFORM
               </span>
             </div>
           </div>
-          <nav className='hidden md:flex items-center space-x-8'>
+          <nav className='hidden md:flex items-center gap-8'>
             <Link
               href='#modules'
-              className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
+              className='text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium'
             >
               Modules
-              <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
             </Link>
             <Link
               href='#features'
-              className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
+              className='text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium'
             >
               Features
-              <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
             </Link>
             <Link
               href='#pricing'
-              className='text-slate-300 hover:text-blue-300 transition-all duration-300 font-medium relative group'
+              className='text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium'
             >
               Pricing
-              <div className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-emerald-500 group-hover:w-full transition-all duration-300'></div>
             </Link>
             <Button
               asChild
-              className='bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-6 py-3 font-semibold'
+              className='bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-5 py-2 text-sm font-medium transition-colors duration-200'
             >
               <Link href={primaryNavigationLink.href}>
                 {primaryNavigationLink.label}
@@ -88,7 +77,7 @@ const HeaderComponent = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className='flex items-center rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800/60 focus:bg-slate-800/60 focus:outline-none'
+                    className='flex items-center rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-accent focus:bg-accent focus:outline-none'
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -96,7 +85,7 @@ const HeaderComponent = () => {
                 ))}
                 <Button
                   asChild
-                  className='mt-2 w-full bg-gradient-to-r from-blue-600 via-blue-500 to-emerald-500 hover:from-blue-700 hover:via-blue-600 hover:to-emerald-600 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 rounded-2xl px-4 py-2 font-semibold'
+                  className='mt-2 w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-4 py-2 text-sm font-medium'
                 >
                   <Link
                     href={primaryNavigationLink.href}
